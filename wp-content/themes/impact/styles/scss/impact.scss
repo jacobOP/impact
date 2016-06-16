@@ -14,6 +14,20 @@ $bp-md: 992px;
 $bp-lg: 1200px;
 
 /* change some bootstrap default classes*/
+// 
+body{
+    color:$articleText;
+    font-size: 14px;
+}
+// links
+a{
+    color:$orange;
+    &:hover, &:focus{
+        color:$greyDark;
+        border-bottom: 1px solid #f7991c;
+        text-decoration:none;
+    }
+}
 // buttons
 .btn{
     border-radius:0;
@@ -44,6 +58,12 @@ input[type=text], input[type=email], textarea{
     box-sizing:border-box;
 }
 
+.inherit{ //useful for links that should be style like their parent element rather than a link. Think <a> inside an <h1>
+    color: inherit!important;
+    text-decoration: inherit!important;
+    border-bottom: inherit!important;
+}
+
 .flex{
     display: flex;
 }
@@ -57,8 +77,8 @@ h1, .h1{
 }
 
 
-
-/* site header */
+/* template - header and footer */
+// site header
 .site-header{
     background:$black;
     color:$white;
@@ -88,5 +108,34 @@ h1, .h1{
                 border-right:0 none;
             }
         }
+    }
+}
+
+// site footer
+
+
+/* home page - index.php */
+// section.read
+.read .post {
+    //has the flex class already
+
+    img{
+        margin-right:20px;
+    }
+
+    .post--details{
+        max-width:50%;
+    }
+
+    h1, .h1{
+        font-size:22px;
+        margin:15px 0;
+        font-weight:bold;
+    }
+    .tags {
+        color:$orange;
+        font-size:12px;
+        font-weight:bold;
+        margin-top:10px;
     }
 }

@@ -1,4 +1,15 @@
 /* change some bootstrap default classes*/
+body {
+  color: #58595b;
+  font-size: 14px; }
+
+a {
+  color: #f7991c; }
+  a:hover, a:focus {
+    color: #58595b;
+    border-bottom: 1px solid #f7991c;
+    text-decoration: none; }
+
 .btn {
   border-radius: 0;
   border: 0 none;
@@ -23,6 +34,11 @@ input[type=text], input[type=email], textarea {
 * {
   box-sizing: border-box; }
 
+.inherit {
+  color: inherit !important;
+  text-decoration: inherit !important;
+  border-bottom: inherit !important; }
+
 .flex {
   display: flex; }
 
@@ -32,7 +48,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 h1, .h1 {
   font-size: 60px; }
 
-/* site header */
+/* template - header and footer */
 .site-header {
   background: #000000;
   color: #ffffff; }
@@ -57,3 +73,21 @@ h1, .h1 {
     display: block; }
   .main-navigation ul li:last-child a {
     border-right: 0 none; }
+
+/* home page - index.php */
+.read .post img {
+  margin-right: 20px; }
+
+.read .post .post--details {
+  max-width: 50%; }
+
+.read .post h1, .read .post .h1 {
+  font-size: 22px;
+  margin: 15px 0;
+  font-weight: bold; }
+
+.read .post .tags {
+  color: #f7991c;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px; }
