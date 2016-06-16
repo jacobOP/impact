@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Karla|Quicksand);
 @import url('styles/reset.css');
 @import url('styles/bootstrap.css');
+@import url('styles/impact.css');
+
 /*
 Theme Name: Impact 2016
 Theme URI: 
@@ -9,5 +11,5 @@ Author URI: http://ahoy1.github.com
 Description: Theme for Impact 
 Version: 1.0
 License: GNU General Public License
-
+*/
 

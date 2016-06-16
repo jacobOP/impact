@@ -45,22 +45,27 @@
 >
 
 <header id="masthead" class="site-header">
-	<nav class="site-navigation main-navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
-	</nav><!-- .site-navigation .main-navigation -->
+    <div class="container">
+    	<div class="row">
+    		<div class="col-xs-12">
+				<nav class="site-navigation main-navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+				</nav><!-- .site-navigation .main-navigation -->
 
-	<div id="brand">
-		<h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Display the blog name ?></a>
-		</h1>
-		<h4 class="site-description">
-			<?php bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
-		</h4>
-	</div><!-- /brand -->
+				<div id="brand">
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
+							<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo.jpg" alt="IMPACT - Action on Demand" class="img-responsive">
+						</a>
+					</h1>
+					<?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
+				</div><!-- /brand -->
 
-	<div class="search"></div>
-		
+				<div class="search"></div>
+			</div>
+		</div>
+	</div>
 		
 </header><!-- #masthead .site-header -->
 
-<main class="main-fluid"><!-- start the page containter -->
+<main class="container"><!-- start the page containter -->
