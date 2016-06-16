@@ -7,7 +7,7 @@
  *
 */
 get_header(); // This fxn gets the header.php file and renders it ?>
-	<div id="primary" class="row-fluid">
+	<div id="primary" class="row-fluid ">
 		<div id="content" role="main" class="span8">
 			<?php if ( have_posts() ) : 
 			// Do we have any posts/pages in the databse that match our query?

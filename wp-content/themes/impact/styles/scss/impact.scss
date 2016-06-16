@@ -2,7 +2,8 @@
 $black: #000000;
 $white: #ffffff;
 $orange:#f7991c;
-$greyLight: #6d6e71;
+$greyLight:#bcbec0;
+$grey: #6d6e71;
 $greyDark:#58595b;
 $articleText: #58595b;
 
@@ -12,11 +13,80 @@ $bp-sm: 768px;
 $bp-md: 992px;
 $bp-lg: 1200px;
 
-//utility styles & classes
+/* change some bootstrap default classes*/
+// buttons
+.btn{
+    border-radius:0;
+    border:0 none;
+    transition: all 0.125s ease-out;
+}
+.btn-primary{
+    background:$orange;
+    color:$white;
+    &:hover{
+        background:$black;
+    }
+}
+//forms
+input[type=text], input[type=email], textarea{
+    border-radius:0px;
+    border-bottom: 3px solid $greyLight;
+    border-right: 3px solid $greyLight;
+}
+.form-control{
+    border-bottom:3px solid $greyLight;
+    border-right:3px solid $greyLight;
+}
+
+/* default styles */
+//utilities
 *{
     box-sizing:border-box;
 }
 
 .flex{
     display: flex;
+}
+
+//defaults
+h1, .h1, h2, .h2, h3, .h3{
+    margin:25px 0;
+}
+h1, .h1{
+    font-size:60px;
+}
+
+
+
+/* site header */
+.site-header{
+    background:$black;
+    color:$white;
+}
+.site-header--inner{
+    align-items: center;
+    justify-content:space-between;
+}
+.site-header--logo{
+    max-width:270px;
+}
+.main-navigation{
+    ul{
+        padding: 0;
+        margin:0;
+        display: flex;
+        align-items:center;
+        li{
+            a{
+                font-size:16px;
+                color:$white;
+                border-right:1px solid $greyLight;
+                padding: 15px 15px;
+                display: block;
+            }
+            &:last-child a{
+                border-right:0 none;
+            }
+        }
+    }
 }

@@ -1,5 +1,59 @@
+/* change some bootstrap default classes*/
+.btn {
+  border-radius: 0;
+  border: 0 none;
+  transition: all 0.125s ease-out; }
+
+.btn-primary {
+  background: #f7991c;
+  color: #ffffff; }
+  .btn-primary:hover {
+    background: #000000; }
+
+input[type=text], input[type=email], textarea {
+  border-radius: 0px;
+  border-bottom: 3px solid #bcbec0;
+  border-right: 3px solid #bcbec0; }
+
+.form-control {
+  border-bottom: 3px solid #bcbec0;
+  border-right: 3px solid #bcbec0; }
+
+/* default styles */
 * {
   box-sizing: border-box; }
 
 .flex {
   display: flex; }
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin: 25px 0; }
+
+h1, .h1 {
+  font-size: 60px; }
+
+/* site header */
+.site-header {
+  background: #000000;
+  color: #ffffff; }
+
+.site-header--inner {
+  align-items: center;
+  justify-content: space-between; }
+
+.site-header--logo {
+  max-width: 270px; }
+
+.main-navigation ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; }
+  .main-navigation ul li a {
+    font-size: 16px;
+    color: #ffffff;
+    border-right: 1px solid #bcbec0;
+    padding: 15px 15px;
+    display: block; }
+  .main-navigation ul li:last-child a {
+    border-right: 0 none; }
