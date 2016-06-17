@@ -9,7 +9,6 @@
 
 <footer class="site-footer">
 	<div class="site-info container">
-		<hr>
 		<p>site footer
 		</p>
 		

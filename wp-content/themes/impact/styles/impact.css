@@ -43,7 +43,8 @@ input[type=text], input[type=email], textarea {
   display: flex; }
 
 h1, .h1, h2, .h2, h3, .h3 {
-  margin: 25px 0; }
+  margin: 25px 0;
+  color: #231f20; }
 
 h1, .h1 {
   font-size: 60px; }
@@ -68,26 +69,46 @@ h1, .h1 {
   .main-navigation ul li a {
     font-size: 16px;
     color: #ffffff;
-    border-right: 1px solid #bcbec0;
-    padding: 15px 15px;
+    border-right: 2px solid #bcbec0;
+    padding: 10px 20px;
     display: block; }
+    .main-navigation ul li a:hover, .main-navigation ul li a:focus {
+      border-bottom: 0 none;
+      background-color: #f7991c; }
   .main-navigation ul li:last-child a {
     border-right: 0 none; }
 
+.site-footer {
+  border-top: 1px solid #bcbec0;
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 0; }
+
 /* home page - index.php */
-.read .post img {
-  margin-right: 20px; }
+.section-heading {
+  text-align: center; }
 
-.read .post .post--details {
-  max-width: 50%; }
-
-.read .post h1, .read .post .h1 {
-  font-size: 22px;
-  margin: 15px 0;
-  font-weight: bold; }
-
-.read .post .tags {
-  color: #f7991c;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 10px; }
+.read-post {
+  align-items: flex-start;
+  margin-bottom: 10px; }
+  .read-post .post--details {
+    flex-grow: 3; }
+  .read-post.Sponsored .post--details {
+    background: #e6e7e8; }
+  .read-post .post--img img {
+    width: 275px; }
+  .read-post .post--details--inner {
+    max-width: 600px;
+    padding-left: 20px;
+    padding-bottom: 10px; }
+  .read-post h1, .read-post .h1 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #58595b; }
+  .read-post .post--meta {
+    margin-bottom: 10px; }
+  .read-post .tags {
+    color: #f7991c;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px; }

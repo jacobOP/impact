@@ -7,11 +7,28 @@
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 	<div id="primary" class="index">
+		<section class="hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="read">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<h1>Read</h1>
+						<h1 class="section-heading">Read</h1>
+
+						<?php
+						// The Query
+						$args = array( 'category_name' => 'editorial, sponsored' );
+						query_posts( $args );
+						?>
+					
+
 						<?php if ( have_posts() ) : 
 						// Do we have any posts in the databse that match our query?
 						// In the case of the home page, this will call for the most recent posts 
@@ -21,7 +38,16 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							// If we have some posts to show, start a loop that will display each one the same way
 							?>
 
-								<article class="post flex">
+								<article class="read-post flex 
+									<?php 
+										$categories = get_the_category();
+	 
+										if ( ! empty( $categories ) ) {
+										    $postCategory = $categories[0]->name ;   
+										    echo $postCategory;
+										}
+									?>
+								">
 								<?php
 								$main_image = get_field('main_image');
 								// if($main_image)
@@ -39,43 +65,62 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								// // always good to see exactly what you are working with
 								// var_dump($main_image);
 								?>
-								
-								<img src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
+								<div class="post--img">
+									<img class="img-responsive" src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
+								</div>
 								<div class="post--details">
-									<div class="tags">
-										<?php echo get_the_tag_list( '', ', &nbsp;' ); // Display the tags this post has, as links separated by spaces and commas ?>
-									</div>
-									<h1 class="title">
-										<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
-											<?php the_title(); // Show the title of the posts as a link ?>
-										</a>
-									</h1>
-									
-									<div class="post--meta">
-										<div class="post--author"><a href="#"><?php the_author(); ?></a></div>
-										<?php the_time('m/d/Y'); // Display the time published ?> 
-										
-									
-									</div><!--/post-meta -->
-									
-									<div class="the-content">
-										<?php the_content( 'Continue...' ); 
-										// This call the main content of the post, the stuff in the main text box while composing.
-										// This will wrap everything in p tags and show a link as 'Continue...' where/if the
-										// author inserted a <!-- more --> link in the post body
-										?>
-										
-										<?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
-									</div><!-- the-content -->
-					
-									
-									<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
+									<div class="post--details--inner">
 
+										<div class="tags">
+										    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content
+										    ?>
+											<?php 
+													echo get_the_tag_list( '', ', &nbsp;' ); // Display the tags this post has, as links separated by spaces and commas 
+											?>
+											<?php else: ?>
+												<a href="#">SPONSORED</a>
+											<?php endif; ?>
+										</div>
+										<h1 class="title">
+											<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+												<?php the_title(); // Show the title of the posts as a link ?>
+											</a>
+										</h1>
+										
+										<div class="post--meta">
+											<div class="post--author"><a href="#"><?php the_author(); ?></a></div>
+											<?php the_time('m/d/Y'); // Display the time published ?> 
+											
+										
+										</div><!--/post-meta -->
+										
+										<div class="the-content">
+											<?php
+												$content = get_the_content();
+												echo substr($content, 0, 140);
+											?>
+											<br>
+											<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+												Read More
+											</a>
+
+											<?php //the_content( 'Continue...' ); 
+											// This call the main content of the post, the stuff in the main text box while composing.
+											// This will wrap everything in p tags and show a link as 'Continue...' where/if the
+											// author inserted a <!-- more --> link in the post body
+											?>
+											
+											<?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
+										</div><!-- the-content -->
+						
+										
+										<div class="category"><?php //echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
+									</div><!-- .post-details--inner -->
 								</div> <!-- .post-details-->
 									
 								</article>
 
-							<?php endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
+							<?php endwhile; //stop the posts loop once we've exhausted our query/number of posts ?>
 							
 							<!-- pagintation -->
 							<div id="pagination" class="clearfix">
@@ -91,6 +136,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							</article>
 
 						<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
+					<?php // Reset Query
+						wp_reset_query(); ?>
 					</div> <!-- .col-xs-12 -->
 				</div><!-- .row -->
 			</div> <!-- .container -->

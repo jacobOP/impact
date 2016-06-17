@@ -2,10 +2,12 @@
 $black: #000000;
 $white: #ffffff;
 $orange:#f7991c;
+$greyLightest:#e6e7e8;
 $greyLight:#bcbec0;
 $grey: #6d6e71;
 $greyDark:#58595b;
-$articleText: #58595b;
+$text: #58595b;
+$textDark: #231f20;
 
 //breakpoints for media queries
 $bp-xs: 480px;
@@ -16,7 +18,7 @@ $bp-lg: 1200px;
 /* change some bootstrap default classes*/
 // 
 body{
-    color:$articleText;
+    color:$text;
     font-size: 14px;
 }
 // links
@@ -71,6 +73,7 @@ input[type=text], input[type=email], textarea{
 //defaults
 h1, .h1, h2, .h2, h3, .h3{
     margin:25px 0;
+    color:$textDark;
 }
 h1, .h1{
     font-size:60px;
@@ -100,9 +103,13 @@ h1, .h1{
             a{
                 font-size:16px;
                 color:$white;
-                border-right:1px solid $greyLight;
-                padding: 15px 15px;
+                border-right:2px solid $greyLight;
+                padding: 10px 20px;
                 display: block;
+                &:hover, &:focus{
+                    border-bottom:0 none;
+                    background-color:$orange;
+                }
             }
             &:last-child a{
                 border-right:0 none;
@@ -112,25 +119,52 @@ h1, .h1{
 }
 
 // site footer
-
+.site-footer{
+    border-top:1px solid $greyLight;
+    margin:15px 0 0 0;
+    padding:15px 0 0 0;
+}
 
 /* home page - index.php */
+.section-heading{
+    text-align:center;
+}
 // section.read
-.read .post {
-    //has the flex class already
 
-    img{
-        margin-right:20px;
+.read-post {
+    
+    .post--details{
+        //make the div take up the remaining horizontal space in the flex row
+        flex-grow:3;
     }
 
-    .post--details{
-        max-width:50%;
+    &.Sponsored .post--details{
+        background:$greyLightest;
+    }
+    //has the flex class already
+    align-items:flex-start;
+    margin-bottom:10px;
+
+    .post--img{
+        img{
+            width:275px;
+        }
+    }
+
+    .post--details--inner{
+        max-width:600px;
+        padding-left: 20px;
+        padding-bottom:10px;
     }
 
     h1, .h1{
         font-size:22px;
-        margin:15px 0;
+        margin:10px 0;
         font-weight:bold;
+        color:$text;
+    }
+    .post--meta{
+        margin-bottom:10px;
     }
     .tags {
         color:$orange;
@@ -139,3 +173,6 @@ h1, .h1{
         margin-top:10px;
     }
 }
+
+
+
