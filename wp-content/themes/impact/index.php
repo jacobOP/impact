@@ -16,20 +16,96 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				</div>
 			</div>
 		</section>
-		<section class="read">
+		<section class="home-section watch">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="section-heading">Watch</h1>
+					</div>
+				</div>
+			</div> <!-- container -->
+			<div class="bg-greyDark">
+				<div class="container">
+					<div class="row">
+						<?php
+								// The Query, for editorial items
+								$args = array( 'category_name' => 'video' );
+								query_posts( $args );
+
+								$firstVid = true;
+								
+								if ( have_posts() ) : 
+								// Do we have any posts in the databse that match our query?
+								// In the case of the home page, this will call for the most recent posts 
+								?>
+
+									<?php while ( have_posts() ) : the_post(); 
+									// If we have some posts to show, start a loop that will display each one the same way
+									?>
+
+										<article class="watch-post col-md-4  
+											<?php 
+												$categories = get_the_category();
+			 
+												if ( ! empty( $categories ) ) {
+												    $postCategory = $categories[0]->name ;   
+												    echo $postCategory;
+												}
+
+												if($firstVid){
+													//echo ' col-lg-offset-1';
+													$firstVid = false;
+												}
+											?>
+											"> <!-- .watch-post -->
+											<div class="watch-post--video-container video-container">
+												<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+											</div>
+											
+											<div class="tags">
+											    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content
+											    ?>
+												<?php 
+														echo get_the_tag_list( '', ', &nbsp;' ); // Display the tags this post has, as links separated by spaces and commas 
+												?>
+												<?php else: ?>
+													<a href="#">SPONSORED</a>
+												<?php endif; ?>
+											</div>
+											<h1 class="title">
+												<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+													<?php the_title(); // Show the title of the posts as a link ?>
+												</a>
+											</h1>
+											
+										</article>
+
+									<?php endwhile; //stop the posts loop once we've exhausted our query/number of posts ?>
+
+								<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
+									
+									<article class="post error">
+										<h1 class="404">Nothing has been posted like that yet</h1>
+									</article>
+
+								<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
+							<?php // Reset Query
+								wp_reset_query(); ?>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="home-section read">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
 						<h1 class="section-heading">Read</h1>
-
 						<?php
-						// The Query
+						// The Query, for editorial items
 						$args = array( 'category_name' => 'editorial, sponsored' );
 						query_posts( $args );
-						?>
-					
-
-						<?php if ( have_posts() ) : 
+						
+						if ( have_posts() ) : 
 						// Do we have any posts in the databse that match our query?
 						// In the case of the home page, this will call for the most recent posts 
 						?>
@@ -38,7 +114,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							// If we have some posts to show, start a loop that will display each one the same way
 							?>
 
-								<article class="read-post flex 
+								<article class="read-post row 
 									<?php 
 										$categories = get_the_category();
 	 
@@ -65,10 +141,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								// // always good to see exactly what you are working with
 								// var_dump($main_image);
 								?>
-								<div class="post--img">
+								<div class="post--img col-md-4">
 									<img class="img-responsive" src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
 								</div>
-								<div class="post--details">
+								<div class="post--details col-md-8">
 									<div class="post--details--inner">
 
 										<div class="tags">
@@ -97,9 +173,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 										<div class="the-content">
 											<?php
 												$content = get_the_content();
-												echo substr($content, 0, 140);
-											?>
-											<br>
+												echo substr($content, 0, 220);
+											?>... 
 											<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
 												Read More
 											</a>

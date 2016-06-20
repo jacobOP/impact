@@ -42,6 +42,20 @@ input[type=text], input[type=email], textarea {
 .flex {
   display: flex; }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 h1, .h1, h2, .h2, h3, .h3 {
   margin: 25px 0;
   color: #231f20; }
@@ -87,19 +101,39 @@ h1, .h1 {
 .section-heading {
   text-align: center; }
 
+.watch .tags, .read .tags {
+  color: #f7991c;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px; }
+
+.watch .bg-greyDark, .read .bg-greyDark {
+  background: #58595b;
+  padding-top: 30px; }
+
+.watch-post {
+  padding-bottom: 40px; }
+  .watch-post h1, .watch-post .h1 {
+    font-size: 22px;
+    margin: 20px 0;
+    color: #fff; }
+  .watch-post .watch-post--video-container {
+    min-height: 185px;
+    background: #000000; }
+
 .read-post {
-  align-items: flex-start;
   margin-bottom: 10px; }
   .read-post .post--details {
     flex-grow: 3; }
   .read-post.Sponsored .post--details {
     background: #e6e7e8; }
   .read-post .post--img img {
-    width: 275px; }
+    width: 100%; }
   .read-post .post--details--inner {
-    max-width: 600px;
-    padding-left: 20px;
     padding-bottom: 10px; }
+    @media (min-width: 992px) {
+      .read-post .post--details--inner {
+        max-width: 500px; } }
   .read-post h1, .read-post .h1 {
     font-size: 22px;
     margin: 10px 0;
@@ -107,8 +141,3 @@ h1, .h1 {
     color: #58595b; }
   .read-post .post--meta {
     margin-bottom: 10px; }
-  .read-post .tags {
-    color: #f7991c;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 10px; }
