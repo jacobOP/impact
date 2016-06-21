@@ -1,3 +1,15 @@
+/* 
+HI!
+A quick note on the classnames.
+2 dashes( -- ) denotes that a class is a direct child of another element:
+
+<div class="story">
+  <div class="story--title">ASDF</div>
+</div>:
+
+Try to keep that in mind when naming and styling stuff, makes components easier to reason around
+ */
+
 //variables
 $black: #000000;
 $white: #ffffff;
@@ -101,6 +113,13 @@ h1, .h1{
 .site-header{
     background:$black;
     color:$white;
+    width:100%;
+    position:fixed;
+    z-index:9;
+}
+//make the fixed header work;
+main{
+    padding-top:70px;
 }
 .site-header--inner{
     align-items: center;
@@ -136,16 +155,87 @@ h1, .h1{
 
 // site footer
 .site-footer{
-    border-top:1px solid $greyLight;
+    border-top:3px solid $orange;
     margin:15px 0 0 0;
     padding:15px 0 0 0;
+    background:$greyDark;
+    color:$greyLightest;
 }
 
 /* home page - index.php */
 .section-heading{
     text-align:center;
 }
+// section.hero
+.hero{
+    padding-top:35px;
+}
+.periodic{
+    display:block;
 
+    .periodic--row{
+        display:flex;
+        justify-content:flex-start;
+    }
+
+    .el{
+        background:$orange;
+        border: 7px solid $black;
+        border-top:0 none;
+        height:70px;
+        margin:2px 2.65px;
+        transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
+
+        @media (min-width:$bp-md){
+            height:90px;
+            width:75px;
+            margin:2px;
+        }
+
+        .el--name {
+            color:$white;
+            background: $black;
+            font-size:12px;
+            line-height:1.5em;
+        }
+
+        .el--symbol {
+            color:$black;
+            font-weight:bold;
+            padding: 3px 10px;
+            font-size:28px;
+            text-align:center;
+
+            @media (min-width:$bp-md){
+                font-size:48px;
+            }
+        }
+
+        &:hover, &:active, &:focus{
+            cursor:pointer;
+            background:$white;
+            border-color:$greyLight;
+
+            .el--name{
+                background:$greyLight;
+            }
+
+            .el--symbol {
+                color:$orange;
+            }
+        }
+    }
+
+
+
+    .row1{
+        justify-content:space-between;
+    }
+      
+    .row2 .el:nth-child(3), .row3 .el:nth-child(3){
+        margin-left:auto;
+    }
+}
 // section.watch
 .watch, .read{
         .tags {

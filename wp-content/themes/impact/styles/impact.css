@@ -1,3 +1,14 @@
+/* 
+HI!
+A quick note on the classnames.
+2 dashes( -- ) denotes that a class is a direct child of another element:
+
+<div class="story">
+  <div class="story--title">ASDF</div>
+</div>:
+
+Try to keep that in mind when naming and styling stuff, makes components easier to reason around
+ */
 /* change some bootstrap default classes*/
 body {
   color: #58595b;
@@ -66,7 +77,13 @@ h1, .h1 {
 /* template - header and footer */
 .site-header {
   background: #000000;
-  color: #ffffff; }
+  color: #ffffff;
+  width: 100%;
+  position: fixed;
+  z-index: 9; }
+
+main {
+  padding-top: 70px; }
 
 .site-header--inner {
   align-items: center;
@@ -93,13 +110,62 @@ h1, .h1 {
     border-right: 0 none; }
 
 .site-footer {
-  border-top: 1px solid #bcbec0;
+  border-top: 3px solid #f7991c;
   margin: 15px 0 0 0;
-  padding: 15px 0 0 0; }
+  padding: 15px 0 0 0;
+  background: #58595b;
+  color: #e6e7e8; }
 
 /* home page - index.php */
 .section-heading {
   text-align: center; }
+
+.hero {
+  padding-top: 35px; }
+
+.periodic {
+  display: block; }
+  .periodic .periodic--row {
+    display: flex;
+    justify-content: flex-start; }
+  .periodic .el {
+    background: #f7991c;
+    border: 7px solid #000000;
+    border-top: 0 none;
+    height: 70px;
+    margin: 2px 2.65px;
+    transition: background 0.125s ease-in-out, color 0.125s ease-in-out; }
+    @media (min-width: 992px) {
+      .periodic .el {
+        height: 90px;
+        width: 75px;
+        margin: 2px; } }
+    .periodic .el .el--name {
+      color: #ffffff;
+      background: #000000;
+      font-size: 12px;
+      line-height: 1.5em; }
+    .periodic .el .el--symbol {
+      color: #000000;
+      font-weight: bold;
+      padding: 3px 10px;
+      font-size: 28px;
+      text-align: center; }
+      @media (min-width: 992px) {
+        .periodic .el .el--symbol {
+          font-size: 48px; } }
+    .periodic .el:hover, .periodic .el:active, .periodic .el:focus {
+      cursor: pointer;
+      background: #ffffff;
+      border-color: #bcbec0; }
+      .periodic .el:hover .el--name, .periodic .el:active .el--name, .periodic .el:focus .el--name {
+        background: #bcbec0; }
+      .periodic .el:hover .el--symbol, .periodic .el:active .el--symbol, .periodic .el:focus .el--symbol {
+        color: #f7991c; }
+  .periodic .row1 {
+    justify-content: space-between; }
+  .periodic .row2 .el:nth-child(3), .periodic .row3 .el:nth-child(3) {
+    margin-left: auto; }
 
 .watch .tags, .read .tags {
   color: #f7991c;
