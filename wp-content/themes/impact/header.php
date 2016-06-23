@@ -4,6 +4,16 @@
 	/* rendering the page and display the header/nav
 	/*-----------------------------------------------------------------------------------*/
 ?>
+<!-- 
+
+_ _|  \  |  _ \   \    ___|__ __|
+  |  |\/ | |   | _ \  |       |  
+  |  |   | ___/ ___ \ |       |  
+___|_|  _|_|  _/    _\____|  _|  
+
+ACTION ON DEMAND
+ 
+ -->
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

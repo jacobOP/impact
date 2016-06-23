@@ -172,6 +172,32 @@ main{
 }
 .periodic{
     display:block;
+    position:relative;
+    overflow-x:scroll;
+
+    @media (min-width:$bp-sm){
+        overflow:hidden;
+    }
+
+    .periodic--info{
+        height: 210px;
+        width: 398px;
+        background-color: $black;
+        background-image: url("../img/periodic/default.jpg");
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        left: 130px;
+        display: flex;
+        align-items: flex-end;
+
+        @media(min-width:$bp-md){
+            height: 265px;
+            width: 500px;
+            left: 183px;
+        }
+
+    }
 
     .periodic--row{
         display:flex;
@@ -185,6 +211,20 @@ main{
         height:70px;
         margin:2px 2.65px;
         transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
+
+        &.el-large{
+            width: 115px;
+            height: 145px;
+            border-width:10px;
+
+            .el--name{
+                font-size:22px;
+            }
+
+            .el--symbol {
+                font-size:70px;
+            }
+        }
 
         @media (min-width:$bp-md){
             height:90px;
@@ -288,7 +328,7 @@ main{
 
     .post--details--inner{
         padding-bottom:10px;
-        @media(min-width:$bp-md){
+        @media (min-width:$bp-md){
             max-width:500px;
         }
     }
@@ -302,6 +342,30 @@ main{
     .post--meta{
         margin-bottom:10px;
     }
+}
+
+//section.asskicker
+
+.asskicker--banner{
+    background:$black;
+    color:$white;
+    text-align:center;
+    font-size:78px;
+    font-weight:bold;
+}
+
+.asskicker--asskicker {
+    color:$orange;
+    font-style:italic;
+}
+
+.asskicker--img-container img{
+    width:100%;
+}
+
+.asskicker--name{
+    font-size:36px;
+    color:$grey;
 }
 
 
