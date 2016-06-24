@@ -19,11 +19,47 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					<article class="post single-post">
 					
 						<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
-						<div class="post-meta">
-							<?php the_time('m.d.Y'); // Display the time it was published ?>
-							<?php // the_author(); Uncomment this and it will display the post author ?>
-						
+						<div class="post-meta flex">
+							<div class="post-meta--author">
+								<?php the_author(); ?>
+							</div>
+							<div class="post-meta--date">
+								<?php the_time('m.d.Y'); // Display the time it was published ?>							
+							</div>
 						</div><!--/post-meta -->
+						<div class="post-meta-2">
+							<div class="single-post--tags tags flex">
+								<?php
+									$posttags = get_the_tags();
+									if ($posttags) {
+									  foreach($posttags as $tag) {
+									    echo '<div class="el"><div class="el--name">' . $tag->name . '</div><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></div>';
+									  }
+									}
+									?>
+							</div>
+							<div class="social-icons" >
+				                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=574');return false;" target="_blank" title="Share this article on Facebook" data-tar="Facebook">
+				                    <img src="..img/social/facebook.svg" class="svg" alt="Share on Facebook" onerror="this.src='img/social/facebook-icon.png'; this.onerror=null;">
+				                </a>
+				                <a href="https://twitter.com/share?url=<?php the_permalink(); ?>&amp;via=Impact&amp;text=<?php the_title(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share this article on Twitter" data-tar="Twitter">
+				                    <img class="svg" src="..img/social/twitter.svg" alt="Share on Twitter" onerror="this.src='img/social/twitter-icon.png'; this.onerror=null;">
+				                </a>
+				               <!--  <a href="https://plus.google.com/share?url=<?php the_permalink(); ?>"
+				                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=480');return false;"
+				                target="_blank" title="Share this article on Google+">
+				                    <img class="svg" src="/img/social/googleplus.svg" alt="Share on Google Plus" onerror="this.src='img/social/google-plus-icon.png'; this.onerror=null;">
+				                </a> -->
+				                <a href="//www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=850,width=900');return false;" title="Share this article on Reddit">
+				                    <img class="svg" src="..img/social/reddit.svg" alt="Share on Reddit" onerror="this.src='img/social/reddit-icon.png'; this.onerror=null;">
+				                </a>
+				             <!--    <a href="http://www.stumbleupon.com/submit?url=http://www.outerplaces.com/science-fiction/item/12554-roland-emmerich-s-next-space-bound-blockbuster-fast-tracked-at-universal&amp;title=Roland Emmerich's Next Space Opera &quot;Moonfall&quot; Fast-Tracked at Universal" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=716,width=1024');return false;" title="Share this article on StumbleUpon" data-tar="StumbleUpon">
+				                    <img class="svg" src="/img/social/stumble.svg" alt="Share on StumbleUpon" onerror="this.src='img/social/stumble-upon-icon.png'; this.onerror=null;">
+				                </a> -->
+				            </div>
+						</div>
+						<?php $main_image = get_field('main_image'); ?>
+						<img src="<?php echo $main_image['url']; ?>" class="img-responsive single-post--img">
 						
 						<div class="the-content">
 							<?php the_content(); 
@@ -36,7 +72,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 						
 						<div class="meta clearfix">
 							<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
-							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); // Display the tags this post has, as links separated by spaces and pipes ?></div>
+							<div class="banner">
+								<div class="banner-container">
+									ad banner container
+								</div>
+							</div>
 						</div><!-- Meta -->
 						
 					</article>
@@ -57,10 +97,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				</article>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
-
+		
 		</div><!-- #content  -->
 		<div id="article-sidebar" class="sidebar">
-			sidebar stuff please
+			<section class="sidebar--related-articles">
+				<div class="sidebar-section-header">
+					Related Articles
+				</div>
+			</section>
 		</div>
 	</div><!-- #primary .row -->
 </div> <!-- .container -->

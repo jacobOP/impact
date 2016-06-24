@@ -56,22 +56,23 @@ ACTION ON DEMAND
 
 <header id="masthead" class="site-header">
     <div class="container">
-	    <div class="flex site-header--inner">
-			<nav class="site-navigation main-navigation">
+	    <div class="row site-header--inner">
+			<nav class="site-navigation main-navigation col-sm-4">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 			</nav><!-- .site-navigation .main-navigation -->
 
-			<div id="brand" class="site-header--logo">
+			<div id="brand" class="site-header--logo col-sm-4">
 				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
 					<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo.jpg" alt="IMPACT - Action on Demand" class="img-responsive">
 				</a>
 				<?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
 			</div><!-- /brand -->
-
-			<form class="search flex">
-				<input type="text" class="form-control" placeholder="Search">
-				<button class="btn btn-primary js-search-submit" onclick="window.location = '/search?search=&amp;q=' + document.getElementById('search-text-field').value;">Search</button>
-			</form>
+			<div class="col-sm-4">
+				<form class="search flex">
+					<input type="text" class="form-control" placeholder="Search">
+					<button class="btn btn-primary js-search-submit" onclick="window.location = '/search?search=&amp;q=' + document.getElementById('search-text-field').value;">Search</button>
+				</form>
+			</div>
 		</div>
 	</div>
 		
