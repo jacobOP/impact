@@ -169,21 +169,19 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									// If we have some posts to show, start a loop that will display each one the same way
 									?>
 
-										<article class="watch-post col-md-4  
-											<?php 
-												$categories = get_the_category();
-			 
-												if ( ! empty( $categories ) ) {
-												    $postCategory = $categories[0]->name ;   
-												    echo $postCategory;
-												}
-
-												if($firstVid){
-													//echo ' col-lg-offset-1';
-													$firstVid = false;
-												}
+										<article class="watch-post col-md-4 <?php 
+											$categories = get_the_category();
+											if ( ! empty( $categories ) ) {
+											    $postCategory = $categories[0]->name ;
+											    $postCategory = preg_replace('/\s+/', '', $postCategory);   
+											    echo $postCategory;
+											}
+											if($firstVid){
+												//echo ' col-lg-offset-1';
+												$firstVid = false;
+											}
 											?>
-											"> <!-- .watch-post -->
+										"> <!-- .watch-post -->
 											<div class="watch-post--video-container video-container">
 												<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
 											</div>
@@ -240,12 +238,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							// If we have some posts to show, start a loop that will display each one the same way
 							?>
 
-								<article class="read-post row 
-									<?php 
+								<article class="read-post row <?php 
 										$categories = get_the_category();
-	 
 										if ( ! empty( $categories ) ) {
-										    $postCategory = $categories[0]->name ;   
+										    $postCategory = $categories[0]->name ;
+										    $postCategory = preg_replace('/\s+/', '', $postCategory);   
 										    echo $postCategory;
 										}
 									?>
@@ -344,9 +341,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			</div> <!-- .container -->
 		</section> <!-- .read -->
 		<div class="banner container">
-			<hr>
-			ad banner container
-			<hr>
+			<div class="banner-container">
+				ad banner container
+			</div>
 		</div>
 		<section class="home-section asskicker" id="asskicker">
 			<div class="container">
@@ -358,7 +355,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					</div>
 					<?php
 						// The Query, for editorial items
-						$args = array( 'category_name' => 'asskicker-of-the-week' );
+						$args = array( 'category_name' => 'asskicker-of-the-week', 'showposts' => '1' );
 						query_posts( $args );
 						
 						if ( have_posts() ) : 
@@ -370,13 +367,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							// If we have some posts to show, start a loop that will display each one the same way
 							?>
 
-								<article class="asskicker-post col-md-12 
-
-										<?php 
+								<article class="asskicker-post col-md-12 <?php 
 											$categories = get_the_category();
-		 
 											if ( ! empty( $categories ) ) {
-											    $postCategory = $categories[0]->name ;   
+											    $postCategory = $categories[0]->name ;
+											    $postCategory = preg_replace('/\s+/', '', $postCategory);   
 											    echo $postCategory;
 											}
 										?>
@@ -386,7 +381,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									<div class="row">
 										<div class="col-xs-6 col-md-8 ">
 											<div class="asskicker--img-container">
-												<?php echo $main_image['url'] ?>
+												<?php
+												$main_image = get_field('main_image');
+												?>
+												<img src="<?php echo $main_image['url']; ?>" class="img-responsive">
 											</div>
 										</div>
 										<div class="col-xs-6 col-md-4">

@@ -5,9 +5,9 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
-	<div id="primary" class="row-fluid">
-		<div id="content" role="main" class="span8 offset2">
-
+<div class="container">
+	<div id="primary" class="row">
+		<div id="content" role="main" class="col-md-7 col-md-offset-1">
 			<?php if ( have_posts() ) : 
 			// Do we have any posts in the databse that match our query?
 			?>
@@ -16,7 +16,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				// If we have a post to show, start a loop that will display it
 				?>
 
-					<article class="post">
+					<article class="post single-post">
 					
 						<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
 						<div class="post-meta">
@@ -58,6 +58,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
 
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
+		</div><!-- #content  -->
+		<div id="article-sidebar" class="sidebar">
+			sidebar stuff please
+		</div>
+	</div><!-- #primary .row -->
+</div> <!-- .container -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

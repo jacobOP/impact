@@ -19,7 +19,8 @@ $greyLight:#bcbec0;
 $grey: #6d6e71;
 $greyDark:#58595b;
 $text: #58595b;
-$textDark: #231f20;
+$textTitle: #414042;
+$textDark: #231f20;   
 
 //breakpoints for media queries
 $bp-xs: 480px;
@@ -108,7 +109,7 @@ h1, .h1{
 }
 
 
-/* template - header and footer */
+/* template header.php, footer.php - header and footer */
 // site header
 .site-header{
     background:$black;
@@ -158,7 +159,7 @@ main{
     border-top:3px solid $orange;
     margin:15px 0 0 0;
     padding:15px 0 0 0;
-    background:$greyDark;
+    background:$black;
     color:$greyLightest;
 }
 
@@ -344,6 +345,17 @@ main{
     }
 }
 
+//ad banner container
+.banner-container {
+    border: 5px solid;
+    margin: 30px 50px 35px;
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 0;
+    color: $white;
+    background: $greyDark;
+}
+
 //section.asskicker
 
 .asskicker--banner{
@@ -366,7 +378,16 @@ main{
 .asskicker--name{
     font-size:36px;
     color:$grey;
+    font-weight:bold;
 }
 
 
+
+/* single post, single.php */
+.single-post {
+    .title{
+        font-size:38px;
+        color:$textTitle;
+    }
+}
 
