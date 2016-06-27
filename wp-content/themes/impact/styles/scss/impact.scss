@@ -19,6 +19,7 @@ $greyLight:#bcbec0;
 $grey: #6d6e71;
 $greyDark:#58595b;
 $text: #58595b;
+$textLight:#6d6e71;
 $textTitle: #414042;
 $textDark: #231f20;   
 
@@ -429,16 +430,83 @@ main{
     }
 
     .single-post--tags{
-        margin-bottom:25px;
-
         .el{
             width:initial;
             min-width:75px;
+             &:hover{
+                border-bottom-width:7px;
+             }
         }
     }
 
     .single-post--img {
         width:100%;
+    }
+
+    .single-post--img, .single-post--video{
+        margin-bottom:10px;
+    }
+
+    .post-meta-2{
+        justify-content:space-between;
+        margin-bottom:15px;
+    }
+
+    .social-icons {
+
+        a{
+            display:inline-block;
+
+            img{
+                width:34px;
+                height:34px;
+            }
+
+            &:hover{
+                border-bottom: 0 none;
+            }
+        }
+    }
+
+    .the-description{
+        font-style: italic;
+        color:$textLight;
+    }
+}
+
+//sidebar
+.sidebar-section-header{
+    background:$orange;
+    color:$white;
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:bold;
+    padding:5px 10px;
+}
+
+.related-video{
+    margin-bottom:10px;
+    display:block;
+
+    &:hover{
+        border-bottom:0 none;
+    }
+}
+
+.related-video--title{
+    background:$greyDark;
+    color:$white;
+    font-size:16px;
+    padding:8px 10px ;
+}
+
+.related-video--img{
+    height: 184px;
+    background-size:cover;
+    background-position:center center;
+
+    .play-button{
+        padding:10px;
     }
 }
 
