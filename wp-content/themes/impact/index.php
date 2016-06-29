@@ -154,8 +154,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<div class="container">
 					<div class="row">
 						<?php
-								// The Query, for editorial items
-								$args = array( 'category_name' => 'video' );
+								// The Query, for video items
+								$args = array( 'category_name' => 'video', 'showposts' => 3);
 								query_posts( $args );
 
 								$firstVid = true;
@@ -182,9 +182,17 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 											}
 											?>
 										"> <!-- .watch-post -->
-											<div class="watch-post--video-container video-container">
-												<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+
+											<div class="watch-post--img"  data-featherlight="#featherlight-<?php the_ID(); ?>">
+												<?php $main_image = get_field('main_image'); ?>
+												<img class="img-responsive" src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
 											</div>
+
+											<div class="hidden">
+												<div class="" id="featherlight-<?php the_ID(); ?>">
+													<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+												</div>
+											</div>	
 											
 											<div class="tags">
 											    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content
@@ -201,6 +209,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 													<?php the_title(); // Show the title of the posts as a link ?>
 												</a>
 											</h1>
+											<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+												Read More
+											</a>
+
 											
 										</article>
 

@@ -1,13 +1,22 @@
 /* 
-HI!
-A quick note on the classnames.
-2 dashes( -- ) denotes that a class is a direct child of another element:
+HI THERE!
 
-<div class="story">
-  <div class="story--title">ASDF</div>
+Quick notes about classnames.
+
+(A)  lower case, seperated by dashes
+    .class-name{
+        ...
+    }
+
+
+(B)  2 dashes( -- ) denotes that a class is a direct child of another element:
+
+<div class="big-story">
+  <div class="big-story--title">ASDF</div>
+  <div class="big-story--img"></div<
 </div>:
 
-Try to keep that in mind when naming and styling stuff, makes components easier to reason around
+makes components easier to reason around and keeps heirarchy clearer. 
  */
 
 //variables
@@ -29,7 +38,7 @@ $bp-sm: 768px;
 $bp-md: 992px;
 $bp-lg: 1200px;
 
-/* change some bootstrap default classes*/
+/* change some bootstrap defaults*/
 // 
 body{
     color:$text;
@@ -40,7 +49,7 @@ a{
     color:$orange;
     &:hover, &:focus{
         color:$greyDark;
-        border-bottom: 1px solid #f7991c;
+        border-bottom: 1px solid $orange;
         text-decoration:none;
     }
 }
@@ -82,6 +91,10 @@ input[type=text], input[type=email], textarea{
 //utilities
 *{
     box-sizing:border-box;
+}
+
+iframe {
+    max-width:100%;
 }
 
 .inherit{ //useful for links that should be style like their parent element rather than a link. Think <a> inside an <h1>
@@ -153,7 +166,7 @@ main{
         align-items:center;
         li{
             a{
-                font-size:16px;
+                font-size:14px;
                 color:$white;
                 padding: 28px 22px 28px 20px;
                 display: block;
@@ -165,6 +178,9 @@ main{
                     &:after{
                         background-color:$orange;
                     }
+                }
+                @media (min-width: $bp-lg){
+                    font-size:16px;
                 }
                 &:after{
                     display:block;
@@ -199,6 +215,7 @@ main{
 /* home page - index.php */
 .section-heading{
     text-align:center;
+    margin-top:70px;
 }
 // section.hero
 .hero{
@@ -269,6 +286,21 @@ main{
         }
     }
 
+    &.el-small {
+        width:57px;
+        height: 66px;
+        border-width:5px;
+
+         .el--name{
+            font-size:8px;
+            text-align:left;
+        }
+
+        .el--symbol {
+            font-size:35px;
+        }
+    }
+
     @media (min-width:$bp-md){
         height:90px;
         width:75px;
@@ -293,18 +325,19 @@ main{
             font-size:48px;
         }
     }
+    &:not(.el-large), &:not(.el-small){
+        &:hover, &:active, &:focus{
+            cursor:pointer;
+            background:$white;
+            border-color:$greyLight;
 
-    &:hover, &:active, &:focus{
-        cursor:pointer;
-        background:$white;
-        border-color:$greyLight;
+            .el--name{
+                background:$greyLight;
+            }
 
-        .el--name{
-            background:$greyLight;
-        }
-
-        .el--symbol {
-            color:$orange;
+            .el--symbol {
+                color:$orange;
+            }
         }
     }
 }
@@ -328,12 +361,38 @@ main{
     h1, .h1 {
         font-size: 22px;
         margin:20px 0;
-        color: #fff;
+        color: $white;
     }
 
-    .watch-post--video-container{
-        min-height: 185px;
-        background:$black;
+    a:hover, a:active, a:focus{
+        color:$white;
+    }
+}
+
+.watch-post--img{
+    cursor:pointer;
+    position:relative;
+    background-color:$orange;
+
+    &:before{
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-32px 0 0 -32px;
+        content:'';
+        display: block;
+        width:64px;
+        height:64px;
+        background-image:url(../img/video-play-button.png);
+        background-position:center center;
+        background-size:contain;
+        background-repeat:no-repeat;
+    }
+
+    &:hover{
+        img{
+            opacity:0.6;
+        }
     }
 }
 
@@ -378,8 +437,8 @@ main{
 
 //ad banner container
 .banner-container {
-    border: 5px solid;
-    margin: 30px 50px 35px;
+    border: 0px none;
+    margin: 30px 0px 35px;
     text-align: center;
     font-size: 22px;
     padding: 30px 0;
@@ -419,6 +478,7 @@ main{
 
     .title {
         font-size:38px;
+        line-height:1.2em;
         margin:35px 0;
         color:$textTitle;
     }
@@ -433,7 +493,7 @@ main{
         .el{
             width:initial;
             min-width:75px;
-             &:hover{
+             &:hover, &:focus{
                 border-bottom-width:7px;
              }
         }
@@ -462,7 +522,7 @@ main{
                 height:34px;
             }
 
-            &:hover{
+            &:hover, &:active, &:focus{
                 border-bottom: 0 none;
             }
         }
@@ -471,6 +531,10 @@ main{
     .the-description{
         font-style: italic;
         color:$textLight;
+    }
+
+    .the-content{
+        color:$textDark;
     }
 }
 
@@ -502,11 +566,58 @@ main{
 
 .related-video--img{
     height: 184px;
+    background-color:$greyDark;
     background-size:cover;
     background-position:center center;
 
     .play-button{
         padding:10px;
     }
+}
+
+.related-editorial {
+    //has class flex
+    &:hover{
+        border-bottom:2px solid $grey;
+    }
+
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:2px solid $grey;
+}
+
+.related-editorial--img{
+    width:174px;
+    height:118px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.related-editorial--title{
+    max-width:100px;
+    color: $greyDark;
+    padding-left:10px;
+    font-size:12px;
+    font-weight:bold;
+
+    &:hover{
+        color:$orange;
+    }
+}
+
+/* tag page template */
+.tag-page {
+    h1, .h1{
+        font-size:34px;
+        color:$textTitle;
+        padding-left:5px;
+    }
+}
+.tag-page--header{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 10px 0;
 }
 

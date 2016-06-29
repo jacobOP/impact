@@ -1,15 +1,24 @@
 /* 
-HI!
-A quick note on the classnames.
-2 dashes( -- ) denotes that a class is a direct child of another element:
+HI THERE!
 
-<div class="story">
-  <div class="story--title">ASDF</div>
+Quick notes about classnames.
+
+(A)  lower case, seperated by dashes
+    .class-name{
+        ...
+    }
+
+
+(B)  2 dashes( -- ) denotes that a class is a direct child of another element:
+
+<div class="big-story">
+  <div class="big-story--title">ASDF</div>
+  <div class="big-story--img"></div<
 </div>:
 
-Try to keep that in mind when naming and styling stuff, makes components easier to reason around
+makes components easier to reason around and keeps heirarchy clearer. 
  */
-/* change some bootstrap default classes*/
+/* change some bootstrap defaults*/
 body {
   color: #58595b;
   font-size: 14px; }
@@ -51,6 +60,9 @@ input[type=text], input[type=email], textarea {
 /* default styles */
 * {
   box-sizing: border-box; }
+
+iframe {
+  max-width: 100%; }
 
 .inherit {
   color: inherit !important;
@@ -106,7 +118,7 @@ main {
   display: flex;
   align-items: center; }
   .main-navigation ul li a {
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
     padding: 28px 22px 28px 20px;
     display: block;
@@ -117,6 +129,9 @@ main {
       background-color: #f7991c; }
       .main-navigation ul li a:hover:after, .main-navigation ul li a:focus:after {
         background-color: #f7991c; }
+    @media (min-width: 1200px) {
+      .main-navigation ul li a {
+        font-size: 16px; } }
     .main-navigation ul li a:after {
       display: block;
       content: '';
@@ -139,7 +154,8 @@ main {
 
 /* home page - index.php */
 .section-heading {
-  text-align: center; }
+  text-align: center;
+  margin-top: 70px; }
 
 .hero {
   padding-top: 35px; }
@@ -190,6 +206,15 @@ main {
       font-size: 22px; }
     .el.el-large .el--symbol {
       font-size: 70px; }
+  .el.el-small {
+    width: 57px;
+    height: 66px;
+    border-width: 5px; }
+    .el.el-small .el--name {
+      font-size: 8px;
+      text-align: left; }
+    .el.el-small .el--symbol {
+      font-size: 35px; }
   @media (min-width: 992px) {
     .el {
       height: 90px;
@@ -209,13 +234,13 @@ main {
     @media (min-width: 992px) {
       .el .el--symbol {
         font-size: 48px; } }
-  .el:hover, .el:active, .el:focus {
+  .el:not(.el-large):hover, .el:not(.el-large):active, .el:not(.el-large):focus, .el:not(.el-small):hover, .el:not(.el-small):active, .el:not(.el-small):focus {
     cursor: pointer;
     background: #ffffff;
     border-color: #bcbec0; }
-    .el:hover .el--name, .el:active .el--name, .el:focus .el--name {
+    .el:not(.el-large):hover .el--name, .el:not(.el-large):active .el--name, .el:not(.el-large):focus .el--name, .el:not(.el-small):hover .el--name, .el:not(.el-small):active .el--name, .el:not(.el-small):focus .el--name {
       background: #bcbec0; }
-    .el:hover .el--symbol, .el:active .el--symbol, .el:focus .el--symbol {
+    .el:not(.el-large):hover .el--symbol, .el:not(.el-large):active .el--symbol, .el:not(.el-large):focus .el--symbol, .el:not(.el-small):hover .el--symbol, .el:not(.el-small):active .el--symbol, .el:not(.el-small):focus .el--symbol {
       color: #f7991c; }
 
 .watch .tags, .read .tags {
@@ -233,10 +258,29 @@ main {
   .watch-post h1, .watch-post .h1 {
     font-size: 22px;
     margin: 20px 0;
-    color: #fff; }
-  .watch-post .watch-post--video-container {
-    min-height: 185px;
-    background: #000000; }
+    color: #ffffff; }
+  .watch-post a:hover, .watch-post a:active, .watch-post a:focus {
+    color: #ffffff; }
+
+.watch-post--img {
+  cursor: pointer;
+  position: relative;
+  background-color: #f7991c; }
+  .watch-post--img:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -32px 0 0 -32px;
+    content: '';
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-image: url(../img/video-play-button.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .watch-post--img:hover img {
+    opacity: 0.6; }
 
 .read-post {
   margin-bottom: 10px; }
@@ -260,8 +304,8 @@ main {
     margin-bottom: 10px; }
 
 .banner-container {
-  border: 5px solid;
-  margin: 30px 50px 35px;
+  border: 0px none;
+  margin: 30px 0px 35px;
   text-align: center;
   font-size: 22px;
   padding: 30px 0;
@@ -290,6 +334,7 @@ main {
 /* single post, single.php */
 .single-post .title {
   font-size: 38px;
+  line-height: 1.2em;
   margin: 35px 0;
   color: #414042; }
 
@@ -300,7 +345,7 @@ main {
 .single-post .single-post--tags .el {
   width: initial;
   min-width: 75px; }
-  .single-post .single-post--tags .el:hover {
+  .single-post .single-post--tags .el:hover, .single-post .single-post--tags .el:focus {
     border-bottom-width: 7px; }
 
 .single-post .single-post--img {
@@ -318,12 +363,15 @@ main {
   .single-post .social-icons a img {
     width: 34px;
     height: 34px; }
-  .single-post .social-icons a:hover {
+  .single-post .social-icons a:hover, .single-post .social-icons a:active, .single-post .social-icons a:focus {
     border-bottom: 0 none; }
 
 .single-post .the-description {
   font-style: italic;
   color: #6d6e71; }
+
+.single-post .the-content {
+  color: #231f20; }
 
 .sidebar-section-header {
   background: #f7991c;
@@ -347,7 +395,43 @@ main {
 
 .related-video--img {
   height: 184px;
+  background-color: #58595b;
   background-size: cover;
   background-position: center center; }
   .related-video--img .play-button {
     padding: 10px; }
+
+.related-editorial {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #6d6e71; }
+  .related-editorial:hover {
+    border-bottom: 2px solid #6d6e71; }
+
+.related-editorial--img {
+  width: 174px;
+  height: 118px;
+  background-size: cover;
+  background-position: center center; }
+
+.related-editorial--title {
+  max-width: 100px;
+  color: #58595b;
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: bold; }
+  .related-editorial--title:hover {
+    color: #f7991c; }
+
+/* tag page template */
+.tag-page h1, .tag-page .h1 {
+  font-size: 34px;
+  color: #414042;
+  padding-left: 5px; }
+
+.tag-page--header {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 10px 0; }

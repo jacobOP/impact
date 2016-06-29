@@ -42,8 +42,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 										<?php
 											$posttags = get_the_tags();
 											if ($posttags) {
+											  // http://localhost:8888/impact/tag/fear/
 											  foreach($posttags as $tag) {
-											    echo '<a href="#" class="el"><div class="el--name">' . $tag->name . '</div><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></a>';
+											  	$taglink = get_site_url() . '\/tag/' . $tag->name . '/';
+											    echo '<a href="' . $taglink . '" class="el"><div class="el--name">' . $tag->name . '</div><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></a>';
 											  }
 											}
 											?>
@@ -117,7 +119,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									        $args = array(
 									        'category_name' => 'video', 
 									        'tag__in' => $postids_str, //must use tag id for this field
-									        'posts_per_page' => 4); //get all posts
+									        'posts_per_page' => 2); //get all posts
 
 									$posts = get_posts($args);
 									    foreach ($posts as $post) : ?>
@@ -134,13 +136,35 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									
 									// Reset Query
 									wp_reset_query();
-
 									?>
 								</section>
 								<section class="sidebar--related-articles">
 									<div class="sidebar-section-header">
 										Related Articles
 									</div>
+									<?php
+									global $wp_query;
+									        $args = array(
+									        'category_name' => 'editorial', 
+									        'tag__in' => $postids_str, //must use tag id for this field
+									        'posts_per_page' => 4); //get all posts
+
+									$posts = get_posts($args);
+									    foreach ($posts as $post) : ?>
+									  		<a href="<?php the_permalink(); ?>" class="related-editorial flex">
+									  			<?php $main_image = get_field('main_image'); ?>
+									  			<div class="related-editorial--img" style="background-image:url(<?php echo $main_image['url'] ?>)">
+									  			</div>
+									  			<div class="related-editorial--title">
+									  				<?php the_title(); ?>
+									  			</div>
+									  		</a>
+									 	<?php endforeach;
+										// Reset Query
+										wp_reset_query();
+									?>
+									<img src="<?php bloginfo('template_url') ?>/img/sponsor-ad-174x145.jpg" alt="Sponsor" class="img-responsive ">
+
 								</section>
 							</div> <!-- #article-sidebar -->
 						</article>
