@@ -324,8 +324,8 @@ main{
         display: inline-block;
 
         img.svg {
-            width: 34px;
-            height: 35px;
+            width: 24px;
+            height: 24px;
         }
     }
 
@@ -405,40 +405,82 @@ main{
 }
 // section.hero
 .hero{
-    //padding-top:35px;
+    .section-heading {
+        margin-top:0;
+        font-size:32px;
+
+        @media(min-width:$bp-md){
+            font-size:60px;
+        }
+    }
 }
 .periodic{
     display:block;
     position:relative;
-    overflow-x:scroll;
+    text-align:center;
 
     @media (min-width:$bp-sm){
         overflow:hidden;
     }
 
+    @media (min-width:$bp-md){
+        text-align:initial;
+    }
+
     .periodic--info{
         height: 210px;
-        width: 398px;
-        background-color: $black;
+        width: 100%;
+        background-color: $black;;
         background-image: url("../img/periodic/default.jpg");
         background-size: cover;
         background-position: center center;
         position: absolute;
-        left: 130px;
+        left: 0;
+        top: 50%;
         display: flex;
         align-items: flex-end;
+        margin-top: -105px;
+        box-shadow: 0px 15px 10px -10px $black;
+        border: 7px solid $black;
+        cursor:pointer;
 
-        @media(min-width:$bp-md){
+        &:before {
+            display: block;
+            content: 'close';
+            z-index: 99;
+            color: $white;
+            position: absolute;
+            top: 0px;
+            right: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media (min-width:$bp-md) {
+            height: 210px;
+            width: 398px;
+            left: 130px;
+            margin-top:0;
+            top:0;
+            border:0 none;
+            box-shadow:none;
+        }
+
+
+        @media (min-width:$bp-lg){
             height: 265px;
             width: 500px;
             left: 183px;
         }
 
     }
-
-    .periodic--row{
-        display:flex;
-        justify-content:flex-start;
+   
+    .periodic--row {
+    display: inline;
+        @media(min-width: $bp-md){
+            display:flex;
+            justify-content:flex-start;
+        }
     }
 
     .row1{
@@ -447,6 +489,23 @@ main{
       
     .row2 .el:nth-child(3), .row3 .el:nth-child(3){
         margin-left:auto;
+    }
+
+    .el {
+        display:inline-block;
+        margin:2px;
+
+        @media (min-width:$bp-md){
+            display:block;
+        }
+    }
+
+    .periodic--row:last-child .el:last-child {
+        display:none;
+
+        @media (min-width:$bp-md){
+            display:block;
+        }
     }
 }
 
@@ -491,19 +550,19 @@ main{
 
     //periodic elements and single article tags
     &.el-medium {
-        &:hover, &:active, &:focus{
+        &:hover, &:active, &:focus, &.el-active{
             cursor:pointer;
             background:$white;
             border-color:$greyLight;
 
-        .el--name{
-            background:$greyLight;
-        }
+            .el--name{
+                background:$greyLight;
+            }
 
-        .el--symbol {
-            color:$orange;
+            .el--symbol {
+                color:$orange;
+            }
         }
-    }
     }
 
     @media (min-width:$bp-md){
@@ -543,6 +602,7 @@ main{
 
 .bg-greyDark{
     background: $greyDark;
+    color:$white;
     padding-top:30px;
 }
 
@@ -551,12 +611,16 @@ main{
 
     h1, .h1 {
         font-size: 22px;
-        margin:20px 0;
+        margin:10px 0;
         color: $white;
     }
 
     a:hover, a:active, a:focus{
         color:$white;
+    }
+
+    .post--meta {
+        margin-bottom:10px;
     }
 }
 
@@ -583,7 +647,7 @@ main{
     }
 
     &:hover{
-        img{
+        .watch-post--background-image{
             opacity:0.6;
         }
     }
@@ -630,8 +694,11 @@ main{
         font-weight:bold;
         color:$text;
     }
-    .post--meta{
-        margin-bottom:10px;
+   
+    .read-post--background-image{
+        height: 185px;
+        background-size: cover!important;
+        background-position: center center!important;
     }
 }
 
@@ -679,6 +746,7 @@ main{
     font-size:22px;
     color:$grey;
     font-weight:bold;
+    margin-top:15px;
     @media (min-width:$bp-lg){
         font-size:36px;
     }
@@ -756,6 +824,12 @@ main{
 
     .the-content{
         color:$textDark;
+
+        img{
+            max-width:100%;
+            display:block;
+            height:auto;
+        }
     }
 }
 
@@ -828,10 +902,7 @@ main{
 
 /* tag page template */
 .tag-page {
-    h1, .h1{
-        font-size:34px;
-        padding-left:10px;
-    }
+   
 }
 
 .tag-page--header{
@@ -840,6 +911,12 @@ main{
     align-items: center;
     justify-content: center;
     padding: 40px 0 10px 0;
+
+     h1, .h1{
+        color:$textTitle;
+        font-size:34px;
+        padding-left:10px;
+    }
 }
 
 .tag-read {

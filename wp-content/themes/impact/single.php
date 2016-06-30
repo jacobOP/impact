@@ -31,7 +31,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
 								<div class="post-meta flex">
 									<div class="post-meta--author">
-										<?php the_author(); ?>
+										By <?php the_author(); ?>
 									</div>
 									<div class="post-meta--date">
 										<?php the_time('m.d.Y'); // Display the time it was published ?>							
@@ -45,7 +45,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 											  // http://localhost:8888/impact/tag/fear/
 											  foreach($posttags as $tag) {
 											  	$taglink = get_site_url() . '\/tag/' . $tag->name . '/';
-											    echo '<a href="' . $taglink . '" class="el"><div class="el--name">' . $tag->name . '</div><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></a>';
+											    echo '<a href="' . $taglink . '" class="el el-medium"><div class="el--name">' . $tag->name . '</div><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></a>';
 											  }
 											}
 											?>
@@ -93,7 +93,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								</div><!-- the-content -->
 								
 								<div class="meta clearfix">
-									<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
+									<div class="category"><?php //echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
 									<div class="banner">
 										<div class="banner-container">
 											ad banner container

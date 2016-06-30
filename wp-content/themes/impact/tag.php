@@ -80,6 +80,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                                         <?php the_title(); // Show the title of the posts as a link ?>
                                                     </a>
                                                 </h1>
+                                                <div class="post--meta">
+                                                    <div class="post--author"><?php the_author(); ?></div>
+                                                    <?php the_time('m/d/Y'); // Display the time published ?> 
+                                                </div><!--/post-meta -->
+                                                <p><?php the_field('description');  ?></p>
                                                 <a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
                                                     Read Story
                                                 </a>
@@ -169,16 +174,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                                         </h1>
                                                         
                                                         <div class="post--meta">
-                                                            <div class="post--author"><a href="#"><?php the_author(); ?></a></div>
+                                                            <div class="post--author"><?php the_author(); ?></div>
                                                             <?php the_time('m/d/Y'); // Display the time published ?> 
-                                                            
-                                                        
                                                         </div><!--/post-meta -->
                                                         
                                                         <div class="the-content">
                                                             <?php
                                                                 $content = get_the_content();
-                                                                echo substr($content, 0, 220);
+                                                                echo substr($content, 0, 100);
                                                             ?>... 
                                                             <a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
                                                                 Read More
