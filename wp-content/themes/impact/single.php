@@ -37,7 +37,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 										<?php the_time('m.d.Y'); // Display the time it was published ?>							
 									</div>
 								</div><!--/post-meta -->
-								<div class="post-meta-2 flex">
+								<div class="post-meta-2 sm-flex">
 									<div class="single-post--tags tags flex">
 										<?php
 											$posttags = get_the_tags();

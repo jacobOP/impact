@@ -19,6 +19,8 @@ ACTION ON DEMAND
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- remove this when you go live! -->
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <title>
 	<?php bloginfo('name'); // show the blog name, from settings ?> | 
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // if we're on the home page, show the description, from the site's settings - otherwise, show the title of the post or page ?>
@@ -57,17 +59,18 @@ ACTION ON DEMAND
 <header id="masthead" class="site-header">
     <div class="container">
 	    <div class="row site-header--inner">
-			<nav class="site-navigation main-navigation col-sm-4">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
-			</nav><!-- .site-navigation .main-navigation -->
-
-			<div id="brand" class="site-header--logo col-sm-4">
+			<div id="brand" class="site-header--logo col-sm-6 col-sm-push-6 col-md-4 col-md-push-4 col-lg-push-4">
 				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
 					<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo.jpg" alt="IMPACT - Action on Demand" class="img-responsive">
 				</a>
 				<?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
 			</div><!-- /brand -->
-			<div class="col-sm-4">
+
+			<nav class="site-navigation main-navigation col-sm-6 col-sm-pull-6 col-md-4 col-md-pull-4 col-lg-pull-4">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+			</nav><!-- .site-navigation .main-navigation -->
+
+			<div class="col-sm-12 col-md-4">
 				<form class="search flex">
 					<input type="text" class="form-control" placeholder="Search">
 					<button class="btn btn-primary js-search-submit" onclick="window.location = '/search?search=&amp;q=' + document.getElementById('search-text-field').value;">Search</button>

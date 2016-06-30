@@ -14,10 +14,13 @@ Quick notes about classnames.
 <div class="big-story">
   <div class="big-story--title">ASDF</div>
   <div class="big-story--img"></div<
-</div>:
+</div>
 
 makes components easier to reason around and keeps heirarchy clearer. 
- */
+
+(C)  class names that begin with "js_" are javascript hooks, don't style them.
+
+*/
 
 //variables
 $black: #000000;
@@ -149,7 +152,14 @@ iframe {
     }
 }
 
+//wordpress image classes need to actually do something
+.alignright{
+    float:right;
+}
 
+.alignleft {
+    float:left;
+}
 
 .video-container {
     position:relative;
@@ -176,6 +186,55 @@ h1, .h1{
     font-size:60px;
 }
 
+//pirate forms cleanup
+
+.pirate_forms_wrap{
+
+    .form_field_wrap {
+        width: 100%;
+        margin: 0;
+    }
+    .form-control {
+        border:1px solid $greyLightest!important;
+        border-radius: 0px;
+    }
+
+    textarea {
+        margin:20px 0;
+    }
+    
+    //copy + paste .btn, .btn-primary stuff, bump up the font size
+    .pirate-forms-submit-button{
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border-radius: 0;
+        border: 1px solid $orange;
+        transition: all 0.125s ease-out;
+        color:$white;
+        background:$orange;
+
+        &:hover{
+            background:transparent;
+            color:$textDark;
+        }
+    }
+
+}
 
 /* template header.php, footer.php - header and footer */
 // site header
@@ -183,12 +242,17 @@ h1, .h1{
     background:$black;
     color:$white;
     width:100%;
-    position:fixed;
     z-index:9;
+
+    .search {
+        padding:0 0 22px 0;
+        @media (min-width:$bp-md){
+            padding:22px 0;
+        }
+    }
 }
 //make the fixed header work;
 main{
-    padding-top:78px;
 }
 .site-header--inner{
     align-items: center;
@@ -208,14 +272,19 @@ main{
         margin:0;
         display: flex;
         align-items:center;
+        justify-content:center;
         li{
             a{
-                font-size:14px;
+                font-size:18px;
                 color:$white;
-                padding: 28px 22px 28px 20px;
+                padding: 20px 22px 20px 20px;
                 display: block;
                 position:relative;
                 transition:background 0.1s ease-out;
+                 @media (min-width: $bp-md){
+                    font-size:16px;
+                    padding:28px 22px 28px 20px;
+                }
                 &:hover, &:focus{
                     border-bottom:0 none;
                     background-color:$orange;
@@ -223,9 +292,7 @@ main{
                         background-color:$orange;
                     }
                 }
-                @media (min-width: $bp-lg){
-                    font-size:16px;
-                }
+               
                 &:after{
                     display:block;
                     content:'';
@@ -250,6 +317,7 @@ main{
 // site footer
 .site-footer{
     color:$white;
+    margin-top:10px;
 
     a {
         display: inline-block;
@@ -266,6 +334,10 @@ main{
         .site-footer--social, p{
             display:inline-block;
             margin-right:5px;
+
+            a:hover{
+                border-bottom:0 none;
+            }
         }
     }
 
@@ -288,7 +360,11 @@ main{
                     border-right:1px solid $white;
                     a{
                         color: $white;
-                        
+                        border-bottom:1px solid transparent;
+
+                        &:hover{
+                            border-bottom:1px solid $orange;
+                        }
                     }
                      &:last-child {
                         border-right:0 none;
@@ -319,10 +395,16 @@ main{
 .section-heading{
     text-align:center;
     margin-top:70px;
+    font-weight:bold;
+
+    .first-word {
+        color:$orange;
+        font-style:italic;
+    }
 }
 // section.hero
 .hero{
-    padding-top:35px;
+    //padding-top:35px;
 }
 .periodic{
     display:block;
@@ -432,7 +514,7 @@ main{
     .el--name {
         color:$white;
         background: $black;
-        font-size:12px;
+        font-size:10px;
         line-height:1.5em;
     }
 
@@ -454,7 +536,7 @@ main{
         color:$orange;
         font-size:12px;
         font-weight:bold;
-        margin-top:10px;
+        padding-top:10px;
     }
 }
 
@@ -559,18 +641,28 @@ main{
     text-align: center;
     font-size: 22px;
     padding: 30px 0;
-    color: $white;
-    background: $greyDark;
+    color: #ec0081;
+    font-weight:bold;
+    background: #d2d3d5;
 }
 
 //section.asskicker
+.asskicker{
+    margin-bottom:10px;
+}
 
 .asskicker--banner{
     background:$black;
     color:$white;
     text-align:center;
-    font-size:78px;
+    font-size:22px;
+    padding:5px 0;
     font-weight:bold;
+
+    @media(min-width:$bp-lg){
+        font-size:78px;
+        padding:0;
+    }
 }
 
 .asskicker--asskicker {
@@ -583,9 +675,16 @@ main{
 }
 
 .asskicker--name {
-    font-size:36px;
+    font-size:22px;
     color:$grey;
     font-weight:bold;
+    @media (min-width:$bp-lg){
+        font-size:36px;
+    }
+    .first-word {
+        color:$orange;
+        font-style:italic;
+    }
 }
 
 
@@ -607,6 +706,7 @@ main{
     }
 
     .single-post--tags{
+        flex-wrap:wrap;
         .el{
             width:initial;
             min-width:75px;
@@ -630,7 +730,10 @@ main{
     }
 
     .social-icons {
-
+        margin-top:10px;
+        @media (min-width:$bp-sm){
+            margin-top:0;
+        }
         a{
             display:inline-block;
 
@@ -747,3 +850,19 @@ main{
     }
 }
 
+
+/* page template (about, contact, etc) */
+.page-template-default{
+    //orange bg thingy
+    background: #f7991c; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #f7991c 50%, #f7991c 50%, #ffffff 50%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7991c', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    main{
+        //make sure the footer hangs out at the bottom;
+        min-height: calc(100vh - 270px);
+        
+    }
+}

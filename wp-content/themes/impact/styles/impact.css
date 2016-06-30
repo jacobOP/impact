@@ -14,10 +14,13 @@ Quick notes about classnames.
 <div class="big-story">
   <div class="big-story--title">ASDF</div>
   <div class="big-story--img"></div<
-</div>:
+</div>
 
 makes components easier to reason around and keeps heirarchy clearer. 
- */
+
+(C)  class names that begin with "js_" are javascript hooks, don't style them.
+
+*/
 /* change some bootstrap defaults*/
 body {
   color: #58595b;
@@ -108,6 +111,12 @@ iframe {
     display: -webkit-flex;
     display: flex; } }
 
+.alignright {
+  float: right; }
+
+.alignleft {
+  float: left; }
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -129,16 +138,55 @@ h1, .h1, h2, .h2, h3, .h3 {
 h1, .h1 {
   font-size: 60px; }
 
+.pirate_forms_wrap .form_field_wrap {
+  width: 100%;
+  margin: 0; }
+
+.pirate_forms_wrap .form-control {
+  border: 1px solid #e6e7e8 !important;
+  border-radius: 0px; }
+
+.pirate_forms_wrap textarea {
+  margin: 20px 0; }
+
+.pirate_forms_wrap .pirate-forms-submit-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: 0;
+  border: 1px solid #f7991c;
+  transition: all 0.125s ease-out;
+  color: #ffffff;
+  background: #f7991c; }
+  .pirate_forms_wrap .pirate-forms-submit-button:hover {
+    background: transparent;
+    color: #231f20; }
+
 /* template header.php, footer.php - header and footer */
 .site-header {
   background: #000000;
   color: #ffffff;
   width: 100%;
-  position: fixed;
   z-index: 9; }
-
-main {
-  padding-top: 78px; }
+  .site-header .search {
+    padding: 0 0 22px 0; }
+    @media (min-width: 992px) {
+      .site-header .search {
+        padding: 22px 0; } }
 
 .site-header--inner {
   align-items: center;
@@ -152,22 +200,24 @@ main {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .main-navigation ul li a {
-    font-size: 14px;
+    font-size: 18px;
     color: #ffffff;
-    padding: 28px 22px 28px 20px;
+    padding: 20px 22px 20px 20px;
     display: block;
     position: relative;
     transition: background 0.1s ease-out; }
+    @media (min-width: 992px) {
+      .main-navigation ul li a {
+        font-size: 16px;
+        padding: 28px 22px 28px 20px; } }
     .main-navigation ul li a:hover, .main-navigation ul li a:focus {
       border-bottom: 0 none;
       background-color: #f7991c; }
       .main-navigation ul li a:hover:after, .main-navigation ul li a:focus:after {
         background-color: #f7991c; }
-    @media (min-width: 1200px) {
-      .main-navigation ul li a {
-        font-size: 16px; } }
     .main-navigation ul li a:after {
       display: block;
       content: '';
@@ -182,7 +232,8 @@ main {
     display: none; }
 
 .site-footer {
-  color: #ffffff; }
+  color: #ffffff;
+  margin-top: 10px; }
   .site-footer a {
     display: inline-block; }
     .site-footer a img.svg {
@@ -194,6 +245,8 @@ main {
     .site-footer .site-footer--top .site-footer--social, .site-footer .site-footer--top p {
       display: inline-block;
       margin-right: 5px; }
+      .site-footer .site-footer--top .site-footer--social a:hover, .site-footer .site-footer--top p a:hover {
+        border-bottom: 0 none; }
   .site-footer .site-footer--bottom {
     background: #000000;
     padding: 20px;
@@ -208,7 +261,10 @@ main {
         padding: 0 5px;
         border-right: 1px solid #ffffff; }
         .site-footer .site-footer--bottom nav ul li a {
-          color: #ffffff; }
+          color: #ffffff;
+          border-bottom: 1px solid transparent; }
+          .site-footer .site-footer--bottom nav ul li a:hover {
+            border-bottom: 1px solid #f7991c; }
         .site-footer .site-footer--bottom nav ul li:last-child {
           border-right: 0 none; }
     .site-footer .site-footer--bottom .site-footer--logo {
@@ -219,10 +275,11 @@ main {
 /* home page - index.php */
 .section-heading {
   text-align: center;
-  margin-top: 70px; }
-
-.hero {
-  padding-top: 35px; }
+  margin-top: 70px;
+  font-weight: bold; }
+  .section-heading .first-word {
+    color: #f7991c;
+    font-style: italic; }
 
 .periodic {
   display: block;
@@ -295,7 +352,7 @@ main {
   .el .el--name {
     color: #ffffff;
     background: #000000;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.5em; }
   .el .el--symbol {
     color: #000000;
@@ -311,7 +368,7 @@ main {
   color: #f7991c;
   font-size: 12px;
   font-weight: bold;
-  margin-top: 10px; }
+  padding-top: 10px; }
 
 .bg-greyDark {
   background: #58595b;
@@ -381,15 +438,24 @@ main {
   text-align: center;
   font-size: 22px;
   padding: 30px 0;
-  color: #ffffff;
-  background: #58595b; }
+  color: #ec0081;
+  font-weight: bold;
+  background: #d2d3d5; }
+
+.asskicker {
+  margin-bottom: 10px; }
 
 .asskicker--banner {
   background: #000000;
   color: #ffffff;
   text-align: center;
-  font-size: 78px;
+  font-size: 22px;
+  padding: 5px 0;
   font-weight: bold; }
+  @media (min-width: 1200px) {
+    .asskicker--banner {
+      font-size: 78px;
+      padding: 0; } }
 
 .asskicker--asskicker {
   color: #f7991c;
@@ -399,9 +465,15 @@ main {
   width: 100%; }
 
 .asskicker--name {
-  font-size: 36px;
+  font-size: 22px;
   color: #6d6e71;
   font-weight: bold; }
+  @media (min-width: 1200px) {
+    .asskicker--name {
+      font-size: 36px; } }
+  .asskicker--name .first-word {
+    color: #f7991c;
+    font-style: italic; }
 
 /* single post, single.php */
 .single-post .title {
@@ -414,11 +486,13 @@ main {
   justify-content: space-between;
   margin-bottom: 25px; }
 
-.single-post .single-post--tags .el {
-  width: initial;
-  min-width: 75px; }
-  .single-post .single-post--tags .el:hover, .single-post .single-post--tags .el:focus {
-    border-bottom-width: 7px; }
+.single-post .single-post--tags {
+  flex-wrap: wrap; }
+  .single-post .single-post--tags .el {
+    width: initial;
+    min-width: 75px; }
+    .single-post .single-post--tags .el:hover, .single-post .single-post--tags .el:focus {
+      border-bottom-width: 7px; }
 
 .single-post .single-post--img {
   width: 100%; }
@@ -430,13 +504,18 @@ main {
   justify-content: space-between;
   margin-bottom: 15px; }
 
-.single-post .social-icons a {
-  display: inline-block; }
-  .single-post .social-icons a img {
-    width: 34px;
-    height: 34px; }
-  .single-post .social-icons a:hover, .single-post .social-icons a:active, .single-post .social-icons a:focus {
-    border-bottom: 0 none; }
+.single-post .social-icons {
+  margin-top: 10px; }
+  @media (min-width: 768px) {
+    .single-post .social-icons {
+      margin-top: 0; } }
+  .single-post .social-icons a {
+    display: inline-block; }
+    .single-post .social-icons a img {
+      width: 34px;
+      height: 34px; }
+    .single-post .social-icons a:hover, .single-post .social-icons a:active, .single-post .social-icons a:focus {
+      border-bottom: 0 none; }
 
 .single-post .the-description {
   font-style: italic;
@@ -512,3 +591,18 @@ main {
   .tag-read h1, .tag-read .h1 {
     color: #414042;
     padding-left: 0; }
+
+/* page template (about, contact, etc) */
+.page-template-default {
+  background: #f7991c;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f7991c 50%, #f7991c 50%, #ffffff 50%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f7991c 50%, #f7991c 50%, #ffffff 50%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f7991c 50%, #f7991c 50%, #ffffff 50%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7991c', endColorstr='#ffffff',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+  .page-template-default main {
+    min-height: calc(100vh - 270px); }

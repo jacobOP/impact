@@ -10,6 +10,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<section class="hero">
 			<div class="container">
 				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="section-heading"><span class="first-word">Elements</span> of Action</h1>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-10 col-lg-offset-1">
 						<div class="periodic">
 						    <div class="periodic--info">
@@ -379,7 +384,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							// If we have some posts to show, start a loop that will display each one the same way
 							?>
 
-								<article class="asskicker-post col-md-12 <?php 
+								<article class="asskicker-post col-xs-12 <?php 
 											$categories = get_the_category();
 											if ( ! empty( $categories ) ) {
 											    $postCategory = $categories[0]->name ;
@@ -391,7 +396,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 
 									<div class="row">
-										<div class="col-xs-6 col-md-8 ">
+										<div class="col-sm-6 col-md-8 ">
 											<div class="asskicker--img-container">
 												<?php
 												$main_image = get_field('main_image');
@@ -399,8 +404,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 												<img src="<?php echo $main_image['url']; ?>" class="img-responsive">
 											</div>
 										</div>
-										<div class="col-xs-6 col-md-4">
-											<div class="asskicker--name">
+										<div class="col-sm-6 col-md-4">
+											<div class="asskicker--name js_asskicker--name" data-name="<?php the_field('asskickers_name_or_title'); ?>">
 												<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
 												<?php the_field('asskickers_name_or_title'); ?>
 												</a>

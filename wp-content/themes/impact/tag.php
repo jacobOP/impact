@@ -28,7 +28,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                 <?php
                                     // The Query, for video items
                                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                    $args = array( 'category_name' => 'video', 'showposts' => 3, 'paged' => $paged );
+                                    $args = array( 'category_name' => 'video', 'tag' => $current_tag, 'showposts' => 3, 'paged' => $paged );
                                     query_posts( $args );
                                     
                                     if ( have_posts() ) : 
@@ -92,7 +92,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                     <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
                                         
                                         <article class="post error">
-                                            <h1 class="404">Nothing has been posted like that yet</h1>
+                                            <h1>No videos with the tag <?php echo $current_tag ?> yet.</h1>
                                         </article>
 
                                     <?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
@@ -109,7 +109,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                         <div class="col-lg-10 col-lg-offset-1">
                             <?php
                             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $args = array( 'category_name' => 'editorial', 'showposts' => 10, 'paged' => $paged );
+                            $args = array( 'category_name' => 'editorial', 'tag' => $current_tag, 'showposts' => 10, 'paged' => $paged );
                             query_posts( $args );
                             if ( have_posts() ) : 
                             // Do we have any posts in the databse that match our query?
@@ -209,10 +209,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                 </div><!-- pagination -->
 
 
-                            <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
+                            <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader  ?>
                                 
                                 <article class="post error">
-                                    <h1 class="404">Nothing has been posted like that yet</h1>
+                                    <h1>No articles with the tag <?php $current_tag ?> yet.</h1>
                                 </article>
 
                             <?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>

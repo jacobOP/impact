@@ -20,10 +20,12 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'impact');
+//define('DB_NAME', 'impact');
+define('DB_NAME', 'outerp5_impact');
 
 /** MySQL database username */
-define('DB_USER', 'impact');
+//define('DB_USER', 'impact');
+define('DB_USER', 'outerp5_impact');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'tSXYR8r4VntWxUGZ');

@@ -34,11 +34,11 @@
                     </a>
                     <nav>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Site Map</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/about/">About Us</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/contact-us/">Contact Us</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>#">Site Map</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/privacy-policy/">Privacy Policy</a></li>
                         </ul>
                     </nav>
                     <p class="site-footer--copyright">
