@@ -9,7 +9,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<div id="primary" class="index">
 		<section class="hero">
 			<div class="container">
-				<div class="row">
+				<div class="row hidden">
 					<div class="col-xs-12">
 						<h1 class="section-heading"><span class="first-word">Elements</span> of Action</h1>
 					</div>

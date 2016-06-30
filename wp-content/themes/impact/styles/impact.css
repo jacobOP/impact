@@ -188,6 +188,9 @@ h1, .h1 {
       .site-header .search {
         padding: 22px 0; } }
 
+main {
+  padding-top: 34px; }
+
 .site-header--inner {
   align-items: center;
   justify-content: space-between; }
