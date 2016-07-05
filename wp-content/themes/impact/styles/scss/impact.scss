@@ -945,3 +945,18 @@ main{
         
     }
 }
+
+/*  404 page */
+.page-404 {
+    .page-header{
+        text-align:center;
+        @media (min-width:$bp-md){
+            display:flex;
+            justify-content:space-around;
+        }
+    }
+
+    .page-content {
+        text-align:center;
+    }
+}

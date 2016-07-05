@@ -9,16 +9,17 @@
 
 get_header(); ?>
 
-    <div id="primary" class="content-area">
-        <div id="content" class="site-content" role="main">
-
-            <header class="page-header">
-                <h1 class="page-title"><?php _e( '404 Not Found' ); ?></h1>
+    <div id="primary" class="container page-404">
+        <div id="content" class="row" role="main">
+            
+            <header class="page-header col-xs-12">
+                <h1 class="page-title"><?php _e( 'Well that wasn\'t supposed to happen...' ); ?></h1>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/oops.gif" alt="" class="img-responsive">
             </header>
 
-            <div class="page-wrapper">
+            <div class="page-wrapper col-xs-12">
                 <div class="page-content">
-                    <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?'); ?></p>
+                    <p><?php _e( 'We couldn\'t find the page you were looking for. Maybe try a search?'); ?></p>
 
                     <?php get_search_form(); ?>
                 </div><!-- .page-content -->

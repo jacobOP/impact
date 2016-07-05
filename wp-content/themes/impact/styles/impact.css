@@ -665,3 +665,14 @@ h1, .h1 {
   /* IE6-9 fallback on horizontal gradient */ }
   .page-template-default main {
     min-height: calc(100vh - 270px); }
+
+/*  404 page */
+.page-404 .page-header {
+  text-align: center; }
+  @media (min-width: 992px) {
+    .page-404 .page-header {
+      display: flex;
+      justify-content: space-around; } }
+
+.page-404 .page-content {
+  text-align: center; }
