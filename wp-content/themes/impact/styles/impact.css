@@ -188,9 +188,6 @@ h1, .h1 {
       .site-header .search {
         padding: 22px 0; } }
 
-main {
-  padding-top: 34px; }
-
 .site-header--inner {
   align-items: center;
   justify-content: space-between; }
@@ -208,10 +205,13 @@ main {
   .main-navigation ul li a {
     font-size: 18px;
     color: #ffffff;
-    padding: 20px 22px 20px 20px;
+    padding: 20px 18px 20px 16px;
     display: block;
     position: relative;
     transition: background 0.1s ease-out; }
+    @media (min-width: 768px) {
+      .main-navigation ul li a {
+        padding: 20px 22px 20px 20px; } }
     @media (min-width: 992px) {
       .main-navigation ul li a {
         font-size: 16px;
@@ -285,7 +285,7 @@ main {
     font-style: italic; }
 
 .hero .section-heading {
-  margin-top: 0;
+  margin-top: 25px;
   font-size: 32px; }
   @media (min-width: 992px) {
     .hero .section-heading {
@@ -329,18 +329,13 @@ main {
       font-weight: bold; }
     @media (min-width: 992px) {
       .periodic .periodic--info {
-        height: 210px;
-        width: 398px;
-        left: 130px;
+        height: 265px;
+        width: 500px;
+        left: 183px;
         margin-top: 0;
         top: 0;
         border: 0 none;
         box-shadow: none; } }
-    @media (min-width: 1200px) {
-      .periodic .periodic--info {
-        height: 265px;
-        width: 500px;
-        left: 183px; } }
   .periodic .periodic--row {
     display: inline; }
     @media (min-width: 992px) {
@@ -483,6 +478,9 @@ main {
     margin: 10px 0;
     font-weight: bold;
     color: #58595b; }
+  .read-post .post--meta {
+    justify-content: space-between;
+    margin-bottom: 10px; }
   .read-post .read-post--background-image {
     height: 185px;
     background-size: cover !important;
@@ -641,7 +639,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0 10px 0; }
+  padding: 20px 0; }
   .tag-page--header h1, .tag-page--header .h1 {
     color: #414042;
     font-size: 34px;

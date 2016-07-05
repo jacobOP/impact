@@ -282,6 +282,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								// var_dump($main_image);
 								?>
 								<div class="post--img col-md-4">
+									<a href="<?php the_permalink(); ?>"</a>
 									<div class="read-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
 									<?php //the_post_thumbnail('custom-size'); ?>
 
@@ -305,9 +306,10 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 											</a>
 										</h1>
 										
-										<div class="post--meta">
+										<div class="post--meta flex">
 											<div class="post--author"><?php the_author(); ?></div>
-											<?php the_time('m/d/Y'); // Display the time published ?> 
+											<div class="post-meta--date"><?php the_time('m/d/Y'); // Display the time published ?> </div>
+											
 											
 										
 										</div><!--/post-meta -->

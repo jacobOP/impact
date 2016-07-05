@@ -251,9 +251,11 @@ h1, .h1{
         }
     }
 }
-//make the fixed header work;
+
 main{
-    padding-top:34px;
+    @media (min-width:$bp-md){
+        //padding-top:34px;
+    }
 }
 .site-header--inner{
     align-items: center;
@@ -278,11 +280,14 @@ main{
             a{
                 font-size:18px;
                 color:$white;
-                padding: 20px 22px 20px 20px;
+                padding: 20px 18px 20px 16px;
                 display: block;
                 position:relative;
                 transition:background 0.1s ease-out;
-                 @media (min-width: $bp-md){
+                @media (min-width:$bp-sm){
+                    padding: 20px 22px 20px 20px;
+                }
+                @media (min-width: $bp-md){
                     font-size:16px;
                     padding:28px 22px 28px 20px;
                 }
@@ -383,13 +388,8 @@ main{
 
         }
     }
-
     
 }
-
-
-
-
 
 
 /* home page - index.php */
@@ -406,7 +406,7 @@ main{
 // section.hero
 .hero{
     .section-heading {
-        margin-top:0;
+        margin-top:25px;
         font-size:32px;
 
         @media(min-width:$bp-md){
@@ -457,20 +457,16 @@ main{
         }
 
         @media (min-width:$bp-md) {
-            height: 210px;
-            width: 398px;
-            left: 130px;
+            // height: 210px;
+            // width: 398px;
+            // left: 130px;
+            height: 265px;
+            width: 500px;
+            left: 183px;
             margin-top:0;
             top:0;
             border:0 none;
             box-shadow:none;
-        }
-
-
-        @media (min-width:$bp-lg){
-            height: 265px;
-            width: 500px;
-            left: 183px;
         }
 
     }
@@ -694,6 +690,11 @@ main{
         font-weight:bold;
         color:$text;
     }
+
+    .post--meta{
+        justify-content:space-between;
+        margin-bottom:10px;
+    }
    
     .read-post--background-image{
         height: 185px;
@@ -910,7 +911,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0 10px 0;
+    padding: 20px 0;
 
      h1, .h1{
         color:$textTitle;
