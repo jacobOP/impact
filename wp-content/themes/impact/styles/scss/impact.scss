@@ -413,11 +413,13 @@ main{
             font-size:60px;
         }
     }
+
 }
 .periodic{
     display:block;
     position:relative;
     text-align:center;
+    transition:opacity 0.2s ease;
 
     @media (min-width:$bp-sm){
         overflow:hidden;
@@ -427,7 +429,13 @@ main{
         text-align:initial;
     }
 
+    &.loading {
+        opacity:0;
+        pointer-events:none;
+    }
+
     .periodic--info{
+        display:block;
         height: 210px;
         width: 100%;
         background-color: $black;;
@@ -444,22 +452,19 @@ main{
         border: 7px solid $black;
         cursor:pointer;
 
-        &:before {
-            display: block;
-            content: 'close';
-            z-index: 99;
-            color: $white;
-            position: absolute;
-            top: 0px;
-            right: 5px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+        // &:before {
+        //     display: block;
+        //     content: 'close';
+        //     z-index: 99;
+        //     color: $white;
+        //     position: absolute;
+        //     top: 0px;
+        //     right: 5px;
+        //     font-size: 16px;
+        //     font-weight: bold;
+        // }
 
-        @media (min-width:$bp-md) {
-            // height: 210px;
-            // width: 398px;
-            // left: 130px;
+        @media (min-width:$bp-md) {           
             height: 265px;
             width: 500px;
             left: 183px;
@@ -467,6 +472,12 @@ main{
             top:0;
             border:0 none;
             box-shadow:none;
+        }
+
+        @media (min-width:$bp-lg){
+            height: 304px;
+            width: 618px;
+            left: 213px;
         }
 
     }
@@ -516,15 +527,16 @@ main{
     //the big one in the middle of the periodic table
     &.el-large{
         width: 115px;
-        height: 145px;
+        height: 140px;
         border-width:10px;
+        margin:0px;
 
         .el--name{
-            font-size:22px;
+            font-size:18px;
         }
 
         .el--symbol {
-            font-size:70px;
+            font-size:60px;
         }
     }
     
@@ -566,22 +578,29 @@ main{
         width:75px;
         margin:2px;
     }
+    @media (min-width:$bp-lg){
+        height:105px;
+        width:91.2px;
+    }
 
     .el--name {
         color:$white;
         background: $black;
-        font-size:10px;
+        font-size:11.5px;
         line-height:1.5em;
     }
 
     .el--symbol {
         color:$black;
         font-weight:bold;
-        padding: 3px 10px;
+        padding: 7px 0px;
         font-size:28px;
         text-align:center;
 
         @media (min-width:$bp-md){
+            font-size:38px;
+        }
+        @media (min-width:$bp-lg){
             font-size:48px;
         }
     }

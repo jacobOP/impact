@@ -294,14 +294,19 @@ h1, .h1 {
 .periodic {
   display: block;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  transition: opacity 0.2s ease; }
   @media (min-width: 768px) {
     .periodic {
       overflow: hidden; } }
   @media (min-width: 992px) {
     .periodic {
       text-align: initial; } }
+  .periodic.loading {
+    opacity: 0;
+    pointer-events: none; }
   .periodic .periodic--info {
+    display: block;
     height: 210px;
     width: 100%;
     background-color: #000000;
@@ -317,16 +322,6 @@ h1, .h1 {
     box-shadow: 0px 15px 10px -10px #000000;
     border: 7px solid #000000;
     cursor: pointer; }
-    .periodic .periodic--info:before {
-      display: block;
-      content: 'close';
-      z-index: 99;
-      color: #ffffff;
-      position: absolute;
-      top: 0px;
-      right: 5px;
-      font-size: 16px;
-      font-weight: bold; }
     @media (min-width: 992px) {
       .periodic .periodic--info {
         height: 265px;
@@ -336,6 +331,11 @@ h1, .h1 {
         top: 0;
         border: 0 none;
         box-shadow: none; } }
+    @media (min-width: 1200px) {
+      .periodic .periodic--info {
+        height: 304px;
+        width: 618px;
+        left: 213px; } }
   .periodic .periodic--row {
     display: inline; }
     @media (min-width: 992px) {
@@ -367,12 +367,13 @@ h1, .h1 {
   transition: background 0.125s ease-in-out, color 0.125s ease-in-out; }
   .el.el-large {
     width: 115px;
-    height: 145px;
-    border-width: 10px; }
+    height: 140px;
+    border-width: 10px;
+    margin: 0px; }
     .el.el-large .el--name {
-      font-size: 22px; }
+      font-size: 18px; }
     .el.el-large .el--symbol {
-      font-size: 70px; }
+      font-size: 60px; }
   .el.el-small {
     width: 57px;
     height: 66px;
@@ -395,18 +396,25 @@ h1, .h1 {
       height: 90px;
       width: 75px;
       margin: 2px; } }
+  @media (min-width: 1200px) {
+    .el {
+      height: 105px;
+      width: 91.2px; } }
   .el .el--name {
     color: #ffffff;
     background: #000000;
-    font-size: 10px;
+    font-size: 11.5px;
     line-height: 1.5em; }
   .el .el--symbol {
     color: #000000;
     font-weight: bold;
-    padding: 3px 10px;
+    padding: 7px 0px;
     font-size: 28px;
     text-align: center; }
     @media (min-width: 992px) {
+      .el .el--symbol {
+        font-size: 38px; } }
+    @media (min-width: 1200px) {
       .el .el--symbol {
         font-size: 48px; } }
 
