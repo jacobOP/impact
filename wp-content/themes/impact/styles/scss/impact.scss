@@ -183,7 +183,11 @@ h1, .h1, h2, .h2, h3, .h3{
     color:$textDark;
 }
 h1, .h1{
-    font-size:60px;
+    font-size:32px;
+
+    @media (min-width:$bp-sm){
+        font-size:60px;
+    }
 }
 
 //pirate forms cleanup
@@ -278,12 +282,15 @@ main{
         justify-content:center;
         li{
             a{
-                font-size:18px;
+                font-size:16px;
                 color:$white;
                 padding: 20px 18px 20px 16px;
                 display: block;
                 position:relative;
                 transition:background 0.1s ease-out;
+                @media (min-width:360px){
+                    font-size:18px;
+                }
                 @media (min-width:$bp-sm){
                     padding: 20px 22px 20px 20px;
                 }
@@ -395,8 +402,11 @@ main{
 /* home page - index.php */
 .section-heading{
     text-align:center;
-    margin-top:70px;
     font-weight:bold;
+
+    @media (min-width:$bp-sm) {
+        margin-top:70px;
+    }
 
     .first-word {
         color:$orange;
@@ -409,7 +419,7 @@ main{
         margin-top:25px;
         font-size:32px;
 
-        @media(min-width:$bp-md){
+        @media(min-width:$bp-sm){
             font-size:60px;
         }
     }
@@ -419,7 +429,10 @@ main{
     display:block;
     position:relative;
     text-align:center;
-    transition:opacity 0.2s ease;
+    min-height:75px;
+    >* {
+        transition:opacity 1s ease-out;
+    }
 
     @media (min-width:$bp-sm){
         overflow:hidden;
@@ -430,39 +443,37 @@ main{
     }
 
     &.loading {
-        opacity:0;
         pointer-events:none;
+        background-image: url(../img/ellipsis.gif);
+        background-repeat:no-repeat;
+        background-position: center center;
+
+        >* {
+            opacity: 0;
+        }
     }
 
     .periodic--info{
-        display:block;
-        height: 210px;
-        width: 100%;
-        background-color: $black;;
+        display:none;
+        background-color: $orange;
         background-image: url("../img/periodic/default.jpg");
         background-size: cover;
         background-position: center center;
         position: absolute;
-        left: 0;
-        top: 50%;
-        display: flex;
         align-items: flex-end;
-        margin-top: -105px;
-        box-shadow: 0px 15px 10px -10px $black;
-        border: 7px solid $black;
-        cursor:pointer;
+        transition: all 0.125s ease-in-out;
+        border:0px solid $orange;
 
-        // &:before {
-        //     display: block;
-        //     content: 'close';
-        //     z-index: 99;
-        //     color: $white;
-        //     position: absolute;
-        //     top: 0px;
-        //     right: 5px;
-        //     font-size: 16px;
-        //     font-weight: bold;
-        // }
+        &:hover{
+            border-width: 6px;
+        }
+
+        @media (min-width:$bp-sm){
+            display: flex;
+            height: 216px;
+            width: 406px;
+            left: 127px;
+        }
 
         @media (min-width:$bp-md) {           
             height: 265px;
@@ -484,7 +495,7 @@ main{
    
     .periodic--row {
     display: inline;
-        @media(min-width: $bp-md){
+        @media(min-width: $bp-sm){
             display:flex;
             justify-content:flex-start;
         }
@@ -502,16 +513,19 @@ main{
         display:inline-block;
         margin:2px;
 
-        @media (min-width:$bp-md){
+        @media (min-width:$bp-sm){
             display:block;
+            width: 56.25px;
+            height: 70px;
         }
-    }
-
-    .periodic--row:last-child .el:last-child {
-        display:none;
-
         @media (min-width:$bp-md){
-            display:block;
+            height:90px;
+            width:75px;
+            margin:2px;
+        }
+        @media (min-width:$bp-lg){
+            height:105px;
+            width:91.2px;
         }
     }
 }
@@ -557,8 +571,8 @@ main{
     }
 
     //periodic elements and single article tags
-    &.el-medium {
-        &:hover, &:active, &:focus, &.el-active{
+    &.el-hoverable {
+        &:hover, &:focus, &.el-active{
             cursor:pointer;
             background:$white;
             border-color:$greyLight;
@@ -588,6 +602,12 @@ main{
         background: $black;
         font-size:11.5px;
         line-height:1.5em;
+        @media  (min-width:$bp-sm) {
+            font-size:8.25px;
+        }
+        @media  (min-width:$bp-md) {
+            font-size:11.5px;
+        }
     }
 
     .el--symbol {
@@ -605,6 +625,35 @@ main{
         }
     }
 }
+
+//mobile layout for periodic elements
+.supertag-row{
+    .el.el-large{
+        height: 120px;
+        border-width: 10px;
+        margin: 3px;
+        flex-grow: 1;
+
+        .el--symbol {
+            padding:0;
+        }
+    }
+}
+
+.supertag-row-expanded {
+    .bucket{
+        // has class flex
+        padding:10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        .el{
+            width: 25%;
+            height: 80px;
+        }
+    }
+}
+
+
 // section.watch
 .watch, .read{
         .tags {
@@ -967,7 +1016,9 @@ main{
 
 /*  404 page */
 .page-404 {
-    .page-header{
+    header{
+        margin-top:25px;
+        margin-bottom:25px;
         text-align:center;
         @media (min-width:$bp-md){
             display:flex;

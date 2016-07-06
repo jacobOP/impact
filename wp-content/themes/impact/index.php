@@ -24,121 +24,121 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								</div>
 						    </a>
 							<div class="periodic--row row1">
-							  <div class="js_el js_hydrogen el el-medium">
+							  <div class="js_el js_hydrogen el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
 							  </div>
-							  <div class="js_el el el-medium">
+							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
 							  </div>							</div>
 							<div class="periodic--row row2">
-							  <div class="js_el el el-medium">
+							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
 							  </div>							</div>
 							<div class="periodic--row row3">
-							  <div class="js_el el el-medium">
+							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							</div>
-							<div class="periodic--row">
-							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
-							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
 							  </div>							</div>
 							<div class="periodic--row">
-							  <div class="js_el el el-medium">
+							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-medium">
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							</div>
+							<div class="periodic--row">
+							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
+							  	<div class="el--name">Name</div>
+							  	<div class="el--symbol">N</div>
+							  </div>							  <div class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
 							  </div>							</div>
@@ -249,7 +249,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 						if ($page_num='') $page_num =1;
 					
 
-						$args = array( 'category_name' => 'editorial, sponsored', 'paged' =>$page_num, 'showposts' => 4 );
+						$args = array( 'category_name' => 'editorial, sponsored', 'paged' =>$page_num, 'showposts' => 12);
 						query_posts( $args );
 						
 						if ( have_posts() ) : 

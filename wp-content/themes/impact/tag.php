@@ -97,7 +97,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                     <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
                                         
                                         <article class="post error">
-                                            <h1>No videos with the tag <?php echo $current_tag ?> yet.</h1>
+                                            <p>No videos with the tag <?php echo $current_tag ?> yet.</p>
                                         </article>
 
                                     <?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
@@ -215,7 +215,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                             <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader  ?>
                                 
                                 <article class="post error">
-                                    <h1>No articles with the tag <?php $current_tag ?> yet.</h1>
+                                    <p>No articles with the tag <?php echo $current_tag ?> yet.</p>
                                 </article>
 
                             <?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
