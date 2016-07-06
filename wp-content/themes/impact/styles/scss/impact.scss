@@ -293,6 +293,18 @@ main{
                 }
                 @media (min-width:$bp-sm){
                     padding: 20px 22px 20px 20px;
+
+                    &:after{
+                        display:block;
+                        content:'';
+                        position:absolute;
+                        right:2px;
+                        top:50%;
+                        margin-top:-20px;
+                        height:40px;
+                        width:2px;
+                        background-color:$greyLight;
+                    }
                 }
                 @media (min-width: $bp-md){
                     font-size:16px;
@@ -306,17 +318,6 @@ main{
                     }
                 }
                
-                &:after{
-                    display:block;
-                    content:'';
-                    position:absolute;
-                    right:2px;
-                    top:50%;
-                    margin-top:-20px;
-                    height:40px;
-                    width:2px;
-                    background-color:$greyLight;
-                }
             }
             &:last-child {
                 a:after{
@@ -470,15 +471,15 @@ main{
 
         @media (min-width:$bp-sm){
             display: flex;
-            height: 216px;
-            width: 406px;
+            height: 200px;
+            width: 407px;
             left: 127px;
         }
 
         @media (min-width:$bp-md) {           
             height: 265px;
-            width: 500px;
-            left: 183px;
+            width: 535px;
+            left: 163px;
             margin-top:0;
             top:0;
             border:0 none;
@@ -486,9 +487,9 @@ main{
         }
 
         @media (min-width:$bp-lg){
-            height: 304px;
-            width: 618px;
-            left: 213px;
+            height: 314px;
+            width: 638px;
+            left: 203px;
         }
 
     }
@@ -511,37 +512,81 @@ main{
 
     .el {
         display:inline-block;
-        margin:2px;
+        margin:1.5px;
 
-        @media (min-width:$bp-sm){
-            display:block;
-            width: 56.25px;
-            height: 70px;
-        }
         @media (min-width:$bp-md){
-            height:90px;
-            width:75px;
-            margin:2px;
+            margin:1.7px;
         }
+
         @media (min-width:$bp-lg){
-            height:105px;
-            width:91.2px;
+            margin: 2.5px;
         }
     }
 }
 
 .el{
+    display:block;
     background:$orange;
     border: 7px solid $black;
     border-top:0 none;
-    height:70px;
-    margin:2px 2.65px;
+    width:57px;
+    height:66px;
     transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
+
+
+    @media (min-width:$bp-sm){
+
+    }
+    @media (min-width:$bp-md){
+        width:75px;
+        height:86.84px;
+    }
+    @media (min-width:$bp-lg){
+        width:90px;
+        height:104.21px;
+    }
     
+    //starts at $bp-md dimensions and grows larger & each breakpoint
+    &.el-medium {
+        width:75px;
+        height:86.84px;
+
+        @media (min-width:$bp-md){
+            width:90px;
+            height:104.21px;
+        }
+
+        .el--name {
+            color:$white;
+            background: $black;
+            font-size:10px;
+            line-height:2.0em;
+            text-align:left;
+            font-weight:bold;
+           
+            @media  (min-width:$bp-md) {
+                font-size:11.5px;
+            }        
+        }
+
+        .el--symbol {
+            color:$black;
+            font-weight:bold;
+            padding: 2px 0px;
+            font-size:38px;
+            text-align:center;
+
+            @media (min-width:$bp-md){
+                font-size:48px;
+            }
+        }
+    }
+
+
     //the big one in the middle of the periodic table
     &.el-large{
         width: 115px;
-        height: 140px;
+        height: 133.16px;
         border-width:10px;
         margin:0px;
 
@@ -554,22 +599,6 @@ main{
         }
     }
     
-    //at the top of the tags page
-    &.el-small {
-        width:57px;
-        height: 66px;
-        border-width:5px;
-
-         .el--name{
-            font-size:8px;
-            text-align:left;
-        }
-
-        .el--symbol {
-            font-size:35px;
-        }
-    }
-
     //periodic elements and single article tags
     &.el-hoverable {
         &:hover, &:focus, &.el-active{
@@ -587,51 +616,44 @@ main{
         }
     }
 
-    @media (min-width:$bp-md){
-        height:90px;
-        width:75px;
-        margin:2px;
-    }
-    @media (min-width:$bp-lg){
-        height:105px;
-        width:91.2px;
-    }
-
     .el--name {
         color:$white;
         background: $black;
-        font-size:11.5px;
-        line-height:1.5em;
+        font-size:10px;
+        line-height:2.0em;
+        font-weight:bold;
+        text-align:left;
         @media  (min-width:$bp-sm) {
             font-size:8.25px;
         }
         @media  (min-width:$bp-md) {
             font-size:11.5px;
-        }
+        }        
     }
 
     .el--symbol {
         color:$black;
         font-weight:bold;
-        padding: 7px 0px;
+        padding: 2px 0px;
         font-size:28px;
         text-align:center;
 
         @media (min-width:$bp-md){
             font-size:38px;
+            padding: 5px 0px;
         }
         @media (min-width:$bp-lg){
             font-size:48px;
+            padding: 6px 0;
         }
     }
 }
 
 //mobile layout for periodic elements
 .supertag-row{
+    //as class flex
+    justify-content:space-around;
     .el.el-large{
-        height: 120px;
-        border-width: 10px;
-        margin: 3px;
         flex-grow: 1;
 
         .el--symbol {
@@ -644,12 +666,36 @@ main{
     .bucket{
         // has class flex
         padding:10px 0;
+        margin:7px 0 0 0;
         flex-wrap: wrap;
         justify-content: center;
+        position:relative;
+        border:7px solid $greyLight;
         .el{
-            width: 25%;
-            height: 80px;
+            
         }
+        &:not(hidden) {
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: -15px;
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 10px solid $greyLight;
+            }
+        }
+    }
+    .bucket-1:before, .bucket-4:before {
+        left:10%;
+    }
+    .bucket-2:before, .bucket-5:before {
+        left:45%;
+    }
+    .bucket-3:before, .bucket-6:before {
+        left:80%;
     }
 }
 
@@ -846,8 +892,6 @@ main{
     .single-post--tags{
         flex-wrap:wrap;
         .el{
-            width:initial;
-            min-width:75px;
              &:hover, &:focus{
                 border-bottom-width:7px;
              }

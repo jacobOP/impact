@@ -126,10 +126,10 @@ jQuery('document').ready(function(){
         //build the tag groups
         for (var i = 1; i <= 6; i++) {
             if (i <= 3){
-                jQuery('.js_supertag-row-1').append('<div class="el el-large el-hoverable el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
+                jQuery('.js_supertag-row-1').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
                 jQuery('.js_supertag-row-1-expanded').append('<div class="bucket js_bucket bucket-' + i + ' js_bucket-' + i + ' hidden flex"></div>');
             } else {
-                jQuery('.js_supertag-row-2').append('<div class="el el-large el-hoverable el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
+                jQuery('.js_supertag-row-2').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
                 jQuery('.js_supertag-row-2-expanded').append('<div class="bucket js_bucket bucket-' + i + ' js_bucket-' + i + ' hidden flex"></div>');
             }
         };
@@ -137,7 +137,7 @@ jQuery('document').ready(function(){
         //add the regular tags
         for (i = 0; i < impactTags.length; i++){
             var tagSymbol = getTagSymbol(impactTags[i]);
-            var elHTML = '<a href="/impact/tag/martial-arts/' + impactTags[i].replace(' ', '-') + '" class="js_el el el-hoverable"><div class="el--name">' + impactTags[i] + '</div><div class="el--symbol">' + tagSymbol + '</div></a>';
+            var elHTML = '<a href="' + window.location.pathname + '/tag/' + impactTags[i].replace(' ', '-') + '/" class="js_el el el-medium el-hoverable"><div class="el--name">' + impactTags[i] + '</div><div class="el--symbol">' + tagSymbol + '</div></a>';
 
             var group1 = jQuery('.js_bucket-1'),
                 group2 = jQuery('.js_bucket-2'),
