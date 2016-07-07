@@ -94,6 +94,14 @@ jQuery('document').ready(function(){
         return styled;
     };
 
+    var processTagName = function(tagName){
+        if (tagName.length > 9){
+            return '<span class="el--name--sm">' + tagName + '</span>'
+        } else {
+            return tagName;
+        };
+    }
+
     var getTagSymbol = function(tagName){
         if (tagName.length <= 5) {
             return tagName.substring(0,1);
@@ -106,18 +114,14 @@ jQuery('document').ready(function(){
     var renderElements = function(){
         var i = 0;
         jQuery('.js_el').each(function(){
-            if (impactTags[i].length > 10){
-                var tagName = '<span class="el--name--sm">' + impactTags[i] + '</span>'
-                jQuery(this).children('.el--name').html('');
-                jQuery(this).children('.el--name').append(tagName);
-            } else {
-                var tagName = impactTags[i];
-                jQuery(this).children('.el--name').text(tagName);
-            };
+            var tagName = processTagName(impactTags[i])
+
             var tagSymbol = getTagSymbol(impactTags[i]);
-            
+
+            jQuery(this).children('.el--name').html('');
+            jQuery(this).children('.el--name').html(tagName);
             jQuery(this).children('.el--symbol').text(tagSymbol);
-            jQuery(this).attr('data-tag', tagName);
+            jQuery(this).attr('data-tag', impactTags[i]);
             //remove loading class
             i += 1;
         });
@@ -143,11 +147,7 @@ jQuery('document').ready(function(){
           
         //add the regular tags
         for (i = 0; i < impactTags.length; i++){
-            if (impactTags[i].length > 10){
-                var tagName = '<span class="el--name--sm">' + impactTags[i] + '</span>'
-            } else {
-                var tagName = impactTags[i];
-            };
+            var tagName = processTagName(impactTags[i]);
             var tagSymbol = getTagSymbol(impactTags[i]);
             var elHTML = '<a href="' + window.location.pathname + '/tag/' + impactTags[i].replace(' ', '-') + '/" class="js_el el el-medium el-hoverable"><div class="el--name">' + tagName + '</div><div class="el--symbol">' + tagSymbol + '</div></a>';
 
@@ -189,7 +189,7 @@ jQuery('document').ready(function(){
     };
 
     var updatePeriodicInfo = function(tag){
-        jQuery('.js_periodic--info .el--name').text(tag);  
+        jQuery('.js_periodic--info .el--name').html(processTagName(tag));  
         var tagSymbol = getTagSymbol(tag);
         jQuery('.js_periodic--info .el--symbol').text(tagSymbol);
         tag = tag.trim();

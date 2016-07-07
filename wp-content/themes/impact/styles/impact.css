@@ -447,9 +447,6 @@ h1, .h1 {
     @media (min-width: 768px) {
       .el .el--name .el--name--sm {
         font-size: 0.8em; } }
-    @media (min-width: 1200px) {
-      .el .el--name .el--name--sm {
-        font-size: 1.0em; } }
   .el .el--symbol {
     color: #000000;
     font-weight: bold;
