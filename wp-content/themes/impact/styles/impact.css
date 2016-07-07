@@ -378,7 +378,8 @@ h1, .h1 {
   border-top: 0 none;
   width: 57px;
   height: 66px;
-  transition: background 0.125s ease-in-out, color 0.125s ease-in-out; }
+  transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
+  position: relative; }
   @media (min-width: 992px) {
     .el {
       width: 75px;
@@ -443,6 +444,12 @@ h1, .h1 {
     @media (min-width: 992px) {
       .el .el--name {
         font-size: 11.5px; } }
+    @media (min-width: 768px) {
+      .el .el--name .el--name--sm {
+        font-size: 0.8em; } }
+    @media (min-width: 1200px) {
+      .el .el--name .el--name--sm {
+        font-size: 1.0em; } }
   .el .el--symbol {
     color: #000000;
     font-weight: bold;
@@ -452,18 +459,27 @@ h1, .h1 {
     @media (min-width: 992px) {
       .el .el--symbol {
         font-size: 38px;
-        padding: 5px 0px; } }
+        padding: 2px 0px; } }
     @media (min-width: 1200px) {
       .el .el--symbol {
         font-size: 48px;
-        padding: 6px 0; } }
+        padding: 3px 0; } }
 
 .supertag-row {
+  margin: 5px 15px;
   justify-content: space-around; }
-  .supertag-row .el.el-large {
-    flex-grow: 1; }
-    .supertag-row .el.el-large .el--symbol {
-      padding: 0; }
+  .supertag-row .el-active:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -20px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 12px solid #bcbec0; }
 
 .supertag-row-expanded .bucket {
   padding: 10px 0;
@@ -472,25 +488,6 @@ h1, .h1 {
   justify-content: center;
   position: relative;
   border: 7px solid #bcbec0; }
-  .supertag-row-expanded .bucket:not(hidden):before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: -15px;
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid #bcbec0; }
-
-.supertag-row-expanded .bucket-1:before, .supertag-row-expanded .bucket-4:before {
-  left: 10%; }
-
-.supertag-row-expanded .bucket-2:before, .supertag-row-expanded .bucket-5:before {
-  left: 45%; }
-
-.supertag-row-expanded .bucket-3:before, .supertag-row-expanded .bucket-6:before {
-  left: 80%; }
 
 .watch .tags, .read .tags {
   color: #f7991c;

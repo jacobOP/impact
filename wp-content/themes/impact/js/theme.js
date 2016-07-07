@@ -106,9 +106,16 @@ jQuery('document').ready(function(){
     var renderElements = function(){
         var i = 0;
         jQuery('.js_el').each(function(){
-            var tagName = impactTags[i];
-            var tagSymbol = getTagSymbol(tagName);
-            jQuery(this).children('.el--name').text(tagName);
+            if (impactTags[i].length > 10){
+                var tagName = '<span class="el--name--sm">' + impactTags[i] + '</span>'
+                jQuery(this).children('.el--name').html('');
+                jQuery(this).children('.el--name').append(tagName);
+            } else {
+                var tagName = impactTags[i];
+                jQuery(this).children('.el--name').text(tagName);
+            };
+            var tagSymbol = getTagSymbol(impactTags[i]);
+            
             jQuery(this).children('.el--symbol').text(tagSymbol);
             jQuery(this).attr('data-tag', tagName);
             //remove loading class
@@ -136,8 +143,13 @@ jQuery('document').ready(function(){
           
         //add the regular tags
         for (i = 0; i < impactTags.length; i++){
+            if (impactTags[i].length > 10){
+                var tagName = '<span class="el--name--sm">' + impactTags[i] + '</span>'
+            } else {
+                var tagName = impactTags[i];
+            };
             var tagSymbol = getTagSymbol(impactTags[i]);
-            var elHTML = '<a href="' + window.location.pathname + '/tag/' + impactTags[i].replace(' ', '-') + '/" class="js_el el el-medium el-hoverable"><div class="el--name">' + impactTags[i] + '</div><div class="el--symbol">' + tagSymbol + '</div></a>';
+            var elHTML = '<a href="' + window.location.pathname + '/tag/' + impactTags[i].replace(' ', '-') + '/" class="js_el el el-medium el-hoverable"><div class="el--name">' + tagName + '</div><div class="el--symbol">' + tagSymbol + '</div></a>';
 
             var group1 = jQuery('.js_bucket-1'),
                 group2 = jQuery('.js_bucket-2'),

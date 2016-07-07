@@ -532,7 +532,7 @@ main{
     width:57px;
     height:66px;
     transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
-
+    position:relative;
 
     @media (min-width:$bp-sm){
 
@@ -628,7 +628,16 @@ main{
         }
         @media  (min-width:$bp-md) {
             font-size:11.5px;
-        }        
+        } 
+        .el--name--sm {
+            @media (min-width:$bp-sm){
+                font-size:0.8em;
+            }
+            @media (min-width:$bp-lg){
+                font-size:1.0em;
+            }
+        } 
+
     }
 
     .el--symbol {
@@ -640,24 +649,33 @@ main{
 
         @media (min-width:$bp-md){
             font-size:38px;
-            padding: 5px 0px;
+            padding: 2px 0px;
         }
         @media (min-width:$bp-lg){
             font-size:48px;
-            padding: 6px 0;
+            padding: 3px 0;
         }
     }
 }
 
 //mobile layout for periodic elements
 .supertag-row{
+    margin:5px 15px;
     //as class flex
     justify-content:space-around;
-    .el.el-large{
-        flex-grow: 1;
-
-        .el--symbol {
-            padding:0;
+    .el-active{
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left:50%;
+            margin-left:-20px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 12px solid $greyLight;
         }
     }
 }
@@ -671,31 +689,6 @@ main{
         justify-content: center;
         position:relative;
         border:7px solid $greyLight;
-        .el{
-            
-        }
-        &:not(hidden) {
-            &:before {
-                display: block;
-                content: '';
-                position: absolute;
-                top: -15px;
-                width: 0;
-                height: 0;
-                border-left: 15px solid transparent;
-                border-right: 15px solid transparent;
-                border-bottom: 10px solid $greyLight;
-            }
-        }
-    }
-    .bucket-1:before, .bucket-4:before {
-        left:10%;
-    }
-    .bucket-2:before, .bucket-5:before {
-        left:45%;
-    }
-    .bucket-3:before, .bucket-6:before {
-        left:80%;
     }
 }
 
