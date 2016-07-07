@@ -559,8 +559,8 @@ main{
         .el--name {
             color:$white;
             background: $black;
-            font-size:10px;
-            line-height:2.0em;
+            font-size:12px;
+            line-height:1.5em;
             text-align:left;
             font-weight:bold;
            
@@ -630,10 +630,7 @@ main{
             font-size:11.5px;
         } 
         .el--name--sm {
-            @media (min-width:$bp-sm){
-                font-size:0.8em;
-            }
-           
+            font-size:0.8em;           
         } 
 
     }
@@ -883,6 +880,7 @@ main{
     .single-post--tags{
         flex-wrap:wrap;
         .el{
+            margin-right:5px;
              &:hover, &:focus{
                 border-bottom-width:7px;
              }
