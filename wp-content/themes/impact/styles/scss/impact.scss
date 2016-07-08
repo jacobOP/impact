@@ -41,6 +41,61 @@ $bp-sm: 768px;
 $bp-md: 992px;
 $bp-lg: 1200px;
 
+/* fonts ! */
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Roman.eot');
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-Roman.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.eot');
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-HvIt.eot');
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-HvIt.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-HvIt.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-HvIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed';
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-BdCn.eot');
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-BdCn.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-BdCn.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-BdCn.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed';
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-MdCn.eot');
+    src: url('../fonts/helveticaneue/HelveticaNeueLTStd-MdCn.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-MdCn.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-MdCn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
 /* change some bootstrap defaults*/
 // 
 body{
@@ -283,6 +338,7 @@ main{
         li{
             a{
                 font-size:16px;
+                font-family: Helvetica, Arial, sans-serif;
                 color:$white;
                 padding: 20px 18px 20px 16px;
                 display: block;
@@ -531,6 +587,7 @@ main{
     border-top:0 none;
     width:57px;
     height:66px;
+    line-height:1.0em;
     transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
     position:relative;
 
@@ -557,12 +614,8 @@ main{
         }
 
         .el--name {
-            color:$white;
-            background: $black;
-            font-size:12px;
-            line-height:1.5em;
+            font-size:14px;
             text-align:left;
-            font-weight:bold;
            
             @media  (min-width:$bp-md) {
                 font-size:11.5px;
@@ -572,12 +625,13 @@ main{
         .el--symbol {
             color:$black;
             font-weight:bold;
-            padding: 2px 0px;
+            padding: 16px 0 0 0;
             font-size:38px;
             text-align:center;
 
             @media (min-width:$bp-md){
                 font-size:48px;
+                padding:22px 0;
             }
         }
     }
@@ -591,11 +645,12 @@ main{
         margin:0px;
 
         .el--name{
-            font-size:18px;
+            line-height:1.0em;
+            font-size:22px;
         }
 
         .el--symbol {
-            font-size:60px;
+            font-size:80px;
         }
     }
     
@@ -619,36 +674,41 @@ main{
     .el--name {
         color:$white;
         background: $black;
-        font-size:10px;
-        line-height:2.0em;
-        font-weight:bold;
+        font-size:12px;
+        padding:4px 0 1px;
+        font-family:"Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align:left;
         @media  (min-width:$bp-sm) {
-            font-size:8.25px;
+            font-size:10px;
         }
         @media  (min-width:$bp-md) {
-            font-size:11.5px;
+            font-size:12px;
         } 
         .el--name--sm {
-            font-size:0.8em;           
-        } 
+            font-size:0.8em;         
+            @media (min-width:$bp-md) {
+                font-size:1.0em;
+            } 
+        }
 
     }
 
     .el--symbol {
         color:$black;
         font-weight:bold;
-        padding: 2px 0px;
-        font-size:28px;
+        padding: 9px 0 0 0;
+        font-size:30px;
+        line-height:1.0em;
+        font-family:"Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align:center;
 
         @media (min-width:$bp-md){
             font-size:38px;
-            padding: 2px 0px;
+            padding: 17px 0 0 0;
         }
         @media (min-width:$bp-lg){
-            font-size:48px;
-            padding: 3px 0;
+            font-size:50px;
+            padding: 20px 0;
         }
     }
 }

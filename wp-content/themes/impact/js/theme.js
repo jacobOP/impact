@@ -9,193 +9,193 @@
 var impactTags = [
     //bucket 1
     {
-        "name" : "Reality",
-        "symbol" : "Re",
-        "bucket" : 1
-    },
-    {
-        "name" : "Fail",
-        "symbol" : "F",
-        "bucket" : 1
-    },
-    {
-        "name" : "Funny",
-        "symbol" : "Fn",
-        "bucket" : 1
-    },
-    {
-        "name" : "Wild",
-        "symbol" : "W",
-        "bucket" : 1
-    },
-    {
-        "name" : "Hero",
-        "symbol" : "H",
+        "name" : "Action",
+        "symbol" : "A",
         "bucket" : 1
     },
     {
         "name" : "Adrenaline",
-        "symbol" : "A",
+        "symbol" : "Ad",
+        "bucket" : 1
+    },
+    {
+        "name" : "Car Chase",
+        "symbol" : "Cc",
+        "bucket" : 1
+    },
+    {
+        "name" : "Westerns",
+        "symbol" : "We",
+        "bucket" : 1
+    },
+    {
+        "name" : "Testosterone",
+        "symbol" : "Ts",
+        "bucket" : 1
+    },
+    {
+        "name" : "Explosions",
+        "symbol" : "Ex",
         "bucket" : 1
     },
 
     //bucket 2
     {
-        "name" : "Tech",
-        "symbol" : "T",
+        "name" : "WTF",
+        "symbol" : "W",
         "bucket" : 2
     },
     {
-        "name" : "Speed",
-        "symbol" : "Sp",
+        "name" : "Gore",
+        "symbol" : "G",
         "bucket" : 2
     },
     {
-        "name" : "Car Chase",
-        "symbol" : "Cc",
+        "name" : "Violence",
+        "symbol" : "V",
         "bucket" : 2
     },
     {
-        "name" : "Reality",
-        "symbol" : "Re",
+        "name" : "Pain",
+        "symbol" : "P",
         "bucket" : 2
     },
     {
-        "name" : "Collision",
-        "symbol" : "Co",
+        "name" : "Danger",
+        "symbol" : "Da",
         "bucket" : 2
     },
     {
-        "name" : "Wreck",
-        "symbol" : "Wr",
+        "name" : "Fail",
+        "symbol" : "F",
         "bucket" : 2
     },
 
     //bucket 3
     {
-        "name" : "WTF",
-        "symbol" : "W",
+        "name" : "Adventure",
+        "symbol" : "Av",
         "bucket" : 3
     },
     {
-        "name" : "Gore",
-        "symbol" : "G",
+        "name" : "Wild",
+        "symbol" : "Wi",
         "bucket" : 3
     },
     {
-        "name" : "Destruction",
-        "symbol" : "De",
+        "name" : "Funny",
+        "symbol" : "Fu",
         "bucket" : 3
     },
     {
-        "name" : "Explosions",
-        "symbol" : "Ex",
+        "name" : "Suspense",
+        "symbol" : "Su",
         "bucket" : 3
     },
     {
-        "name" : "Pain",
-        "symbol" : "P",
+        "name" : "Evil",
+        "symbol" : "E",
         "bucket" : 3
     },
     {
-        "name" : "Danger",
-        "symbol" : "D",
+        "name" : "Old School",
+        "symbol" : "Os",
         "bucket" : 3
     },
 
     //bucket 4
     {
-        "name" : "Fight",
-        "symbol" : "F",
+        "name" : "Tech",
+        "symbol" : "Te",
         "bucket" : 4
     },
     {
-        "name" : "Violence",
-        "symbol" : "V",
+        "name" : "Covert",
+        "symbol" : "Cv",
         "bucket" : 4
     },
     {
-        "name" : "Martial Arts",
-        "symbol" : "Ma",
+        "name" : "Weapons",
+        "symbol" : "We",
         "bucket" : 4
     },
     {
-        "name" : "Kick Ass",
-        "symbol" : "Ka",
+        "name" : "Speed",
+        "symbol" : "Sp",
         "bucket" : 4
     },
     {
-        "name" : "Evil",
-        "symbol" : "E",
+        "name" : "Police",
+        "symbol" : "Po",
         "bucket" : 4
     },
     {
-        "name" : "Testosterone",
-        "symbol" : "Ts",
+        "name" : "Reality",
+        "symbol" : "Re",
         "bucket" : 4
     },
 
     //bucket 5
-    {
-        "name" : "Action",
-        "symbol" : "A",
-        "bucket" : 5
-    },
-    {
-        "name" : "Old School",
-        "symbol" : "Os",
-        "bucket" : 5
-    },
     {
         "name" : "Skills",
         "symbol" : "Sk",
         "bucket" : 5
     },
     {
-        "name" : "Suspense",
-        "symbol" : "Su",
+        "name" : "Kick Ass",
+        "symbol" : "Ka",
         "bucket" : 5
     },
     {
-        "name" : "Adventure",
-        "symbol" : "Av",
+        "name" : "Martial Arts",
+        "symbol" : "Ma",
         "bucket" : 5
     },
     {
-        "name" : "Westerns",
-        "symbol" : "Ws",
+        "name" : "Hero",
+        "symbol" : "H",
+        "bucket" : 5
+    },
+    {
+        "name" : "Fight",
+        "symbol" : "Fi",
+        "bucket" : 5
+    },
+    {
+        "name" : "Sports",
+        "symbol" : "Sp",
         "bucket" : 5
     },
 
     //bucket 6
-    {
-        "name" : "Military",
-        "symbol" : "M",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Covert",
-        "symbol" : "Cv",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Police",
-        "symbol" : "Po",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Weapons",
-        "symbol" : "Wp",
-        "bucket" : 6,
-    },
     {
         "name" : "War",
         "symbol" : "Wa",
         "bucket" : 6,
     },
     {
+        "name" : "Military",
+        "symbol" : "Mi",
+        "bucket" : 6,
+    },
+    {
         "name" : "Riot",
         "symbol" : "R",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Wreck",
+        "symbol" : "Wr",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Destruction",
+        "symbol" : "De",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Burn",
+        "symbol" : "B",
         "bucket" : 6,
     },
 ];
@@ -258,11 +258,19 @@ jQuery('document').ready(function(){
 
             //add 6 supertags &  6 buckets 
             for (var i = 1; i <= 6; i++) {
+                var supertags = [
+                    ["Action", "A"],
+                    ["WTF", "W"],
+                    ["Adventure", "Av"],
+                    ["Tech", "Te"],
+                    ["Skills", "Sk"],
+                    ["War", "Wa"],
+                ];
                 if (i <= 3){
-                    jQuery('.js_supertag-row-1').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
+                    jQuery('.js_supertag-row-1').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">' + supertags[i-1][0] + '</div><div class="el--symbol">' + supertags[i-1][1] + '</div></div>');  
                     jQuery('.js_supertag-row-1-expanded').append('<div class="bucket js_bucket bucket-' + i + ' js_bucket-' + i + ' hidden flex"></div>');
                 } else {
-                    jQuery('.js_supertag-row-2').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">Group ' + i + '</div><div class="el--symbol">' + i + '</div></div>');  
+                    jQuery('.js_supertag-row-2').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">' + supertags[i-1][0] + '</div><div class="el--symbol">' + supertags[i-1][1] + '</div></div>');  
                     jQuery('.js_supertag-row-2-expanded').append('<div class="bucket js_bucket bucket-' + i + ' js_bucket-' + i + ' hidden flex"></div>');
                 }
             };
