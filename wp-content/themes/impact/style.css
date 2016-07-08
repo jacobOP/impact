@@ -1,15 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Karla|Quicksand);
+/*@import url(http://fonts.googleapis.com/css?family=Karla|Quicksand);*/
 @import url('styles/reset.css');
 @import url('styles/bootstrap.css');
 @import url('js/featherlight-1.5.0/release/featherlight.min.css');
-@import url('styles/impact.css');
+@import url('styles/impact.min.css');
 
 /*
 Theme Name: Impact 2016
 Theme URI: 
 Author: Jacob Harris, with thanks to J Beckman for the Naked Wordpress theme
 Author URI: http://ahoy1.github.com
-Description: Theme for Impact 
+Description: Theme for Impact - Action on Demand
 Version: 1.0
 License: GNU General Public License
 */

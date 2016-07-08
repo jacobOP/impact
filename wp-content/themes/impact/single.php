@@ -17,13 +17,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					// If we have a post to show, start a loop that will display it
 					?>
 						<?php
+						$postid = get_the_id();
 						$posttags = get_the_tags();
-						$postids_str = '';
+						$posttags_str = '';
 						if ($posttags) {
 						  foreach($posttags as $tag) {
-						    $postids_str .=  strval($tag->term_id) .',';
+						    $posttags_str .=  strval($tag->term_id) .',';
 						  }
-						  $postids_str = rtrim($postids_str, ",");
+						  $posttags_str = rtrim($posttags_str, ",");
 						}
 						?>
 						<article class="post single-post row">
@@ -118,7 +119,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									global $wp_query;
 									        $args = array(
 									        'category_name' => 'video', 
-									        'tag__in' => $postids_str, //must use tag id for this field
+									        'tag__in' => $posttags_str, //must use tag id for this field
+									        'post__not_in' => array( $postid ), //ignore the post we're currently readings
 									        'posts_per_page' => 2); //get all posts
 
 									$posts = get_posts($args);
@@ -146,7 +148,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									global $wp_query;
 									        $args = array(
 									        'category_name' => 'editorial', 
-									        'tag__in' => $postids_str, //must use tag id for this field
+									        'tag__in' => $posttags_str, //must use tag id for this field
+									        'post__not_in' => array( $postid ), // ignore the post we're currently reading
 									        'posts_per_page' => 4); //get all posts
 
 									$posts = get_posts($args);
