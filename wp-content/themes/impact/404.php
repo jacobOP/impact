@@ -19,9 +19,7 @@ get_header(); ?>
 
             <div class="page-wrapper col-xs-12">
                 <div class="page-content">
-                    <p><?php _e( 'We couldn\'t find the page you were looking for. Maybe try a search?'); ?></p>
-
-                    <?php get_search_form(); ?>
+                    <p><?php _e( 'We couldn\'t find the page you were looking for.'); ?></p>
                 </div><!-- .page-content -->
             </div><!-- .page-wrapper -->
 

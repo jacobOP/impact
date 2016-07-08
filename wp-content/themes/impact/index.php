@@ -159,77 +159,78 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<div class="container">
 					<div class="row">
 						<?php
-								// The Query, for video items
-								$args = array( 'category_name' => 'video', 'showposts' => 3);
-								query_posts( $args );
+							// The Query, for video items
+							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+							$args = array( 'category_name' => 'video', 'showposts' => 3, 'paged' => $paged);
+							query_posts( $args );
 
-								$firstVid = true;
-								
-								if ( have_posts() ) : 
-								// Do we have any posts in the databse that match our query?
-								// In the case of the home page, this will call for the most recent posts 
+							$firstVid = true;
+							
+							if ( have_posts() ) : 
+							// Do we have any posts in the databse that match our query?
+							// In the case of the home page, this will call for the most recent posts 
+							?>
+
+								<?php while ( have_posts() ) : the_post(); 
+								// If we have some posts to show, start a loop that will display each one the same way
 								?>
 
-									<?php while ( have_posts() ) : the_post(); 
-									// If we have some posts to show, start a loop that will display each one the same way
-									?>
+									<article class="watch-post col-md-4 <?php 
+										$categories = get_the_category();
+										if ( ! empty( $categories ) ) {
+										    $postCategory = $categories[0]->name ;
+										    $postCategory = preg_replace('/\s+/', '', $postCategory);   
+										    echo $postCategory;
+										}
+										if($firstVid){
+											//echo ' col-lg-offset-1';
+											$firstVid = false;
+										}
+										?>
+									"> 
 
-										<article class="watch-post col-md-4 <?php 
-											$categories = get_the_category();
-											if ( ! empty( $categories ) ) {
-											    $postCategory = $categories[0]->name ;
-											    $postCategory = preg_replace('/\s+/', '', $postCategory);   
-											    echo $postCategory;
-											}
-											if($firstVid){
-												//echo ' col-lg-offset-1';
-												$firstVid = false;
-											}
+										<div class="watch-post--img"  data-featherlight="#featherlight-<?php the_ID(); ?>">
+											<?php $main_image = get_field('main_image'); ?>
+											<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
+										</div>
+
+										<div class="hidden">
+											<div class="" id="featherlight-<?php the_ID(); ?>">
+												<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+											</div>
+										</div>	
+										
+										<div class="tags">
+										    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content
+										    ?>
+											<?php 
+													echo get_the_tag_list( '', ', &nbsp;' ); // Display the tags this post has, as links separated by spaces and commas 
 											?>
-										"> 
-
-											<div class="watch-post--img"  data-featherlight="#featherlight-<?php the_ID(); ?>">
-												<?php $main_image = get_field('main_image'); ?>
-												<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
-											</div>
-
-											<div class="hidden">
-												<div class="" id="featherlight-<?php the_ID(); ?>">
-													<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
-												</div>
-											</div>	
-											
-											<div class="tags">
-											    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content
-											    ?>
-												<?php 
-														echo get_the_tag_list( '', ', &nbsp;' ); // Display the tags this post has, as links separated by spaces and commas 
-												?>
-												<?php else: ?>
-													<a href="#">SPONSORED</a>
-												<?php endif; ?>
-											</div>
-											<h1 class="title">
-												<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
-													<?php the_title(); // Show the title of the posts as a link ?>
-												</a>
-											</h1>
-											<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
-												Read Story
+											<?php else: ?>
+												<a href="#">SPONSORED</a>
+											<?php endif; ?>
+										</div>
+										<h1 class="title">
+											<a class="inherit" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+												<?php the_title(); // Show the title of the posts as a link ?>
 											</a>
+										</h1>
+										<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+											Read Story
+										</a>
 
-											
-										</article>
-
-									<?php endwhile; //stop the posts loop once we've exhausted our query/number of posts ?>
-
-								<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-									
-									<article class="post error">
-										<h1 class="404">Nothing has been posted like that yet</h1>
+										
 									</article>
 
-								<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
+								<?php endwhile; //stop the posts loop once we've exhausted our query/number of posts ?>
+
+							<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
+								
+								<article class="post error">
+									<h1 class="404">Nothing has been posted like that yet</h1>
+								</article>
+
+							<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
 							<?php // Reset Query
 								wp_reset_query(); ?>
 					</div> <!-- .row -->
@@ -244,12 +245,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 						<?php
 						// The Query, for editorial items
 
-
-						$page_num = $paged;
-						if ($page_num='') $page_num =1;
-					
-
-						$args = array( 'category_name' => 'editorial, sponsored', 'paged' =>$page_num, 'showposts' => 12);
+						$args = array( 'category_name' => 'editorial, sponsored', 'paged' =>$paged, 'showposts' => 12);
 						query_posts( $args );
 						
 						if ( have_posts() ) : 
