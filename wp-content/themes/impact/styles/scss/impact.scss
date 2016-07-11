@@ -660,6 +660,7 @@ main{
             cursor:pointer;
             background:$white;
             border-color:$greyLight;
+            border-width:7px!important;
 
             .el--name{
                 background:$greyLight;
@@ -686,9 +687,6 @@ main{
         } 
         .el--name--sm {
             font-size:0.8em;         
-            @media (min-width:$bp-md) {
-                font-size:1.0em;
-            } 
         }
 
     }

@@ -84,5 +84,31 @@ function naked_scripts()  {
 add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
 
 
+/*-----------------------------------------------------------------------------------*/
+/* ajax in more posts function
+/*-----------------------------------------------------------------------------------*/
+function more_post_ajax(){
+    $offset = $_POST["offset"];
+    $ppp = $_POST["ppp"];
+    header("Content-Type: text/html");
+
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => $ppp,
+        'category_name' => 'editorial',
+        'offset' => $offset,
+    );
+
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) { $loop->the_post(); 
+       the_content();
+    }
+
+    exit; 
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax'); 
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+
 
 

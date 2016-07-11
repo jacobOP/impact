@@ -17,131 +17,131 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="periodic js_periodic loading">
-						    <a href="#" class="periodic--info js_periodic--info">
+						    <div class="periodic--info js_periodic--info">
 								<div class="el el-large">
 								  	<div class="el--name">Name</div>
 								  	<div class="el--symbol">N</div>
 								</div>
-						    </a>
+						    </div>
 							<div class="periodic--row row1">
-							  <div class="js_el js_hydrogen el el-hoverable">
+							  <a href="#" class="js_el js_hydrogen el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>
-							  <div class="js_el el el-hoverable">
+							  </a>
+							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							</div>
+							  </a>							</div>
 							<div class="periodic--row row2">
-							  <div class="js_el el el-hoverable">
+							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							</div>
+							  </a>							</div>
 							<div class="periodic--row row3">
-							  <div class="js_el el el-hoverable">
+							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							</div>
+							  </a>							</div>
 							<div class="periodic--row">
-							  <div class="js_el el el-hoverable">
+							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							</div>
+							  </a>							</div>
 							<div class="periodic--row">
-							  <div class="js_el el el-hoverable">
+							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							  <div class="js_el el el-hoverable">
+							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
 							  	<div class="el--symbol">N</div>
-							  </div>							</div>
+							  </a>							</div>
 						</div>
 					</div>
 				</div>

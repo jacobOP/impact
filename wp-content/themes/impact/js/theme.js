@@ -243,6 +243,7 @@ jQuery('document').ready(function(){
 
                 var tagSymbol = impactTags[i].symbol;
 
+                jQuery(this).attr('href', window.location.pathname + '/tag/' + impactTags[i].name.replace(' ', '-') + '/');
                 jQuery(this).children('.el--name').html('');
                 jQuery(this).children('.el--name').html(tagName);
                 jQuery(this).children('.el--symbol').text(tagSymbol);
@@ -323,7 +324,7 @@ jQuery('document').ready(function(){
             jQuery('.js_periodic--info .el--symbol').text(tagSymbol);
             tag = tag.trim();
             tag = tag.replace(' ', '-');
-            jQuery('.js_periodic--info').attr('href','http://www.outerplaces.com/Kzvp8m2wAdvmgH/impact/tag/' + tag + '/');
+            //jQuery('.js_periodic--info').attr('href','http://www.outerplaces.com/Kzvp8m2wAdvmgH/impact/tag/' + tag + '/');
         }
 
     };
@@ -340,7 +341,8 @@ jQuery('document').ready(function(){
 
         jQuery('.js_el').each(function(){
             //click handlers
-            jQuery(this).on('click', function(){
+            jQuery(this).on('mouseover', function(){
+                console.log('mouseover');
                 if ( !jQuery(this).hasClass('el-active') ) {
                     var thisTag = jQuery(this).attr('data-tag');
                     pt.updatePeriodicInfo(thisTag, jQuery(this).children('.el--symbol').text());
@@ -354,7 +356,7 @@ jQuery('document').ready(function(){
         jQuery('.js_periodic').removeClass('loading');
 
         //lets show the first element's info block by default
-        jQuery('.js_hydrogen').click();
+        jQuery('.js_hydrogen').trigger('mouseover');
     } else {
         //lets do the mobile layout stuff
         pt.renderElementsXS();
