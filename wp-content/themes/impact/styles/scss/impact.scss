@@ -130,7 +130,7 @@ a{
 .btn-primary{
     background:$orange;
     color:$white;
-    &:hover{
+    &:hover, &:active, &:focus{
         background:$black;
     }
 }
@@ -647,6 +647,7 @@ main{
         .el--name{
             line-height:1.0em;
             font-size:22px;
+            padding-top:6px;
         }
 
         .el--symbol {
@@ -874,6 +875,55 @@ main{
     font-weight:bold;
     background: #d2d3d5;
 }
+
+//more posts button
+#pagination {
+    display:none!important;
+}
+.more-posts-container{
+    justify-content:center;
+    margin-top:25px;
+}
+
+.more-posts {
+    font-size: 22px;
+    font-weight:700;
+    color:$orange;
+    padding: 11px 45px 8px;
+    max-width:100%;
+    line-height: initial;
+    border: 3px solid transparent;
+    position: relative;
+    z-index: 3333;
+    cursor:pointer;
+
+    &:after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid $orange;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -20px;
+        opacity: 0;
+        transition: all 0.25s ease;
+    }
+
+    &:hover, &:active, &:focus, &:disabled{
+        border: 3px solid $orange;
+        background: transparent;
+
+        &:after {
+            opacity: 1;
+            bottom: -20px;
+        }
+    }
+}
+
 
 //section.asskicker
 .asskicker{

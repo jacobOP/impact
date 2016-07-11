@@ -361,7 +361,7 @@ jQuery('document').ready(function(){
         //lets do the mobile layout stuff
         pt.renderElementsXS();
         jQuery('.js_periodic').removeClass('loading');
-    }
+    };
 
 });
 

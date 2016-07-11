@@ -86,6 +86,7 @@ add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and al
 
 /*-----------------------------------------------------------------------------------*/
 /* ajax in more posts function
+/* this is kind of a monster b/c it returns html, im sorry future dev
 /*-----------------------------------------------------------------------------------*/
 function more_post_ajax(){
     $offset = $_POST["offset"];
@@ -100,9 +101,40 @@ function more_post_ajax(){
     );
 
     $loop = new WP_Query($args);
+    $article = '';
     while ($loop->have_posts()) { $loop->the_post(); 
-       the_content();
-    }
+    	$article = '<article class="read-post row ';
+    	$categories = get_the_category();
+    	$permalink = get_the_permalink();
+    	$title = get_the_title();
+    	$author = get_the_author();
+    	$time = get_the_time('m/d/Y');
+    	$main_image = get_field('main_image');
+        $content = substr(get_the_content(), 0, 100);   	
+    	$postCategory = '';
+		if ( ! empty( $categories ) ) {
+		    $postCategory = $categories[0]->name ;
+		    $postCategory = preg_replace('/\s+/', '', $postCategory);   
+		}
+		
+		$article .=  $postCategory . '">'  ;  
+
+		$article .= '<div class="post--img col-md-4"><a href="' . $permalink . '"><div class="read-post--background-image" style="background:url(' . $main_image['url'] .'"></div></a></div><div class="post--details col-md-8"><div class="post--details--inner"><div class="tags">';
+
+        if($postCategory != 'Sponsored'){ //display "sponsored" tag on sponsored content, tags on all other content
+        		$taglist = get_the_tag_list( '', ', &nbsp;' ); 
+                $article .= $taglist; // Display the tags this post has, as links separated by spaces and commas 
+        } else{
+        	$article .= '<a href="#">SPONSORED</a>';
+        }
+        //add title
+        $article .= '</div><h1 class="title"><a class="inherit" href="' . $permalink . '" title="' . $title . '">' . $title . '</a></h1>';;
+        //add post-meta
+        $article .= '<div class="post--meta flex"><div class="post--author">' . $author . '</div><div class="post-meta--date">' . $time . '</div></div>';
+        //add content snippet
+        $article.= '<div class="the-content">' . $content . '...<a class="" href="' . $permalink . '" title="' . $title . '">Read More</a></div></div></div></article>';
+		echo $article;
+    };
 
     exit; 
 }
