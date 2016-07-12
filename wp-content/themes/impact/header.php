@@ -28,6 +28,8 @@ ACTION ON DEMAND
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+
 <?php // We are loading our theme directory style.css by queuing scripts in our functions.php file, 
 	// so if you want to load other stylesheets,
 	// I would load them with an @import call in your style.css
