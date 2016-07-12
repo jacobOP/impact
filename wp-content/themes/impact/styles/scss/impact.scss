@@ -931,12 +931,12 @@ main{
     color:$white;
     text-align:center;
     font-size:22px;
-    padding:5px 0;
+    line-height:1.0em;
+    padding:0.3em 0 0 0;
     font-weight:bold;
 
     @media(min-width:$bp-lg){
         font-size:78px;
-        padding:0;
     }
 }
 
