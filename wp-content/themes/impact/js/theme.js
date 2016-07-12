@@ -202,6 +202,27 @@ var impactTags = [
 
 
 jQuery('document').ready(function(){
+    var siteSearch = function(){
+        var term = document.getElementById('search-input').value;
+        if (term) {
+            console.log('term: ' + term);
+            console.log(window.location.hostname + '/Kzvp8m2wAdvmgH/impact/search/?search=&q=' + term);
+            window.location.href = 'http://' + window.location.hostname + '/Kzvp8m2wAdvmgH/impact/search/?search=&q=' + term;
+        } else {
+            console.log('no term');
+        }
+    }
+
+    jQuery('.js_search-submit').on('click', function(){
+        siteSearch();
+    });
+
+    jQuery("#search-input").keyup(function (e) {
+        if (e.keyCode == 13) {
+            siteSearch();
+        }
+    });
+
     var styleFirstWord = function(string){
         var styled = '';
         if(string.length > 0){
@@ -226,14 +247,6 @@ jQuery('document').ready(function(){
                 return tagName;
             };
         },
-
-        // getTagSymbol : function(tagName){
-        //     if (tagName.length <= 5) {
-        //         return tagName.substring(0,1);
-        //     } else {
-        //         return tagName.substring(0,2);
-        //     };
-        // },
 
         //put the right stuff in the element blocks;
         renderElements : function(){
@@ -331,8 +344,9 @@ jQuery('document').ready(function(){
 
     //style the first word of the asskicker of the week
     var assKickerTitle = jQuery('.js_asskicker--name').attr('data-name');
-    jQuery('.js_asskicker--name a').html(styleFirstWord(assKickerTitle));
-
+    if (assKickerTitle){
+        jQuery('.js_asskicker--name a').html(styleFirstWord(assKickerTitle));        
+    };
 
     //periodic table stuff
     if (jQuery(document).width() >= 768) {
@@ -342,7 +356,6 @@ jQuery('document').ready(function(){
         jQuery('.js_el').each(function(){
             //click handlers
             jQuery(this).on('mouseover', function(){
-                console.log('mouseover');
                 if ( !jQuery(this).hasClass('el-active') ) {
                     var thisTag = jQuery(this).attr('data-tag');
                     pt.updatePeriodicInfo(thisTag, jQuery(this).children('.el--symbol').text());

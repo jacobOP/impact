@@ -265,11 +265,11 @@ h1, .h1{
     //copy + paste .btn, .btn-primary stuff, bump up the font size
     .pirate-forms-submit-button{
         display: inline-block;
-        padding: 6px 12px;
+        padding: 12px 20px 9px;
         margin-bottom: 0;
         font-size: 18px;
         font-weight: normal;
-        line-height: 1.42857143;
+        line-height: 1.0em;;
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
@@ -519,12 +519,7 @@ main{
         position: absolute;
         align-items: flex-end;
         transition: all 0.125s ease-in-out;
-        border:0px solid $orange;
-
-        &:hover{
-            border-width: 6px;
-        }
-
+    
         @media (min-width:$bp-sm){
             display: flex;
             height: 200px;
@@ -652,6 +647,7 @@ main{
 
         .el--symbol {
             font-size:80px;
+            padding-top:18px;
         }
     }
     

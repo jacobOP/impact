@@ -73,10 +73,10 @@ ACTION ON DEMAND
 			</nav><!-- .site-navigation .main-navigation -->
 
 			<div class="col-sm-12 col-md-4">
-				<form class="search flex">
-					<input type="text" class="form-control" placeholder="Search">
-					<button class="btn btn-primary js-search-submit" onclick="window.location = '/search?search=&amp;q=' + document.getElementById('search-text-field').value;">Search</button>
-				</form>
+				<div class="search flex">
+					<input type="text" class="form-control" id="search-input" placeholder="Search">
+					<button class="btn btn-primary js_search-submit">Search</button>
+				</div>
 			</div>
 		</div>
 	</div>
