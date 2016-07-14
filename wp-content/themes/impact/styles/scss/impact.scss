@@ -562,7 +562,6 @@ main{
     }
 
     .el {
-        display:inline-block;
         margin:1.5px;
 
         @media (min-width:$bp-md){
@@ -576,7 +575,8 @@ main{
 }
 
 .el{
-    display:block;
+    display:flex;
+    flex-direction:column;
     background:$orange;
     border: 7px solid $black;
     border-top:0 none;
@@ -585,6 +585,7 @@ main{
     line-height:1.0em;
     transition: background 0.125s ease-in-out, color 0.125s ease-in-out;
     position:relative;
+
 
     @media (min-width:$bp-sm){
 
@@ -686,6 +687,11 @@ main{
             font-size:0.8em;         
         }
 
+    }
+
+    .el--symbol-container {
+        flex-grow:2;
+        justify-content:center;
     }
 
     .el--symbol {

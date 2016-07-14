@@ -148,7 +148,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                                 // var_dump($main_image);
                                                 ?>
                                                 <div class="post--img col-md-4">
-                                                    <img class="img-responsive" src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <img class="img-responsive" src="<?php echo $main_image['url'] ?>" alt="<?php the_title(); ?>" />
+                                                    </a>
                                                 </div>
                                                 <div class="post--details col-md-8">
                                                     <div class="post--details--inner">
