@@ -205,8 +205,6 @@ jQuery('document').ready(function(){
     var siteSearch = function(){
         var term = document.getElementById('search-input').value;
         if (term) {
-            console.log('term: ' + term);
-            console.log(window.location.hostname + '/Kzvp8m2wAdvmgH/impact/search/?search=&q=' + term);
             window.location.href = 'http://' + window.location.hostname + '/Kzvp8m2wAdvmgH/impact/search/?search=&q=' + term;
         } else {
             console.log('no term');
@@ -246,6 +244,14 @@ jQuery('document').ready(function(){
             } else {
                 return tagName;
             };
+        },
+
+        renderTagPageElement : function(el, tag){
+            for (var i = 0; i < impactTags.length; i++) {
+                if (impactTags[i].name === tag) {
+                    el.children('.el--symbol-container').children('.el--symbol').text(impactTags[i].symbol);
+                }
+            }
         },
 
         //put the right stuff in the element blocks;
@@ -375,6 +381,13 @@ jQuery('document').ready(function(){
         //lets do the mobile layout stuff
         pt.renderElementsXS();
         jQuery('.js_periodic').removeClass('loading');
+    };
+
+
+    //fix the symbol on the tag element for tag pages
+    if ( window.location.pathname.indexOf('tag') > -1 ) {
+        var tagPageEl = jQuery('.js_tag-page-el');
+        pt.renderTagPageElement(tagPageEl, tagPageEl.children('.el--name').text() );
     };
 
 });

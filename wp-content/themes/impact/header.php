@@ -53,6 +53,203 @@ ACTION ON DEMAND
 // Move it if you like, but I would keep it around.
 ?>
 
+<script>
+//this needs to be globally available so idk have fun  ¯\_(ツ)_/¯
+var impactTags = [
+    //bucket 1
+    {
+        "name" : "Action",
+        "symbol" : "A",
+        "bucket" : 1
+    },
+    {
+        "name" : "Adrenaline",
+        "symbol" : "Ad",
+        "bucket" : 1
+    },
+    {
+        "name" : "Car Chase",
+        "symbol" : "Cc",
+        "bucket" : 1
+    },
+    {
+        "name" : "Westerns",
+        "symbol" : "We",
+        "bucket" : 1
+    },
+    {
+        "name" : "Testosterone",
+        "symbol" : "Ts",
+        "bucket" : 1
+    },
+    {
+        "name" : "Explosions",
+        "symbol" : "Ex",
+        "bucket" : 1
+    },
+
+    //bucket 2
+    {
+        "name" : "WTF",
+        "symbol" : "W",
+        "bucket" : 2
+    },
+    {
+        "name" : "Gore",
+        "symbol" : "G",
+        "bucket" : 2
+    },
+    {
+        "name" : "Violence",
+        "symbol" : "V",
+        "bucket" : 2
+    },
+    {
+        "name" : "Pain",
+        "symbol" : "P",
+        "bucket" : 2
+    },
+    {
+        "name" : "Danger",
+        "symbol" : "Da",
+        "bucket" : 2
+    },
+    {
+        "name" : "Fail",
+        "symbol" : "F",
+        "bucket" : 2
+    },
+
+    //bucket 3
+    {
+        "name" : "Adventure",
+        "symbol" : "Av",
+        "bucket" : 3
+    },
+    {
+        "name" : "Wild",
+        "symbol" : "Wi",
+        "bucket" : 3
+    },
+    {
+        "name" : "Funny",
+        "symbol" : "Fu",
+        "bucket" : 3
+    },
+    {
+        "name" : "Suspense",
+        "symbol" : "Su",
+        "bucket" : 3
+    },
+    {
+        "name" : "Evil",
+        "symbol" : "E",
+        "bucket" : 3
+    },
+    {
+        "name" : "Old School",
+        "symbol" : "Os",
+        "bucket" : 3
+    },
+
+    //bucket 4
+    {
+        "name" : "Tech",
+        "symbol" : "Te",
+        "bucket" : 4
+    },
+    {
+        "name" : "Covert",
+        "symbol" : "Cv",
+        "bucket" : 4
+    },
+    {
+        "name" : "Weapons",
+        "symbol" : "We",
+        "bucket" : 4
+    },
+    {
+        "name" : "Speed",
+        "symbol" : "Sp",
+        "bucket" : 4
+    },
+    {
+        "name" : "Police",
+        "symbol" : "Po",
+        "bucket" : 4
+    },
+    {
+        "name" : "Reality",
+        "symbol" : "Re",
+        "bucket" : 4
+    },
+
+    //bucket 5
+    {
+        "name" : "Skills",
+        "symbol" : "Sk",
+        "bucket" : 5
+    },
+    {
+        "name" : "Kick Ass",
+        "symbol" : "Ka",
+        "bucket" : 5
+    },
+    {
+        "name" : "Martial Arts",
+        "symbol" : "Ma",
+        "bucket" : 5
+    },
+    {
+        "name" : "Hero",
+        "symbol" : "H",
+        "bucket" : 5
+    },
+    {
+        "name" : "Fight",
+        "symbol" : "Fi",
+        "bucket" : 5
+    },
+    {
+        "name" : "Sports",
+        "symbol" : "Sp",
+        "bucket" : 5
+    },
+
+    //bucket 6
+    {
+        "name" : "War",
+        "symbol" : "Wa",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Military",
+        "symbol" : "Mi",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Riot",
+        "symbol" : "R",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Wreck",
+        "symbol" : "Wr",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Destruction",
+        "symbol" : "De",
+        "bucket" : 6,
+    },
+    {
+        "name" : "Burn",
+        "symbol" : "B",
+        "bucket" : 6,
+    },
+];
+</script>
+
 </head>
 
 <body 

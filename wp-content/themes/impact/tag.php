@@ -12,7 +12,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                 <div class="row">
                     <div class="col-xs-12 tag-page--header">
                         <?php $current_tag = single_tag_title("", false); ?>
-                        <div class="el">
+                       
+                        <div class="js_tag-page-el el">
                             <div class="el--name"><?php echo $current_tag; ?></div>
                             <div class="flex el--symbol-container">
                                 <div class="el--symbol"><?php echo substr($current_tag, 0, 1) ?></div>
