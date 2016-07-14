@@ -20,127 +20,127 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 						    <div class="periodic--info js_periodic--info">
 								<div class="el el-large">
 								  	<div class="el--name">Name</div>
-								  	<div class="el--symbol">N</div>
+								  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 								</div>
 						    </div>
 							<div class="periodic--row row1">
 							  <a href="#" class="js_el js_hydrogen el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>
 							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							</div>
 							<div class="periodic--row row2">
 							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							</div>
 							<div class="periodic--row row3">
 							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							</div>
 							<div class="periodic--row">
 							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							</div>
 							<div class="periodic--row">
 							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							  <a href="#" class="js_el el el-hoverable">
 							  	<div class="el--name">Name</div>
-							  	<div class="el--symbol">N</div>
+							  	<div class="flex el--symbol-container"><div class="el--symbol">N</div></div>
 							  </a>							</div>
 						</div>
 					</div>
