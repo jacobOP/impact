@@ -14,7 +14,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                         <?php $current_tag = single_tag_title("", false); ?>
                         <div class="el">
                             <div class="el--name"><?php echo $current_tag; ?></div>
-                            <div class="el--symbol"><?php echo substr($current_tag, 0, 1) ?></div>
+                            <div class="flex el--symbol-container">
+                                <div class="el--symbol"><?php echo substr($current_tag, 0, 1) ?></div>
+                            </div>
                         </div>
                         <h1><?php echo $current_tag; ?></h1>
                     </div>
