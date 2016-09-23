@@ -6,8 +6,14 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
+	<script>
+		//this gets called here because it makes the page reflow, so we want to do it asap
+		jQuery(function(){
+    	jQuery('.js_hero').removeClass('hidden');
+		});
+	</script>
 	<div id="primary" class="index">
-		<section class="hero">
+		<section class="hero js_hero hidden"> <!-- hidden class gets removed if js is enabled -->
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
