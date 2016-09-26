@@ -1146,11 +1146,11 @@ main{
 /* page template (about, contact, etc) */
 .page-template-default{
     //orange bg thingy
-    background: #f7991c; /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #f7991c 50%, #f7991c 50%, #ffffff 50%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7991c', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /* background: #f7991c; 
+    background: -moz-linear-gradient(-45deg,  #f7991c 50%, #f7991c 50%, #ffffff 50%); 
+    background: -webkit-linear-gradient(-45deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); 
+    background: linear-gradient(135deg,  #f7991c 50%,#f7991c 50%,#ffffff 50%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7991c', endColorstr='#ffffff',GradientType=1 );  */
 
     main{
         //make sure the footer hangs out at the bottom;
