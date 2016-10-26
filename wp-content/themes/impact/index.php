@@ -194,8 +194,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 										}
 										?>
 									"> 
-
-										<div class="watch-post--img"  data-featherlight="#featherlight-<?php the_ID(); ?>">
+										<a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+											<div class="watch-post--img">
+												<?php $main_image = get_field('main_image'); ?>
+												<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
+											</div>
+										</a>
+										
+										<div class="watch-post--img hidden"  data-featherlight="#featherlight-<?php the_ID(); ?>">
 											<?php $main_image = get_field('main_image'); ?>
 											<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
 										</div>
