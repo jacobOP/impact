@@ -15,11 +15,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<div id="primary" class="index">
 		<section class="hero js_hero hidden"> <!-- hidden class gets removed if js is enabled -->
 			<div class="container">
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-xs-12">
 						<h1 class="section-heading"><span class="first-word">Elements</span> of Action</h1>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="periodic js_periodic loading">
@@ -200,17 +200,17 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 												<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
 											</div>
 										</a>
-										
-										<div class="watch-post--img hidden"  data-featherlight="#featherlight-<?php the_ID(); ?>">
-											<?php $main_image = get_field('main_image'); ?>
-											<div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
+
+									<!-- 	<div class="watch-post--img hidden"  data-featherlight="#featherlight-<?php //the_ID(); ?>">
+											<?php //$main_image = get_field('main_image'); ?>
+											<div class="watch-post--background-image" style="background:url(<?php //echo $main_image['url'] ?>)"></div>
 										</div>
 
 										<div class="hidden">
-											<div class="" id="featherlight-<?php the_ID(); ?>">
-												<?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+											<div class="" id="featherlight-<?php //the_ID(); ?>">
+												<?php //echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
 											</div>
-										</div>	
+										</div>	 -->
 										
 										<div class="tags">
 										    <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content

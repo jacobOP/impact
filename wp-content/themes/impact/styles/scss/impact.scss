@@ -137,6 +137,9 @@ a{
 //forms
 input[type=text], input[type=email], textarea{
     border-radius:0px;
+    box-shadow: 0 0 0 transparent!important;
+    border-top: 0 none;
+    border-left: 0 none;
     border-bottom: 3px solid $greyLight;
     border-right: 3px solid $greyLight;
 }
@@ -302,6 +305,11 @@ h1, .h1{
     color:$white;
     width:100%;
     z-index:9;
+    margin-bottom:40px;
+
+    @media(min-width:$bp-sm){
+        margin-bottom:50px;
+    }
 
     .search {
         padding:0 0 22px 0;
@@ -317,10 +325,13 @@ main{
     }
 }
 .site-header--inner{
-    display:flex;
     flex-wrap:wrap;
     align-items: center;
     justify-content:space-between;
+
+    @media(min-width:$bp-sm){
+        display:flex;
+    }
 }
 .site-header--logo {
     img{
