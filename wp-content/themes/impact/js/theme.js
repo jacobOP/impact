@@ -360,7 +360,7 @@ jQuery('document').ready(function(){
         pt.renderElements();
 
         jQuery('.js_el').each(function(){
-            //click handlers
+            //events 
             jQuery(this).on('mouseover', function(){
                 if ( !jQuery(this).hasClass('el-active') ) {
                     var thisTag = jQuery(this).attr('data-tag');
@@ -368,6 +368,9 @@ jQuery('document').ready(function(){
                     pt.updatePeriodicInfo(thisTag, thisSymbol);
                     jQuery('.js_el').removeClass('el-active');
                     jQuery(this).addClass('el-active');
+                    var thisTagImage = impactTagsImages[thisTag];
+                    console.log(thisTagImage);
+                    jQuery('.periodic--info').css('background-image', 'url(' +thisTagImage+ ')');
                 }
             });
         });

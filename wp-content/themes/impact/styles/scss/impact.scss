@@ -298,7 +298,7 @@ h1, .h1{
 /* template header.php, footer.php - header and footer */
 // site header
 .site-header{
-    background:$black;
+    background:$greyDark;
     color:$white;
     width:100%;
     z-index:9;
@@ -317,6 +317,8 @@ main{
     }
 }
 .site-header--inner{
+    display:flex;
+    flex-wrap:wrap;
     align-items: center;
     justify-content:space-between;
 }

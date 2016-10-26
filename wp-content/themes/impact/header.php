@@ -4,6 +4,9 @@
 	/* rendering the page and display the header/nav
 	/*-----------------------------------------------------------------------------------*/
 ?>
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <!-- 
 
 _ _|  \  |  _ \   \    ___|__ __|
@@ -14,8 +17,6 @@ ___|_|  _|_|  _/    _\____|  _|
 ACTION ON DEMAND
  
  -->
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +52,34 @@ ACTION ON DEMAND
 // (right here) into the head of your website. 
 // Removing this fxn call will disable all kinds of plugins and Wordpress default insertions. 
 // Move it if you like, but I would keep it around.
+?>
+
+
+<?php
+    //this fetches the most recent image for each tag and echoes them into a js object named impactTagsImages 
+    $tags = get_tags();
+    $tags_images = '';
+    foreach ( $tags as $tag ) {
+        $original_query = $wp_query;
+        $wp_query = null;
+        $args=array('posts_per_page'=>1, 'tag' => $tag->name);
+        $wp_query = new WP_Query( $args );
+        if ( have_posts() ) :
+            while (have_posts()) : the_post();
+                $main_image = get_field('main_image');
+                $tags_images = $tags_images .'"'. $tag->name.'" : "'.$main_image['url'].'", ';
+            endwhile;
+        endif;
+        $wp_query = null;
+        $wp_query = $original_query;
+        wp_reset_postdata();
+        // $tag_link = get_tag_link( $tag->term_id );
+        // $html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+        // $html .= "{$tag->name}</a>";
+    }
+    echo '<script>';
+    echo 'impactTagsImages = {' . $tags_images . '}';
+    echo "</script>";
 ?>
 
 <script>
@@ -260,13 +289,12 @@ var impactTags = [
 	// and the list goes on. Look it up if you want more.
 	?>
 >
-
 <header id="masthead" class="site-header">
     <div class="container">
 	    <div class="row site-header--inner">
 			<div id="brand" class="site-header--logo col-sm-6 col-sm-push-6 col-md-4 col-md-push-4 col-lg-push-4">
 				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
-					<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo.jpg" alt="IMPACT - Action on Demand" class="img-responsive">
+					<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo_10-12-16.png" alt="IMPACT - Action on Demand" class="img-responsive">
 				</a>
 				<?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
 			</div><!-- /brand -->
