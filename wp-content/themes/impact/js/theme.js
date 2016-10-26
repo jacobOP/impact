@@ -369,8 +369,11 @@ jQuery('document').ready(function(){
                     jQuery('.js_el').removeClass('el-active');
                     jQuery(this).addClass('el-active');
                     var thisTagImage = impactTagsImages[thisTag];
-                    console.log(thisTagImage);
-                    jQuery('.periodic--info').css('background-image', 'url(' +thisTagImage+ ')');
+                    console.log(typeof thisTagImage);
+                    if (typeof thisTagImage != 'undefined'){
+                        console.log('not undefined');
+                        jQuery('.js_periodic--info').css('background-image', 'url(' +thisTagImage+ ')');
+                    }
                 }
             });
         });

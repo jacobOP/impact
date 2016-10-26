@@ -73,9 +73,6 @@ ACTION ON DEMAND
         $wp_query = null;
         $wp_query = $original_query;
         wp_reset_postdata();
-        // $tag_link = get_tag_link( $tag->term_id );
-        // $html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-        // $html .= "{$tag->name}</a>";
     }
     echo '<script>';
     echo 'impactTagsImages = {' . $tags_images . '}';
