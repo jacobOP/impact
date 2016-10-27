@@ -9,33 +9,33 @@
 var impactTags = [
     //bucket 1
     {
-        "name" : "Action",
-        "symbol" : "A",
+        "name" : "Life Skills",
+        "symbol" : "Ls",
         "bucket" : 1
     },
     {
-        "name" : "Adrenaline",
-        "symbol" : "Ad",
+        "name" : "Fitness",
+        "symbol" : "F",
         "bucket" : 1
     },
     {
-        "name" : "Car Chase",
-        "symbol" : "Cc",
+        "name" : "Adventure",
+        "symbol" : "Av",
         "bucket" : 1
     },
     {
-        "name" : "Westerns",
-        "symbol" : "We",
+        "name" : "Actionology",
+        "symbol" : "Ay",
+        "bucket" : 1
+    },
+    {
+        "name" : "Feast",
+        "symbol" : "Fe",
         "bucket" : 1
     },
     {
         "name" : "Testosterone",
         "symbol" : "Ts",
-        "bucket" : 1
-    },
-    {
-        "name" : "Explosions",
-        "symbol" : "Ex",
         "bucket" : 1
     },
 
@@ -46,13 +46,18 @@ var impactTags = [
         "bucket" : 2
     },
     {
-        "name" : "Gore",
-        "symbol" : "G",
+        "name" : "Nightmare Fuel",
+        "symbol" : "Nf",
         "bucket" : 2
     },
     {
-        "name" : "Violence",
-        "symbol" : "V",
+        "name" : "Beast Mode",
+        "symbol" : "Bm",
+        "bucket" : 2
+    },
+    {
+        "name" : "Gore",
+        "symbol" : "G",
         "bucket" : 2
     },
     {
@@ -61,62 +66,67 @@ var impactTags = [
         "bucket" : 2
     },
     {
-        "name" : "Danger",
+        "name" : "Nail-Biters",
         "symbol" : "Da",
-        "bucket" : 2
-    },
-    {
-        "name" : "Fail",
-        "symbol" : "F",
         "bucket" : 2
     },
 
     //bucket 3
     {
-        "name" : "Adventure",
-        "symbol" : "Av",
+        "name" : "Winning",
+        "symbol" : "Wg",
         "bucket" : 3
     },
     {
-        "name" : "Wild",
-        "symbol" : "Wi",
+        "name" : "Laughs",
+        "symbol" : "L",
         "bucket" : 3
     },
     {
-        "name" : "Funny",
-        "symbol" : "Fu",
+        "name" : "Girls",
+        "symbol" : "F",
         "bucket" : 3
     },
     {
-        "name" : "Suspense",
-        "symbol" : "Su",
+        "name" : "Kick Ass",
+        "symbol" : "Ka",
         "bucket" : 3
     },
     {
-        "name" : "Evil",
-        "symbol" : "E",
+        "name" : "Hero",
+        "symbol" : "H",
         "bucket" : 3
     },
     {
-        "name" : "Old School",
-        "symbol" : "Os",
+        "name" : "Fail",
+        "symbol" : "Fl",
         "bucket" : 3
     },
 
     //bucket 4
     {
         "name" : "Tech",
-        "symbol" : "Te",
-        "bucket" : 4
-    },
-    {
-        "name" : "Covert",
-        "symbol" : "Cv",
+        "symbol" : "T",
         "bucket" : 4
     },
     {
         "name" : "Weapons",
-        "symbol" : "We",
+        "symbol" : "Wp",
+        "bucket" : 4
+    },
+    {
+        "name" : "War",
+        "symbol" : "Wa",
+        "bucket" : 4
+    },
+    {
+        "name" : "Motors",
+        "symbol" : "Mo",
+        "bucket" : 4
+    },
+    {
+        "name" : "Military",
+        "symbol" : "Pi",
         "bucket" : 4
     },
     {
@@ -124,41 +134,31 @@ var impactTags = [
         "symbol" : "Sp",
         "bucket" : 4
     },
-    {
-        "name" : "Police",
-        "symbol" : "Po",
-        "bucket" : 4
-    },
-    {
-        "name" : "Reality",
-        "symbol" : "Re",
-        "bucket" : 4
-    },
 
     //bucket 5
     {
-        "name" : "Skills",
-        "symbol" : "Sk",
+        "name" : "Danger",
+        "symbol" : "Dg",
         "bucket" : 5
     },
     {
-        "name" : "Kick Ass",
-        "symbol" : "Ka",
+        "name" : "Destruction",
+        "symbol" : "Dn",
         "bucket" : 5
     },
     {
-        "name" : "Martial Arts",
-        "symbol" : "Ma",
+        "name" : "Explosions",
+        "symbol" : "Ex",
         "bucket" : 5
     },
     {
-        "name" : "Hero",
-        "symbol" : "H",
+        "name" : "Burn",
+        "symbol" : "B",
         "bucket" : 5
     },
     {
-        "name" : "Fight",
-        "symbol" : "Fi",
+        "name" : "Crime Time",
+        "symbol" : "Ct",
         "bucket" : 5
     },
     {
@@ -169,33 +169,33 @@ var impactTags = [
 
     //bucket 6
     {
-        "name" : "War",
-        "symbol" : "Wa",
+        "name" : "Masters",
+        "symbol" : "Ms",
         "bucket" : 6,
     },
     {
-        "name" : "Military",
-        "symbol" : "Mi",
+        "name" : "Adrenaline",
+        "symbol" : "Ad",
         "bucket" : 6,
     },
     {
-        "name" : "Riot",
-        "symbol" : "R",
+        "name" : "Fight",
+        "symbol" : "Ft",
         "bucket" : 6,
     },
     {
-        "name" : "Wreck",
-        "symbol" : "Wr",
+        "name" : "Martial Arts",
+        "symbol" : "Ma",
         "bucket" : 6,
     },
     {
-        "name" : "Destruction",
-        "symbol" : "De",
+        "name" : "Street Smarts",
+        "symbol" : "Ss",
         "bucket" : 6,
     },
     {
-        "name" : "Burn",
-        "symbol" : "B",
+        "name" : "Sports",
+        "symbol" : "S",
         "bucket" : 6,
     },
 ];

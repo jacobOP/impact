@@ -161,7 +161,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					</div>
 				</div>
 			</div> <!-- container -->
-			<div class="bg-greyDark">
+			<div class="bg-greyLightest">
 				<div class="container">
 					<div class="row">
 						<?php
