@@ -262,7 +262,7 @@ jQuery('document').ready(function(){
 
                 var tagSymbol = impactTags[i].symbol;
 
-                jQuery(this).attr('href', window.location.hostname + window.location.pathname + '/tag/' + impactTags[i].name.replace(' ', '-') + '/');
+                jQuery(this).attr('href', '/tag/' + impactTags[i].name.replace(' ', '-') + '/');
                 jQuery(this).children('.el--name').html('');
                 jQuery(this).children('.el--name').html(tagName);
                 jQuery(this).children('.el--symbol-container').children('.el--symbol').text(tagSymbol);

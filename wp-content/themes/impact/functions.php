@@ -118,6 +118,9 @@ function more_post_ajax(){
         'offset' => $offset,
     );
 
+    //echo 'offset: ' . $offset . ', ppp:' . $ppp . '<br>';
+
+
     $loop = new WP_Query($args);
     $article = '';
     while ($loop->have_posts()) { $loop->the_post(); 
@@ -152,7 +155,7 @@ function more_post_ajax(){
         //add content snippet
         $article.= '<div class="the-content">' . $content . '...<a class="" href="' . $permalink . '" title="' . $title . '">Read More</a></div></div></div></article>';
 		echo $article;
-    };
+    };    
 
     exit; 
 }
