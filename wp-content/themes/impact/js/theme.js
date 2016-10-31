@@ -67,7 +67,7 @@ var impactTags = [
     },
     {
         "name" : "Nail-Biters",
-        "symbol" : "Da",
+        "symbol" : "Nb",
         "bucket" : 2
     },
 
@@ -126,7 +126,7 @@ var impactTags = [
     },
     {
         "name" : "Military",
-        "symbol" : "Pi",
+        "symbol" : "Mi",
         "bucket" : 4
     },
     {
@@ -393,6 +393,14 @@ jQuery('document').ready(function(){
         var tagPageEl = jQuery('.js_tag-page-el');
         pt.renderTagPageElement(tagPageEl, tagPageEl.children('.el--name').text() );
     };
+
+    //fix the symbol on the tag elements above articles
+    if(jQuery('.js_single-post--tag').length){  
+      jQuery('.js_single-post--tag').each(function(){
+        var tag = jQuery(this).attr('data-tag');
+        pt.renderTagPageElement(jQuery(this), tag );
+      });
+    }
 
 });
 

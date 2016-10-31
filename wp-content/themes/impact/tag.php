@@ -6,14 +6,15 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
+    <?php $current_tag = single_tag_title("", false); ?>
     <div id="primary" class="tag-page">
         <div id="content" role="main">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 tag-page--header">
-                        <?php $current_tag = single_tag_title("", false); ?>
+                        
                        
-                        <div class="js_tag-page-el el">
+                        <div class="js_tag-page-el el" data-tag="<?php echo $current_tag ?>">
                             <div class="el--name"><?php echo $current_tag; ?></div>
                             <div class="flex el--symbol-container">
                                 <div class="el--symbol"><?php echo substr($current_tag, 0, 1) ?></div>
@@ -35,7 +36,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                 // Do we have any posts in the databse that match our query?
                 // In the case of the home page, this will call for the most recent posts 
                 ?>
-                <section class="bg-greyDark tag-watch">
+                <section class="bg-greyLightest tag-watch">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-10 col-lg-offset-1">
@@ -58,16 +59,12 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                                             ?>
                                         "> <!-- .watch-post -->
 
-                                            <div class="watch-post--img"  data-featherlight="#featherlight-<?php the_ID(); ?>">
-                                                <?php $main_image = get_field('main_image'); ?>
-                                                <div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
-                                            </div>
-
-                                            <div class="hidden">
-                                                <div class="" id="featherlight-<?php the_ID(); ?>">
-                                                    <?php echo wp_oembed_get( get_field( 'youtube_link' ) ); ?>
+                                            <a class="" href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+                                                <div class="watch-post--img">
+                                                    <?php $main_image = get_field('main_image'); ?>
+                                                    <div class="watch-post--background-image" style="background:url(<?php echo $main_image['url'] ?>)"></div>
                                                 </div>
-                                            </div>  
+                                            </a>
                                             
                                             <div class="tags">
                                                 <?php if($postCategory != 'Sponsored'): //display "sponsored" tag on sponsored content, tags on all other content

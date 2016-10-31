@@ -46,7 +46,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 											  // http://localhost:8888/impact/tag/fear/
 											  foreach($posttags as $tag) {
 											  	$taglink = get_site_url() . '\/tag/' . $tag->name . '/';
-											    echo '<a href="' . $taglink . '" class="el el-medium el-hoverable"><div class="el--name">' . $tag->name . '</div><div class="el--symbol-container flex"><div class="el--symbol">' . substr($tag->name, 0, 1) . '</div></div></a>';
+											    echo '<a href="' . $taglink . '" class="el el-medium el-hoverable js_single-post--tag" data-tag="' . $tag->name . '"><div class="el--name">' . $tag->name . '</div><div class="el--symbol-container flex"><div class="el--symbol">&nbsp;&nbsp;</div></div></a>';
 											  }
 											}
 											?>
