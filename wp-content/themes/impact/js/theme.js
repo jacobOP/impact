@@ -84,7 +84,7 @@ var impactTags = [
     },
     {
         "name" : "Girls",
-        "symbol" : "F",
+        "symbol" : "Gs",
         "bucket" : 3
     },
     {

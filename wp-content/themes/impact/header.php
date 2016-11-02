@@ -81,7 +81,7 @@ ACTION ON DEMAND
 
 <script>
 //this needs to be globally available so idk have fun  ¯\_(ツ)_/¯
-var impactTags = [
+/*var impactTags = [
     //bucket 1
     {
         "name" : "Life Skills",
@@ -159,7 +159,7 @@ var impactTags = [
     },
     {
         "name" : "Girls",
-        "symbol" : "F",
+        "symbol" : "Gs",
         "bucket" : 3
     },
     {
@@ -273,7 +273,7 @@ var impactTags = [
         "symbol" : "S",
         "bucket" : 6,
     },
-];
+];*/
 </script>
 
 </head>

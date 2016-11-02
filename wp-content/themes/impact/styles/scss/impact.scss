@@ -54,6 +54,18 @@ $bp-lg: 1200px;
 }
 
 @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue/HelveticaNeueLTStd-It.eot');
+  src: url('../fonts/helveticaneue/HelveticaNeueLTStd-It.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-It.otf')  format('opentype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-It.woff') format('woff'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-It.ttf')  format('truetype'),
+        url('../fonts/helveticaneue/HelveticaNeueLTStd-It.svg#HelveticaNeueLTStd-It') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
     font-family: 'Helvetica Neue';
     src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.eot');
     src: url('../fonts/helveticaneue/HelveticaNeueLTStd-Hv.eot?#iefix') format('embedded-opentype'),
