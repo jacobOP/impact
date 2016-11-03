@@ -6,14 +6,16 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
-    <?php $current_tag = single_tag_title("", false); ?>
+    <?php 
+        $current_tag = single_tag_title("", false);
+        //need to query for the tag name w/ dashes, apparently its stored that way in the DB
+        $current_tag_dashes = str_replace(' ', '-', $current_tag);
+    ?>
     <div id="primary" class="tag-page">
         <div id="content" role="main">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 tag-page--header">
-                        
-                       
                         <div class="js_tag-page-el el" data-tag="<?php echo $current_tag ?>">
                             <div class="el--name"><?php echo $current_tag; ?></div>
                             <div class="flex el--symbol-container">
@@ -28,7 +30,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
             <?php
                 // The Query, for video items
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array( 'category_name' => 'video', 'tag' => $current_tag, 'showposts' => 3, 'paged' => $paged );
+                $args = array( 'category_name' => 'video', 'tag' => $current_tag_dashes, 'showposts' => 3, 'paged' => $paged );
                 query_posts( $args );
                 
                 if ( have_posts() ) : 
@@ -108,7 +110,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                         <div class="col-lg-10 col-lg-offset-1">
                             <?php
                             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $args = array( 'category_name' => 'editorial', 'tag' => $current_tag, 'showposts' => 10, 'paged' => $paged );
+                            $args = array( 'category_name' => 'editorial', 'tag' => $current_tag_dashes, 'showposts' => 10, 'paged' => $paged );
                             query_posts( $args );
                             if ( have_posts() ) : 
                             // Do we have any posts in the databse that match our query?

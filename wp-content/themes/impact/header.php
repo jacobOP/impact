@@ -15,7 +15,6 @@ _ _|  \  |  _ \   \    ___|__ __|
 ___|_|  _|_|  _/    _\____|  _|  
 
 ACTION ON DEMAND
- 
  -->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -62,7 +61,9 @@ ACTION ON DEMAND
     foreach ( $tags as $tag ) {
         $original_query = $wp_query;
         $wp_query = null;
-        $args=array('posts_per_page'=>1, 'tag' => $tag->name);
+        //need to query for the tag name w/ dashes, apparently its stored that way in the DB
+        $current_tag = str_replace(' ', '-', $tag->name);
+        $args=array('posts_per_page'=>1, 'tag' => $current_tag);
         $wp_query = new WP_Query( $args );
         if ( have_posts() ) :
             while (have_posts()) : the_post();
@@ -78,204 +79,6 @@ ACTION ON DEMAND
     echo 'impactTagsImages = {' . $tags_images . '}';
     echo "</script>";
 ?>
-
-<script>
-//this needs to be globally available so idk have fun  ¯\_(ツ)_/¯
-/*var impactTags = [
-    //bucket 1
-    {
-        "name" : "Life Skills",
-        "symbol" : "Ls",
-        "bucket" : 1
-    },
-    {
-        "name" : "Fitness",
-        "symbol" : "F",
-        "bucket" : 1
-    },
-    {
-        "name" : "Adventure",
-        "symbol" : "Av",
-        "bucket" : 1
-    },
-    {
-        "name" : "Actionology",
-        "symbol" : "Ay",
-        "bucket" : 1
-    },
-    {
-        "name" : "Feast",
-        "symbol" : "Fe",
-        "bucket" : 1
-    },
-    {
-        "name" : "Testosterone",
-        "symbol" : "Ts",
-        "bucket" : 1
-    },
-
-    //bucket 2
-    {
-        "name" : "WTF",
-        "symbol" : "W",
-        "bucket" : 2
-    },
-    {
-        "name" : "Nightmare Fuel",
-        "symbol" : "Nf",
-        "bucket" : 2
-    },
-    {
-        "name" : "Beast Mode",
-        "symbol" : "Bm",
-        "bucket" : 2
-    },
-    {
-        "name" : "Gore",
-        "symbol" : "G",
-        "bucket" : 2
-    },
-    {
-        "name" : "Pain",
-        "symbol" : "P",
-        "bucket" : 2
-    },
-    {
-        "name" : "Nail-Biters",
-        "symbol" : "Da",
-        "bucket" : 2
-    },
-
-    //bucket 3
-    {
-        "name" : "Winning",
-        "symbol" : "Wg",
-        "bucket" : 3
-    },
-    {
-        "name" : "Laughs",
-        "symbol" : "L",
-        "bucket" : 3
-    },
-    {
-        "name" : "Girls",
-        "symbol" : "Gs",
-        "bucket" : 3
-    },
-    {
-        "name" : "Kick Ass",
-        "symbol" : "Ka",
-        "bucket" : 3
-    },
-    {
-        "name" : "Hero",
-        "symbol" : "H",
-        "bucket" : 3
-    },
-    {
-        "name" : "Fail",
-        "symbol" : "Fl",
-        "bucket" : 3
-    },
-
-    //bucket 4
-    {
-        "name" : "Tech",
-        "symbol" : "T",
-        "bucket" : 4
-    },
-    {
-        "name" : "Weapons",
-        "symbol" : "Wp",
-        "bucket" : 4
-    },
-    {
-        "name" : "War",
-        "symbol" : "Wa",
-        "bucket" : 4
-    },
-    {
-        "name" : "Motors",
-        "symbol" : "Mo",
-        "bucket" : 4
-    },
-    {
-        "name" : "Military",
-        "symbol" : "Pi",
-        "bucket" : 4
-    },
-    {
-        "name" : "Speed",
-        "symbol" : "Sp",
-        "bucket" : 4
-    },
-
-    //bucket 5
-    {
-        "name" : "Danger",
-        "symbol" : "Dg",
-        "bucket" : 5
-    },
-    {
-        "name" : "Destruction",
-        "symbol" : "Dn",
-        "bucket" : 5
-    },
-    {
-        "name" : "Explosions",
-        "symbol" : "Ex",
-        "bucket" : 5
-    },
-    {
-        "name" : "Burn",
-        "symbol" : "B",
-        "bucket" : 5
-    },
-    {
-        "name" : "Crime Time",
-        "symbol" : "Ct",
-        "bucket" : 5
-    },
-    {
-        "name" : "Sports",
-        "symbol" : "Sp",
-        "bucket" : 5
-    },
-
-    //bucket 6
-    {
-        "name" : "Masters",
-        "symbol" : "Ms",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Adrenaline",
-        "symbol" : "Ad",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Fight",
-        "symbol" : "Ft",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Martial Arts",
-        "symbol" : "Ma",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Street Smarts",
-        "symbol" : "Ss",
-        "bucket" : 6,
-    },
-    {
-        "name" : "Sports",
-        "symbol" : "S",
-        "bucket" : 6,
-    },
-];*/
-</script>
-
 </head>
 
 <body 
