@@ -3,13 +3,13 @@ HI THERE!
 
 Quick notes about classnames.
 
-(A)  lower case, seperated by dashes
+(1)  lower case, seperated by dashes
     .class-name{
         ...
     }
 
 
-(B)  2 dashes( -- ) denotes that a class is a direct child of another element:
+(2)  2 dashes( -- ) denotes that a class is a direct child of another element:
 
 <div class="big-story">
   <div class="big-story--title">ASDF</div>
@@ -18,7 +18,7 @@ Quick notes about classnames.
 
 makes components easier to reason around and keeps heirarchy clearer. 
 
-(C)  class names that begin with "js_" are javascript hooks, don't style them.
+(3)  class names that begin with "js_" are javascript hooks, don't style them.
 
 */
 
@@ -676,6 +676,10 @@ main{
             line-height:1.0em;
             font-size:22px;
             padding-top:6px;
+
+            .el--name--sm{
+                font-size:0.7em;
+            }
         }
 
         .el--symbol {
@@ -716,7 +720,11 @@ main{
             font-size:12px;
         } 
         .el--name--sm {
-            font-size:0.8em;         
+            font-size:0.7em;
+
+            @media (min-width:$bp-lg){
+                font-size: 0.8em;
+            }         
         }
 
     }
