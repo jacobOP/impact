@@ -22,7 +22,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 						$posttags_str = '';
 						if ($posttags) {
 						  foreach($posttags as $tag) {
-						    $posttags_str .=  strval($tag->term_id) .',';
+						    $posttags_str .=  strval(str_replace(' ', '-', $tag->name)) .',';
 						  }
 						  $posttags_str = rtrim($posttags_str, ",");
 						}
@@ -45,7 +45,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 											if ($posttags) {
 											  // http://localhost:8888/impact/tag/fear/
 											  foreach($posttags as $tag) {
-											  	$taglink = get_site_url() . '\/tag/' . $tag->name . '/';
+
+											  	$taglink = get_site_url() . '\/tag/' . str_replace(" ", "-", $tag->name) . '/';
 											    echo '<a href="' . $taglink . '" class="el el-medium el-hoverable js_single-post--tag" data-tag="' . $tag->name . '"><div class="el--name">' . $tag->name . '</div><div class="el--symbol-container flex"><div class="el--symbol">&nbsp;&nbsp;</div></div></a>';
 											  }
 											}
@@ -109,7 +110,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							</div>
 
 
-							<div id="article-sidebar" class="sidebar col-sm-4">
+							<div id="article-=" class="sidebar col-sm-4">
 								<section class="sidebar--related-videos">
 									<div class="sidebar-section-header">
 										Related Videos
@@ -119,7 +120,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									global $wp_query;
 									        $args = array(
 									        'category_name' => 'video', 
-									        'tag__in' => $posttags_str, //must use tag id for this field
+									        'tag' => $posttags_str,
 									        'post__not_in' => array( $postid ), //ignore the post we're currently readings
 									        'posts_per_page' => 2); //get all posts
 
@@ -148,7 +149,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 									global $wp_query;
 									        $args = array(
 									        'category_name' => 'editorial', 
-									        'tag__in' => $posttags_str, //must use tag id for this field
+									        'tag' => $posttags_str,
 									        'post__not_in' => array( $postid ), // ignore the post we're currently reading
 									        'posts_per_page' => 4); //get all posts
 
