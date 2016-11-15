@@ -162,8 +162,8 @@ var impactTags = [
         "bucket" : 5
     },
     {
-        "name" : "Sports",
-        "symbol" : "Sp",
+        "name" : "Violence",
+        "symbol" : "V",
         "bucket" : 5
     },
 

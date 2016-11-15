@@ -1031,11 +1031,19 @@ main{
 /* single post, single.php */
 .single-post {
 
+    .site-header{
+        margin-bottom:0px;
+    }
+
     .title {
-        font-size:38px;
+        font-size:30px;
         line-height:1.2em;
-        margin:35px 0;
+        margin:20px 0;
         color:$textTitle;
+        @media (min-width:$bp-md){
+            font-size:38px;
+            margin:35px 0;
+        }
     }
 
     .post-meta {
@@ -1048,6 +1056,7 @@ main{
         flex-wrap:wrap;
         .el{
             margin-right:5px;
+            margin-bottom:5px;
              &:hover, &:focus{
                 border-bottom-width:7px;
              }
@@ -1072,7 +1081,7 @@ main{
     }
 
     .social-icons {
-        margin-top:10px;
+        margin-top:5px;
         @media (min-width:$bp-sm){
             margin-top:0;
         }
