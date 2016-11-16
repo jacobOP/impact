@@ -90,44 +90,28 @@ ACTION ON DEMAND
 	?>
 >
 <header id="masthead" class="site-header">
-<div class="site-header--small-bar">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="flex">
-          <div class="social">
-            
-          </div>
-          <div class="search flex">
-            <input type="text" class="form-control" id="search-input" placeholder="Search">
-            <button class="btn btn-primary js_search-submit">Search</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="row site-header--inner">
+  		<div id="brand" class="site-header--logo col-sm-6 col-sm-push-6 col-md-4 col-md-push-4 col-lg-push-4">
+  			<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
+  				<img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo_10-12-16.png" alt="IMPACT - Action on Demand" class="img-responsive">
+  			</a>
+  			<?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
+  		</div><!-- /brand -->
+
+  		<nav class="site-navigation main-navigation col-sm-6 col-sm-pull-6 col-md-4 col-md-pull-4 col-lg-pull-4">
+  			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+  		</nav><!-- .site-navigation .main-navigation -->
+
+  		<div class="col-sm-12 col-md-4">
+  			<div class="search flex">
+  				<input type="text" class="form-control" id="search-input" placeholder="Search">
+  				<button class="btn btn-primary js_search-submit">Search</button>
+  			</div>
+  		</div>
+	</div>
 </div>
-<div class="site-header--large-bar">
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="flex">
-        <div id="brand" class="site-header--logo">
-          <a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
-            <img src="<?php echo get_site_url(); ?>/wp-content/themes/impact/img/logo_10-12-16.png" alt="IMPACT - Action on Demand" class="img-responsive">
-          </a>
-          <?php // bloginfo( 'description' ); // Display the blog description, found in General Settings ?>
-        </div><!-- /brand -->
-        <nav class="site-navigation main-navigation">
-          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
-        </nav><!-- .site-navigation .main-navigation -->
-      </div>
-    </div>
-  </div>
-</div>
-  
-</div>
-  
+		
 </header><!-- #masthead .site-header -->
 
 <main><!-- start the page containter -->
