@@ -150,10 +150,8 @@ textarea {
 }
 
 .search .form-control {
-  border-bottom:0 none;
-  &:focus {
-    
-  }
+  border-bottom: 0 none;
+  &:focus {}
 }
 
 
@@ -319,54 +317,53 @@ h1,
   width: 100%;
   z-index: 9;
   margin-bottom: 40px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   @media (min-width: $bp-sm) {
     margin-bottom: 50px;
   }
-  @media (min-width: $bp-md){
-    position:fixed;
+  @media (min-width: $bp-md) {
+    position: fixed;
   }
 }
 
 main {
-  @media (min-width:$bp-md){
-    padding-top:170px;
+  @media (min-width: $bp-md) {
+    padding-top: 170px;
   }
 }
 
-.site-header--small-bar{
-  background:$black;
-  color:$orange;
-  padding:5px 0;
+.site-header--small-bar {
+  background: $black;
+  color: $orange;
+  padding: 5px 0;
   order: 2;
-  @media (min-width:$bp-sm){
+  @media (min-width: $bp-sm) {
     order: 1;
   }
-  .flex{
-    justify-content:flex-end;
+  .flex {
+    justify-content: flex-end;
   }
 }
-
 
 .site-header--social {
   display: flex;
   justify-content: flex-end;
   border-right: 2px solid $white;
   padding: 0 15px 0 0;
-  margin:0 25px 0 0;
+  margin: 0 25px 0 0;
   a {
     width: 30px;
     height: 30px;
-    margin:0 10px;
+    margin: 0 10px;
     background: transparent;
-    &:hover{
+    &:hover {
       color: $white;
       border-bottom: 0 none;
       text-decoration: none;
-      svg{
-        fill:$white;
+      svg {
+        fill: $white;
       }
     }
   }
@@ -379,16 +376,15 @@ main {
     transition: fill 0.125s ease-in-out;
   }
 }
+
 .search-svg-container {
   background: $orange;
   width: 30px;
   height: 30px;
-  cursor:pointer;
-
-  &:hover svg{
-    fill:$black;
+  cursor: pointer;
+  &:hover svg {
+    fill: $black;
   }
-
   svg {
     width: 30px;
     height: 30px;
@@ -397,53 +393,52 @@ main {
     transition: fill 0.125s ease-in-out;
   }
 }
-.launch-search{
-  .spyglass{
-    display:block;
-  }
-  .cancel{
-    display:none
-  }
 
-  &.active{
-    .spyglass{
-      display:none;
+.launch-search {
+  .spyglass {
+    display: block;
+  }
+  .cancel {
+    display: none
+  }
+  &.active {
+    .spyglass {
+      display: none;
     }
-    .cancel{
-      display:block
+    .cancel {
+      display: block
     }
   }
 }
 
-.site-header--search{
-  margin-top:5px;
-
-  input[type=email], input[type=text], textarea{
-    border: 0 none;    
+.site-header--search {
+  margin-top: 5px;
+  input[type=email],
+  input[type=text],
+  textarea {
+    border: 0 none;
     height: 30px;
   }
-
-  .site-header-search-button{
+  .site-header-search-button {
     border: 0 none;
-    border-radius:0;
+    border-radius: 0;
     padding: 0;
   }
 }
 
-
 .site-header--large-bar {
-  background:$greyLightest;
-  color:$text;
+  background: $greyLightest;
+  color: $text;
   order: 1;
-  @media (min-width:$bp-sm){
+  @media (min-width: $bp-sm) {
     order: 2;
   }
   .flex {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    @media (min-width:$bp-sm){
-      flex-wrap:nowrap;
+    @media (min-width: $bp-sm) {
+      flex-wrap: nowrap;
       justify-content: space-between;
     }
   }
@@ -480,7 +475,7 @@ main {
         position: relative;
         padding: 10px 30px;
         transition: background 0.1s ease-out;
-        @media (min-width:$bp-sm) {
+        @media (min-width: $bp-sm) {
           padding: 0px 35px;
         }
         @media (min-width: $bp-md) {}
@@ -585,13 +580,13 @@ main {
   position: relative;
   text-align: center;
   min-height: 75px;
-  opacity:0;
+  opacity: 0;
   >* {
     transition: opacity 1s ease-out;
   }
   @media (min-width:$bp-sm) {
     overflow: hidden;
-    opacity:1;
+    opacity: 1;
   }
   @media (min-width:$bp-md) {
     text-align: initial;
@@ -1119,7 +1114,7 @@ main {
   }
   .the-content {
     color: $textDark;
-    margin-top:30px;
+    margin-top: 30px;
     img {
       max-width: 100%;
       width: 100%;
@@ -1128,6 +1123,10 @@ main {
     }
     .wp-caption {
       max-width: 100%;
+    }
+    ol, ul {
+      list-style: decimal;
+      font-size: 24px;
     }
   }
 }
