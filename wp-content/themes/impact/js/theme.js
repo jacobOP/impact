@@ -202,6 +202,7 @@ var impactTags = [
 
 
 jQuery('document').ready(function(){
+    //site search
     var siteSearch = function(){
         var term = document.getElementById('search-input').value;
         if (term) {
@@ -220,6 +221,16 @@ jQuery('document').ready(function(){
             siteSearch();
         }
     });
+
+    //control for hiding/showing search in header
+    var toggleSearch = function(){
+        jQuery('.js_launch-search').toggleClass('active');
+        jQuery('.site-header--search').toggleClass('hidden');
+    }
+
+    jQuery('.js_launch-search').on('click', function(){
+        toggleSearch();
+    })
 
     var styleFirstWord = function(string){
         var styled = '';
@@ -273,6 +284,7 @@ jQuery('document').ready(function(){
         },
 
         renderElementsXS : function (){
+            //make it totally transparent while loading
             //replace html with the supertag rows
             jQuery('.js_periodic').html('<div class="js_supertag-row supertag-row js_supertag-row-1 supertag-row-1 flex"></div><div class="supertag-row-expanded supertag-row-expanded-1 js_supertag-row-1-expanded"></div><div class="js_supertag-row supertag-row js_supertag-row-2 supertag-row-2 flex"></div><div class="supertag-row-expanded supertag-row-expanded-2 js_supertag-row-2-expanded">');
 
@@ -281,10 +293,10 @@ jQuery('document').ready(function(){
                 var supertags = [
                     ["Action", "A"],
                     ["WTF", "W"],
-                    ["Adventure", "Av"],
+                    ["Winning", "Wg"],
                     ["Tech", "Te"],
-                    ["Skills", "Sk"],
-                    ["War", "Wa"],
+                    ["Danger", "Dg"],
+                    ["Masters", "Ms"],
                 ];
                 if (i <= 3){
                     jQuery('.js_supertag-row-1').append('<div class="el el-hoverable el-medium el-supertag js_el-supertag taggroup-' + i + ' js_taggroup-' + i + '" data-target="js_bucket-' + i + '"><div class="el--name">' + supertags[i-1][0] + '</div><div class="el--symbol">' + supertags[i-1][1] + '</div></div>');  
@@ -334,8 +346,9 @@ jQuery('document').ready(function(){
                     jQuery('.js_bucket').addClass('hidden');
                     jQuery('.' + jQuery(this).attr('data-target') ).removeClass('hidden');
                 }
-                
             });
+            //make it opaque again now that we're done
+            jQuery('.js_periodic').css('opacity', '1');
         },
 
         updatePeriodicInfo : function(tag, tagSymbol){
@@ -356,9 +369,7 @@ jQuery('document').ready(function(){
 
     //periodic table stuff
     if (jQuery(document).width() >= 768) {
-
         pt.renderElements();
-
         jQuery('.js_el').each(function(){
             //events 
             jQuery(this).on('mouseover', function(){

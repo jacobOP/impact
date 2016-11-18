@@ -95,13 +95,40 @@ ACTION ON DEMAND
     <div class="row">
       <div class="col-xs-12">
         <div class="flex">
-          <div class="social">
-            
+          <div class="site-header--social">
+            <a href="https://www.youtube.com/Impact" target="_blank">
+              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/youtube-play-button.svg'); ?>
+            </a>
+            <a href="https://www.facebook.com/actionondemand" target="_blank">
+              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/facebook-letter-logo.svg'); ?>
+            </a>
+            <a href="https://twitter.com/actionondemand" target="_blank">
+              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/twitter-logo.svg'); ?>
+            </a>
           </div>
-          <div class="search flex">
-            <input type="text" class="form-control" id="search-input" placeholder="Search">
-            <button class="btn btn-primary js_search-submit">Search</button>
+          <div class="site-header--search-icon">
+            <div class="search-svg-container launch-search js_launch-search">
+              <div class="spyglass">
+                <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/spyglass.svg'); ?>
+              </div>
+              <div class="cancel">
+                <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/cancel.svg'); ?>
+              </div>
+            </div>
+
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header--search hidden flex">
+          <input type="text" class="form-control" id="search-input" placeholder="Search">
+          <button class="js_search-submit site-header-search-button">
+            <div class="search-svg-container">
+              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/spyglass.svg'); ?>
+            </div>
+          </button>
         </div>
       </div>
     </div>
