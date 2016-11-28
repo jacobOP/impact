@@ -96,23 +96,38 @@ ACTION ON DEMAND
       <div class="col-xs-12">
         <div class="flex">
           <div class="site-header--social">
-            <a href="https://www.youtube.com/Impact" target="_blank">
-              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/youtube-play-button.svg'); ?>
+            <a href="https://www.youtube.com/Impact" class="social-icon social-youtube" target="_blank">
+              <span class="screen-reader-text">
+                youtube
+              </span>
             </a>
-            <a href="https://www.facebook.com/actionondemand" target="_blank">
-              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/facebook-letter-logo.svg'); ?>
+            <a href="https://www.facebook.com/actionondemand" class="social-icon social-facebook" target="_blank">
+              <span class="screen-reader-text">
+                facebook
+              </span>
             </a>
-            <a href="https://twitter.com/actionondemand" target="_blank">
-              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/social/svg-bw/twitter-logo.svg'); ?>
+            <a href="https://twitter.com/actionondemand" class="social-icon social-twitter" target="_blank">
+              <span class="screen-reader-text">
+                twitter
+              </span>
+            </a>
+            <a href="https://www.instagram.com/actionondemand/" class="social-icon social-instagram" target="_blank">
+              <span class="screen-reader-text">
+                instagram
+              </span>
             </a>
           </div>
           <div class="site-header--search-icon">
-            <div class="search-svg-container launch-search js_launch-search">
-              <div class="spyglass">
-                <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/spyglass.svg'); ?>
+            <div class="launch-search js_launch-search">
+              <div class="search-icon search-spyglass">
+                <div class="screen-reader-text">
+                  launch search 
+                </div>
               </div>
-              <div class="cancel">
-                <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/cancel.svg'); ?>
+              <div class="search-icon search-cancel">
+                <div class="screen-reader-text">
+                  cancel search
+                </div>
               </div>
             </div>
 
@@ -125,8 +140,10 @@ ACTION ON DEMAND
         <div class="site-header--search hidden flex">
           <input type="text" class="form-control" id="search-input" placeholder="Search">
           <button class="js_search-submit site-header-search-button">
-            <div class="search-svg-container">
-              <?php echo file_get_contents(get_site_url() . '/wp-content/themes/impact/img/search/spyglass.svg'); ?>
+            <div class="search-icon search-spyglass">
+              <div class="screen-reader-text">
+                search
+              </div>
             </div>
           </button>
         </div>
